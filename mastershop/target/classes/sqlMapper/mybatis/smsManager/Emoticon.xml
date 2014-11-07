@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Emoticon">
+	
+	<!-- 발송 문구 리스트-->
+	<select id="getUserSendMsgList"   parameterType="HashMap" resultType="Emoticon">		 
+		SELECT  fk_member_id,   fk_tel,         		  send_subject, 
+        			send_content,  	attachment_path,  attachment_file_size,
+        			msg_type,       	msg_sub_type
+		FROM 	tbl_sms_group 
+		WHERE 	fk_member_id = #{fk_member_id}
+			<if test=" fk_tel !=null and !fk_tel.equals('')">
+			 AND 	fk_tel= #{fk_tel}  
+			</if>
+			AND  send_content is not null
+			AND 	msg_type = #{msg_type}
+			AND 	msg_sub_type = #{msg_sub_type}
+			<if test="searchString!=null and !searchString.equals('')">
+				AND send_content LIKE  CONCAT('%', #{searchString}, '%')				
+			</if>			
+		GROUP BY  fk_member_id, fk_tel, send_subject, send_content, attachment_path, attachment_file_size, msg_type, msg_sub_type
+		ORDER BY reg_date desc
+		LIMIT #{pageStart}, #{pageSize}			
+	</select>
+	
+	<!-- 발송 문구 리스트 카운트-->
+	<select id="getUserSendMsgListCount"   parameterType="HashMap" resultType="int">
+		select count(*) as cnt
+		from (
+		      SELECT  fk_member_id,   fk_tel,         		  send_subject, 
+		        			send_content,  	attachment_path,  attachment_file_size,
+		        			msg_type,       	msg_sub_type
+				FROM 	tbl_sms_group 
+				WHERE 	fk_member_id = #{fk_member_id}
+					<if test=" fk_tel !=null and !fk_tel.equals('')">
+						 AND 	fk_tel= #{fk_tel}  
+					</if>
+					AND  send_content is not null
+					AND 	msg_type = #{msg_type}					
+					AND 	msg_sub_type = #{msg_sub_type}
+					<if test="searchString!=null and !searchString.equals('')">
+						AND send_content LIKE  CONCAT('%', #{searchString}, '%')
+					</if>	
+				GROUP BY  fk_member_id, fk_tel, send_subject, send_content, attachment_path, attachment_file_size, msg_type, msg_sub_type
+		)as result	
+	</select>
+	
+	<!-- 추천 문구 리스트(문자 등록,수정에서 사용) -->
+	<select id="getRecommendContentList"   parameterType="HashMap" resultType="Emoticon">
+		SELECT  emo.pk_mid
+			        , emo.fd_type
+			        , emo.fd_category1
+			        , emo.fd_category2
+			        , emo.fd_category3
+			        , emo.fd_content_no
+			        , emo.fd_subject
+			        , emo.fd_content
+			        , emo.fd_event_yy
+			        , emo.fd_event_mm
+			        , emo.fd_event_dd
+			        , emo.fd_event_memo
+			        , emo.fd_file_path
+			        , emo.fd_file_name
+			        , emo.fd_reg_date
+		FROM tbl_member mem INNER JOIN tbl_emoticon_new emo 
+			ON mem.fd_business_type1 = emo.fd_category2 AND mem.fd_business_type2 = emo.fd_category3
+		WHERE 	mem.pk_member_id = #{pk_member_id}
+		      		AND emo.fd_category1 = 'B'
+		      		AND emo.fd_content is not null
+		      		<if test="fd_sms_type !=null">
+						AND emo.fd_type = #{fd_sms_type}
+					</if>
+		ORDER BY emo.fd_reg_date DESC
+		LIMIT 3	
+	</select>
+	
+	<!-- 추천 문구 리스트(팝업) -->
+	<select id="getRecommendMsgList"   parameterType="HashMap" resultType="Emoticon">
+		SELECT 	pk_mid, fd_type,  fd_category1, fd_category2, fd_category3,
+		       		fd_content_no, fd_subject, fd_content, fd_event_yy, fd_event_mm, fd_event_dd,
+		      		fd_file_path, fd_file_name, fd_reg_date
+		FROM (       
+		    SELECT 	pk_mid, fd_type,  fd_category1, fd_category2, fd_category3,
+		           		fd_content_no, fd_subject, fd_content, fd_event_yy, fd_event_mm, fd_event_dd,
+		           		fd_file_path, fd_file_name, fd_reg_date
+		    FROM 	tbl_emoticon_new
+		    WHERE 	fd_type = #{fd_sms_type}
+		      AND 	fd_category1 = 'C'
+		      AND	 	fd_content is not null
+		      <if test="searchString!=null and !searchString.equals('')">				
+				AND  fd_content LIKE  CONCAT('%', #{searchString}, '%')
+			</if>
+		    union   
+		    select pk_mid, fd_type,  fd_category1, fd_category2, fd_category3,
+		           fd_content_no, fd_subject, fd_content, fd_event_yy, fd_event_mm, fd_event_dd,
+		           fd_file_path, fd_file_name, fd_reg_date
+		    from tbl_emoticon_new
+		    where fd_type = #{fd_sms_type}
+		      AND 	fd_category1 = 'E'
+		      AND	 	fd_content is not null
+		    <if test="searchString!=null and !searchString.equals('')">				
+				AND  fd_content LIKE  CONCAT('%', #{searchString}, '%')
+			</if>
+			<if test="searchString==null or searchString.equals('')">
+		      	AND concat(fd_event_yy,fd_event_mm) = date_format(now(), '%Y%m')
+		    </if>
+		)as result      
+		ORDER BY pk_mid
+		LIMIT #{pageStart}, #{pageSize}
+		<!-- 
+		SELECT	teg.fd_group_type,  	teg.fd_group_name, 
+		   	     	teg.fd_sort,        		te.fd_title, 
+			        te.fd_content,      		te.fd_sms_type, 
+			        te.fd_file_path,    		te.fd_file_name
+		FROM 	tbl_emoticon_group 	teg, tbl_emoticon te
+		WHERE 	teg.fd_group_code = te.fk_group_code
+			AND 	te.fd_sms_type = #{fd_sms_type}
+			<if test="searchString!=null and !searchString.equals('')">				
+				AND te.fd_content LIKE  CONCAT('%', #{searchString}, '%')
+			</if>
+			<if test="fd_group_type !=null">
+				AND teg.fd_group_type = #{fd_group_type}
+			</if>		
+		ORDER BY teg.fd_sort ASC
+		LIMIT #{pageStart}, #{pageSize}
+		-->	
+	</select>
+	
+	<!-- 추천 문구 리스트 카운트(팝업) -->	
+	<select id="getRecommendMsgListCount"   parameterType="HashMap" resultType="int">
+		SELECT count(*) as cnt
+		FROM (       
+		    SELECT 	pk_mid, fd_type,  fd_category1, fd_category2, fd_category3,
+		           		fd_content_no, fd_subject, fd_content, fd_event_yy, fd_event_mm, fd_event_dd,
+		           		fd_file_path, fd_file_name, fd_reg_date
+		    FROM 	tbl_emoticon_new
+		    WHERE 	fd_type = #{fd_sms_type}
+		      AND 	fd_category1 = 'C'
+		      AND	 	fd_content is not null
+		      <if test="searchString!=null and !searchString.equals('')">				
+				AND  fd_content LIKE  CONCAT('%', #{searchString}, '%')
+			</if>
+		    union   
+		    select pk_mid, fd_type,  fd_category1, fd_category2, fd_category3,
+		           fd_content_no, fd_subject, fd_content, fd_event_yy, fd_event_mm, fd_event_dd,
+		           fd_file_path, fd_file_name, fd_reg_date
+		    from tbl_emoticon_new
+		    where fd_type = #{fd_sms_type}
+		      and fd_category1 = 'E'
+		      AND	 	fd_content is not null
+		    <if test="searchString!=null and !searchString.equals('')">				
+				AND  fd_content LIKE  CONCAT('%', #{searchString}, '%')
+			</if>
+			<if test="searchString==null or searchString.equals('')">
+		      	AND concat(fd_event_yy,fd_event_mm) = date_format(now(), '%Y%m')
+		    </if>
+		)as result
+		<!-- 
+		SELECT count(*) as cnt
+		FROM(
+					SELECT	teg.fd_group_type,  	teg.fd_group_name, 
+					   	     	teg.fd_sort,        		te.fd_title, 
+						        te.fd_content,      		te.fd_sms_type, 
+						        te.fd_file_path,    		te.fd_file_name
+					FROM 	tbl_emoticon_group 	teg, tbl_emoticon te
+					WHERE 	teg.fd_group_code = te.fk_group_code
+						AND 	te.fd_sms_type = #{fd_sms_type}
+						<if test="searchString!=null and !searchString.equals('')">
+							AND te.fd_content LIKE  CONCAT('%', #{searchString}, '%')
+						</if>			
+						<if test="fd_group_type !=null">
+							AND teg.fd_group_type = #{fd_group_type}
+						</if>
+		)as result
+		 -->
+	</select>
+	
+	
+	
+	
+	
+	
+</mapper>

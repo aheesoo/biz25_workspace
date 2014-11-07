@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Common">	
+	<!-- 제품 분류 리스트 -->
+	<select id="getProductCodeList"   parameterType="Common" resultType="Common">		 
+		select pk_product_code, fd_up_code, fd_code_name, fd_point_level_5, fd_point_level_10
+		from tb_product_code
+		<trim prefix="where" prefixOverrides="and">
+		    <if test="search_type != '' and search_type != null">
+		        <if test="search_type == 'depth1'">
+		            and fd_up_code = '0000'
+		        </if>
+		        <if test="search_type == 'depth2'">
+		            and fd_up_code <![CDATA[!=]]> '0000'
+		        </if>                
+		    </if>
+		    <if test="fd_up_code != '' and fd_up_code != null">
+		    		and fd_up_code = #{fd_up_code}
+		    </if>
+		</trim>   
+	</select>
+	
+	<!-- 제품 상세보기  -->
+	<select id="getProductCodeListView"   parameterType="String" resultType="Common">		 
+		select pk_product_code, fd_up_code, fd_code_name, fd_point_level_5, fd_point_level_10
+		from tb_product_code
+		where pk_product_code = #{search_code}		        		 
+	</select>
+	
+</mapper>

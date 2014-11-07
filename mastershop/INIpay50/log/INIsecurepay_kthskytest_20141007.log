@@ -1,0 +1,1110 @@
+[10:58:20] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[10:58:20] INFO <00001> DEBUG PRINT : 
+[10:58:20]DEBUG <00001> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[10:58:20]DEBUG <00001> MID          : kthskytest
+[10:58:20]DEBUG <00001> ADMIN(KEYPW) : 1111
+[10:58:20]DEBUG <00001> TX_PGPUBSN : 30
+[10:58:20]DEBUG <00001> TX_MPUBSN : 0
+[10:58:20] INFO <00001> price : 33000
+[10:58:20] INFO <00001> nointerest : no
+[10:58:20] INFO <00001> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[10:58:20]DEBUG <00001> src value       = cHJpY2U9MzMwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[10:58:20]DEBUG <00001> Hashed value    = FIrFr0iN++nPPZxoCjw7k8DiXM8=
+
+[10:58:20]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[10:58:20] INFO <00001> TRANSACTION COMPLETE 
+[10:58:20] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.440 sec. ] 
+[10:58:20] INFO --------------------------------------------------------------------------------
+[11:00:13] INFO <00002> START securepay (5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60)
+[11:00:13] INFO <00002> DEBUG PRINT : 
+[11:00:13] INFO <00002> PAYMETHOD   : Card
+[11:00:13] INFO <00002> OID         : orderid_of_merchant
+[11:00:13] INFO <00002> PRICE       : 33000
+[11:00:13] INFO <00002> CURRENCY    : WON
+[11:00:13] INFO <00002> GOODNAME    : 마스터샵 충전 B형
+[11:00:13] INFO <00002> BUYERNAME   : 조상현
+[11:00:13] INFO <00002> BUYERTEL    : null
+[11:00:13] INFO <00002> BUYEREMAIL  : hasiki@nate.com
+[11:00:13] INFO <00002> SESSIONKEY : mv+RKtuS9Drvb9TO9Ln/IvZ5IPjk5knjN+R15aVXKgJH8iTZiZRS7x96m+pEsPV2
+zlEYZ0iadM+gx7YZrZnjA+9WLla0dTT+gEDntZG/y34RWPWCsqWGefjHfDcDmpXe
+rrNZpf/e9mroVIrATIGtb/e7QFnzhb5XxiLPbveOk04=
+[11:00:13] INFO <00002> ENCRYPTED  : Version=4.1&PayMethod=Card&RsaKeyNum=1&EncryptionAlgorithm=SEED-CBC&SignAlgorithm=RSAwithSHA1&CertVer=39&moid=orderid_of_merchant&ver_trace=main(6086,6053)card(6115,6105)n(6008)Cs(6022)Dt(6002)Pa(6002)Cf(6024)Fv(0000)La(6131)Re(6083)Vr(6006)P(6033)en(6039)nP(6006)&pg1=203.238.37.3&pg2=211.219.96.180&pg1ip=203.238.37.3&pg2ip=211.219.96.180&agreeflag=1111&Data=ONW6oQY1ZhWkW3WG0oRROMvTDJqfEjZs1sAF0RIgDGUg+O0TqxY+W/I+8y4yUe6i
+4l9XJ3icCEe8UGXHwFQkNCXj4KV3p70BPqgUTXdwcVMLVU4tdY02g3dVygNlbj+r
+ibKnke0wj4XNL6NmwaPokW27KLGhsia0qUZDF1dCYXRXO2temL0z7snC7dplTIpb
+U5YF342gAIZLNdWL+Mxj9Jr3E4k0CbMTYnYajUISdS8dCoGCpTaU8izlhErI3gEx
+cRI1M8mGaCP40s1ZWk6XmFuFAF5xswIpV8tkDiKbLqejLV66SDdTJqz2wh9j6IU3
+M83gONixz18dVPDnK9GOCK3GbJlYguFSWA3/0T8Gzb5yuOudDdD6XnBBSvH+UUFy
+TYyxueeTyeH37WRUIgK/Q3wA8VpdQurxu/YaPd9Ujes+QyVmEcJVqzuyxIOQKF9r
+qMd25pS6THOlP5Gy8okzyI1pFZYVFT/TPL+JB8p+d200XkBWqyuouHsFNCJRDZjX
+za86eINlUdc7td1MLJ+N4NJr4ADha7uuLedSFH9JCikexMivzBmF9IS4cMOd0F+U
+WVEJuxctQaQrZbMcMCAy36xLwT+FMexhdgqgpZ5oXFUIjV6NLxtfQYHDRPAvxVdi
+Uc7Uy0a3R0Vps4m3FUaX
+[11:00:13] INFO <00002> MAKE TID OK INIjspCARDkthskytest20141007110013240834
+[11:00:13]DEBUG <00002> PL_ENCRYPTED_PARSING, CertVer=39
+[11:00:13]DEBUG <00002> PL_ENCRYPTED_PARSING, pg1=203.238.37.3
+[11:00:13]DEBUG <00002> PL_ENCRYPTED_PARSING, pg2=211.219.96.180
+[11:00:13]DEBUG <00002> PL_ENCRYPTED_PARSING, pg1ip=203.238.37.3
+[11:00:13]DEBUG <00002> PL_ENCRYPTED_PARSING, pg2ip=211.219.96.180
+[11:00:13]DEBUG <00002> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[11:00:13]DEBUG <00002> MID          : kthskytest
+[11:00:13]DEBUG <00002> ADMIN(KEYPW) : 1111
+[11:00:13]DEBUG <00002> TX_PGPUBSN : 30
+[11:00:13]DEBUG <00002> TX_MPUBSN : 0
+[11:00:14]DEBUG <00002> 0295900177R SHA1                   0                  39                  300200kthskytest               33000INIjspCARDkthskytest20141007110013240834<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <GoodsInfo>
+    <GoodsCnt urlencode="1">1</GoodsCnt>
+    <MOID urlencode="1">orderid_of_merchant</MOID>
+    <Currency urlencode="1">WON</Currency>
+    <Goods no="1">
+      <SMID>kthskytest</SMID>
+      <GoodsName urlencode="1">%B8%B6%BD%BA%C5%CD%BC%A5+%C3%E6%C0%FC+B%C7%FC</GoodsName>
+      <GoodsCntS>1</GoodsCntS>
+      <GoodsPrice>33000</GoodsPrice>
+    </Goods>
+  </GoodsInfo>
+  <BuyerInfo>
+    <BuyerName urlencode="1">%C1%B6%BB%F3%C7%F6</BuyerName>
+    <BuyerTel urlencode="1">null</BuyerTel>
+    <BuyerEmail urlencode="1">hasiki%40nate.com</BuyerEmail>
+    <ParentEmail></ParentEmail>
+    <RecvName></RecvName>
+    <RecvTel></RecvTel>
+    <RecvMsg></RecvMsg>
+    <RecvAddr></RecvAddr>
+    <RecvPostNum></RecvPostNum>
+  </BuyerInfo>
+  <PaymentInfo>
+    <Payment>
+      <PayMethod>Card</PayMethod>
+      <JoinCard></JoinCard>
+      <JoinExpire></JoinExpire>
+      <MailOrder></MailOrder>
+      <SessionKey>mv+RKtuS9Drvb9TO9Ln/IvZ5IPjk5knjN+R15aVXKgJH8iTZiZRS7x96m+pEsPV2
+zlEYZ0iadM+gx7YZrZnjA+9WLla0dTT+gEDntZG/y34RWPWCsqWGefjHfDcDmpXe
+rrNZpf/e9mroVIrATIGtb/e7QFnzhb5XxiLPbveOk04=</SessionKey>
+      <Encrypted urlencode="1">Version%3D4.1%26PayMethod%3DCard%26RsaKeyNum%3D1%26EncryptionAlgorithm%3DSEED-CBC%26SignAlgorithm%3DRSAwithSHA1%26CertVer%3D39%26moid%3Dorderid_of_merchant%26ver_trace%3Dmain%286086%2C6053%29card%286115%2C6105%29n%286008%29Cs%286022%29Dt%286002%29Pa%286002%29Cf%286024%29Fv%280000%29La%286131%29Re%286083%29Vr%286006%29P%286033%29en%286039%29nP%286006%29%26pg1%3D203.238.37.3%26pg2%3D211.219.96.180%26pg1ip%3D203.238.37.3%26pg2ip%3D211.219.96.180%26agreeflag%3D1111%26Data%3DONW6oQY1ZhWkW3WG0oRROMvTDJqfEjZs1sAF0RIgDGUg%2BO0TqxY%2BW%2FI%2B8y4yUe6i%0A4l9XJ3icCEe8UGXHwFQkNCXj4KV3p70BPqgUTXdwcVMLVU4tdY02g3dVygNlbj%2Br%0AibKnke0wj4XNL6NmwaPokW27KLGhsia0qUZDF1dCYXRXO2temL0z7snC7dplTIpb%0AU5YF342gAIZLNdWL%2BMxj9Jr3E4k0CbMTYnYajUISdS8dCoGCpTaU8izlhErI3gEx%0AcRI1M8mGaCP40s1ZWk6XmFuFAF5xswIpV8tkDiKbLqejLV66SDdTJqz2wh9j6IU3%0AM83gONixz18dVPDnK9GOCK3GbJlYguFSWA3%2F0T8Gzb5yuOudDdD6XnBBSvH%2BUUFy%0ATYyxueeTyeH37WRUIgK%2FQ3wA8VpdQurxu%2FYaPd9Ujes%2BQyVmEcJVqzuyxIOQKF9r%0AqMd25pS6THOlP5Gy8okzyI1pFZYVFT%2FTPL%2BJB8p%2Bd200XkBWqyuouHsFNCJRDZjX%0Aza86eINlUdc7td1MLJ%2BN4NJr4ADha7uuLedSFH9JCikexMivzBmF9IS4cMOd0F%2BU%0AWVEJuxctQaQrZbMcMCAy36xLwT%2BFMexhdgqgpZ5oXFUIjV6NLxtfQYHDRPAvxVdi%0AUc7Uy0a3R0Vps4m3FUaX</Encrypted>
+      <Card>
+        <CARD_Code>11</CARD_Code>
+      </Card>
+    </Payment>
+  </PaymentInfo>
+  <ManageInfo>
+    <Language></Language>
+    <URL urlencode="1">www.mastershop.kr</URL>
+    <TXVersion>5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60</TXVersion>
+    <TXUserID></TXUserID>
+    <Ack>1</Ack>
+    <TXRN>9595950595</TXRN>
+    <TXRegNum></TXRegNum>
+  </ManageInfo>
+  <ReservedInfo>
+    <MReserved1></MReserved1>
+    <MReserved2></MReserved2>
+    <MReserved3></MReserved3>
+  </ReservedInfo>
+</INIpay>
+AcIW9NHDWZSZc4tjTqU9UKbtEwmV6i1guk6Pr/tWW5oi4O8UrVeJdAglRKQfLXWG
+fEMvYk+OeJTud1UMzXnVywNvLkcPTOwqQF16Ng3ZNlSbymiC18UvcPuF0+iIvGX2
+JaRytemn0wEN/0c80m4FeaKj3UM8aXvDc04JrXc2eMVT
+
+
+[11:00:14]DEBUG <00002> TO PG : 0295900177R SHA1                   0                  39                  300200kthskytest               33000INIjspCARDkthskytest20141007110013240834<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <GoodsInfo>
+    <GoodsCnt urlencode="1">1</GoodsCnt>
+    <MOID urlencode="1">orderid_of_merchant</MOID>
+    <Currency urlencode="1">WON</Currency>
+    <Goods no="1">
+      <SMID>kthskytest</SMID>
+      <GoodsName urlencode="1">%B8%B6%BD%BA%C5%CD%BC%A5+%C3%E6%C0%FC+B%C7%FC</GoodsName>
+      <GoodsCntS>1</GoodsCntS>
+      <GoodsPrice>33000</GoodsPrice>
+    </Goods>
+  </GoodsInfo>
+  <BuyerInfo>
+    <BuyerName urlencode="1">%C1%B6%BB%F3%C7%F6</BuyerName>
+    <BuyerTel urlencode="1">null</BuyerTel>
+    <BuyerEmail urlencode="1">hasiki%40nate.com</BuyerEmail>
+    <ParentEmail></ParentEmail>
+    <RecvName></RecvName>
+    <RecvTel></RecvTel>
+    <RecvMsg></RecvMsg>
+    <RecvAddr></RecvAddr>
+    <RecvPostNum></RecvPostNum>
+  </BuyerInfo>
+  <PaymentInfo>
+    <Payment>
+      <PayMethod>Card</PayMethod>
+      <JoinCard></JoinCard>
+      <JoinExpire></JoinExpire>
+      <MailOrder></MailOrder>
+      <SessionKey>mv+RKtuS9Drvb9TO9Ln/IvZ5IPjk5knjN+R15aVXKgJH8iTZiZRS7x96m+pEsPV2
+zlEYZ0iadM+gx7YZrZnjA+9WLla0dTT+gEDntZG/y34RWPWCsqWGefjHfDcDmpXe
+rrNZpf/e9mroVIrATIGtb/e7QFnzhb5XxiLPbveOk04=</SessionKey>
+      <Encrypted urlencode="1">Version%3D4.1%26PayMethod%3DCard%26RsaKeyNum%3D1%26EncryptionAlgorithm%3DSEED-CBC%26SignAlgorithm%3DRSAwithSHA1%26CertVer%3D39%26moid%3Dorderid_of_merchant%26ver_trace%3Dmain%286086%2C6053%29card%286115%2C6105%29n%286008%29Cs%286022%29Dt%286002%29Pa%286002%29Cf%286024%29Fv%280000%29La%286131%29Re%286083%29Vr%286006%29P%286033%29en%286039%29nP%286006%29%26pg1%3D203.238.37.3%26pg2%3D211.219.96.180%26pg1ip%3D203.238.37.3%26pg2ip%3D211.219.96.180%26agreeflag%3D1111%26Data%3DONW6oQY1ZhWkW3WG0oRROMvTDJqfEjZs1sAF0RIgDGUg%2BO0TqxY%2BW%2FI%2B8y4yUe6i%0A4l9XJ3icCEe8UGXHwFQkNCXj4KV3p70BPqgUTXdwcVMLVU4tdY02g3dVygNlbj%2Br%0AibKnke0wj4XNL6NmwaPokW27KLGhsia0qUZDF1dCYXRXO2temL0z7snC7dplTIpb%0AU5YF342gAIZLNdWL%2BMxj9Jr3E4k0CbMTYnYajUISdS8dCoGCpTaU8izlhErI3gEx%0AcRI1M8mGaCP40s1ZWk6XmFuFAF5xswIpV8tkDiKbLqejLV66SDdTJqz2wh9j6IU3%0AM83gONixz18dVPDnK9GOCK3GbJlYguFSWA3%2F0T8Gzb5yuOudDdD6XnBBSvH%2BUUFy%0ATYyxueeTyeH37WRUIgK%2FQ3wA8VpdQurxu%2FYaPd9Ujes%2BQyVmEcJVqzuyxIOQKF9r%0AqMd25pS6THOlP5Gy8okzyI1pFZYVFT%2FTPL%2BJB8p%2Bd200XkBWqyuouHsFNCJRDZjX%0Aza86eINlUdc7td1MLJ%2BN4NJr4ADha7uuLedSFH9JCikexMivzBmF9IS4cMOd0F%2BU%0AWVEJuxctQaQrZbMcMCAy36xLwT%2BFMexhdgqgpZ5oXFUIjV6NLxtfQYHDRPAvxVdi%0AUc7Uy0a3R0Vps4m3FUaX</Encrypted>
+      <Card>
+        <CARD_Code>11</CARD_Code>
+      </Card>
+    </Payment>
+  </PaymentInfo>
+  <ManageInfo>
+    <Language></Language>
+    <URL urlencode="1">www.mastershop.kr</URL>
+    <TXVersion>5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60</TXVersion>
+    <TXUserID></TXUserID>
+    <Ack>1</Ack>
+    <TXRN>9595950595</TXRN>
+    <TXRegNum></TXRegNum>
+  </ManageInfo>
+  <ReservedInfo>
+    <MReserved1></MReserved1>
+    <MReserved2></MReserved2>
+    <MReserved3></MReserved3>
+  </ReservedInfo>
+</INIpay>
+AcIW9NHDWZSZc4tjTqU9UKbtEwmV6i1guk6Pr/tWW5oi4O8UrVeJdAglRKQfLXWG
+fEMvYk+OeJTud1UMzXnVywNvLkcPTOwqQF16Ng3ZNlSbymiC18UvcPuF0+iIvGX2
+JaRytemn0wEN/0c80m4FeaKj3UM8aXvDc04JrXc2eMVT
+
+
+[11:00:14] INFO <00002> Connect to 203.238.37.3, 34049
+[11:00:14] INFO <00002> PG ADDRESS(PORT) : 203.238.37.3(34049)
+[11:00:14] INFO <00002> IP ADDRESS(PORT) : 203.238.37.3(34049)
+[11:00:14] INFO <00002> Connect TimeOut  : 5 sec.
+[11:00:15]ERROR <00002> FAIL SOCKET CONNECTION(pg1).
+[11:00:15] INFO <00002> Connect to 203.238.37.3, 34049
+[11:00:15] INFO <00002> PG ADDRESS(PORT) : 203.238.37.3(34049)
+[11:00:15] INFO <00002> IP ADDRESS(PORT) : 203.238.37.3(34049)
+[11:00:15] INFO <00002> Connect TimeOut  : 5 sec.
+[11:00:16]ERROR <00002> FAIL SOCKET CONNECTION(pg1ip).
+[11:00:16] INFO <00002> Connect to 211.219.96.180, 34049
+[11:00:16] INFO <00002> PG ADDRESS(PORT) : 211.219.96.180(34049)
+[11:00:16] INFO <00002> IP ADDRESS(PORT) : 211.219.96.180(34049)
+[11:00:16] INFO <00002> Connect TimeOut  : 5 sec.
+[11:00:16] INFO <00002> SET TX_ENCODECHARSET:KSC5601, SYSTEM ENCODING:UTF-8
+[11:00:16] INFO <00002> SEND OK
+[11:00:17] INFO <00002> RECV OK
+[11:00:17]DEBUG <00002> 0300900175D SHA1                   0                  39                  300210kthskytest               33000INIjspCARDkthskytest20141007110013240834<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <GoodsInfo>
+    <GoodsCnt>1</GoodsCnt>
+    <MOID urlencode="1">orderid_of_merchant</MOID>
+    <Currency>WON</Currency>
+    <Goods no="1">
+      <SMID>kthskytest</SMID>
+      <GoodsName urlencode="1">%B8%B6%BD%BA%C5%CD%BC%A5+%C3%E6%C0%FC+B%C7%FC</GoodsName>
+      <GoodsCntS>1</GoodsCntS>
+      <GoodsPrice>33000</GoodsPrice>
+    </Goods>
+  </GoodsInfo>
+  <PaymentInfo>
+    <Payment>
+      <SessionKey>ABjOCBuoXVE/8w8rJih/TBrf4lfKoj3QOFRVQ3OFy1sYy0lc5lL3/xVQt7bah95L
+CgK9NrVg3Mf7MR3JBrNzePk5YyNtmwTZnXcVuXYaD1EmsZzGlIdp+/sMiS0pyw13
+gtAq6upAOiwqg7Iujk3mQ6zINRPITls8/r24KiYFFigytHNOqebZaEY=
+</SessionKey>
+      <Encrypted>altUJQhjnhjX1SUY+0K1d/BJ7t8l4zDjhRlGB1jLRHoJgb046+caQBRvlKoWUK7K
+72mvvX3c9FjNUYgmd8L/rvb+22HYPltWHXBy+EJqqA4YAo5MxN/2Jg9Ot2g01jOf
+CPqYKV6t7npb84akg+MuLeuOgsQlgbfMUN+rStCIgmeRLbVPGX7yvE7IZYxP8nZj
+78+YPklYreUyjztmhL/W9qPc1QT/ttdK9NS3FakytsxPnjBkq3ts04n4sEDYNrBv
+HdxZY6z56EaQK7/vUBiW+0ZEobk8sl/CV8u1Xw/ixbAtI8Es9N+FrcmPb65+YlX3
+Qj+pcuvWqCTaA83u7njm7ZvFjx8CnqrxkqwiAdGPAdA+uYmj3wUPZUmP0pWeVEc2
+NLToxWPUxDLHYI2PZj8UtcN5WbORJAhQX7JJ76w78Ywe0vUSnUUSa96kaoVlgB0b
+pDSViKHkJLEASmGJ2945FksYUTDnyOBiOUiHEp9um3+vBEdracA1WIpC14bFtBJ7
+NEluZcHwECkpSkXjWrGq33ENPecTmr3C8UPcUKIZFJk2JwuF9K9sfHAcD9DOKUls
+EwKR0hAOUCgEUbTJwuGpkrfmCI71hzZfIgzObBmBHXXWXk+LCBQeQ3qTKgD48e7q
+wmypjXELsBx0fXMpou03q+K0wyQmkdMMb4u09H5MXD/mULZZ8aT3loNSg4jRyIaV
+Z0KzQ0DZPZkx1q+6XgyOatLjCHAQ+0mB2cRQpLQ5o8MtklxkQOo8hLGePWmQKdpr
+QGiTL0cE4lokxr8GIkDeKAuAFXuU35qw8pgeMSkgHl3iSKaYFjtQicenNz813y0H
+cGwXXRlQHnZooOh1SLeMMVFYLdWOc5B9g1QAN3DFeqRjkDL7p/d6MLDwK8IF7U2X
+8C5LRtRW8vnWF16W10pq0ek+UnEX1AveHcqAlD/IFqn941ZD0ebQ3yaDAMy/WV/g
+YnXZUCPm+paK3Z12reRQFTYH/Fx28tLnx34cUCN3YduA9OXb2C8GlO0xEqiKYTGC
+jptM1tRwDTgX0S6DMFjQbDBd1P7A+H2vQS3fKdTvhGI4LeZ9wYdyMPygkCAVvs66
+rd9EuzzGgJIc2WFjUEgOqEoQFg5AMKgW8C8AhvERJQGp6WdsL5gTCI2NOKvNnXz0
+9mS/FZCrHhEKBIbDczJ1n6V5bwmSRKLBY5zJkPxxqGwnlMg/noHZRA323j0QRQAd
+V1CYj8md7dhz7fhoTpZ4wtthl39ZaDFEnHzIep2BYsItIFXdeMXRoIyX3wqeytXy
+l89evQ3+FvVmkCLz0GVwpVISOrt0RXyfMDLRwC1IFkjoLbUjYKLauouAPLaVpsq4
+uNld+jYPm6gDCbcB+Tggzl6djqq+CfC8uMIqcKXiWwXFsueSqoKJm1o+FNHM4prd
+3QUYTn9o3bWI3xEuli6R7tgs88ElJnZTjVS0pbnKz7MMFq/T16Nys+T0eDkk9MFF
+vgvs70WKmLEVNrx75K6ZJxjgGbD5qJqiYpGUMDWuIz859z/aT5FXd9qA+aExKQxh
+Ewc4mP1zrV5I9xd7Ubg0LWZRucq4ZzUdCiLB1TTbIfBRLyfsOAe+ynMtu+jBqURm
+GOVcc0zWuhIqdVhVUOHOdCQ25x2blWgh
+</Encrypted>
+      <PayMethod>Card</PayMethod>
+      <ResultCode>120000</ResultCode>
+      <ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+    </Payment>
+  </PaymentInfo>
+  <ManageInfo>
+    <EventCode></EventCode>
+    <OrgCurrency></OrgCurrency>
+    <ExchangeRate></ExchangeRate>
+    <OrgPrice></OrgPrice>
+  </ManageInfo>
+  <ReservedInfo>
+    <MReserved1 urlencode="1"></MReserved1>
+    <MReserved2 urlencode="1"></MReserved2>
+    <MReserved3 urlencode="1"></MReserved3>
+    <PGReserved1 urlencode="1"></PGReserved1>
+    <PGReserved2 urlencode="1"></PGReserved2>
+    <PGReserved3 urlencode="1"></PGReserved3>
+  </ReservedInfo>
+</INIpay>
+nRJLJTwOTyKeTSyFzOM1hvqVTeZRYRc9cfrHpfmHDPue09HhCc3gCQMLUwuj6mxA
+/ltQ8BgXA4P68Q1+Kx4ud1x8h6f4zKlsOMJEA7nS2OgFjhkhqAVJfSyrlWWNzQwy
+qur5pF5aA5ayxi2ex5cqZHXPUNdZPd/Z4EogD2m29aA=
+
+[11:00:17] INFO <00002> Pay Connection  LapTime[3.597 sec. ] 
+[11:00:17] INFO <00002> TotPrice = 33000
+[11:00:17] INFO <00002> TID      = INIjspCARDkthskytest20141007110013240834
+[11:00:17] INFO <00002> MID      = kthskytest
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : ResultMsg|정상처리되었습니다.
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : ResultCode|120000
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : PayMethod|Card
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : Encrypted|altUJQhjnhjX1SUY+0K1d/BJ7t8l4zDjhRlGB1jLRHoJgb046+caQBRvlKoWUK7K
+72mvvX3c9FjNUYgmd8L/rvb+22HYPltWHXBy+EJqqA4YAo5MxN/2Jg9Ot2g01jOf
+CPqYKV6t7npb84akg+MuLeuOgsQlgbfMUN+rStCIgmeRLbVPGX7yvE7IZYxP8nZj
+78+YPklYreUyjztmhL/W9qPc1QT/ttdK9NS3FakytsxPnjBkq3ts04n4sEDYNrBv
+HdxZY6z56EaQK7/vUBiW+0ZEobk8sl/CV8u1Xw/ixbAtI8Es9N+FrcmPb65+YlX3
+Qj+pcuvWqCTaA83u7njm7ZvFjx8CnqrxkqwiAdGPAdA+uYmj3wUPZUmP0pWeVEc2
+NLToxWPUxDLHYI2PZj8UtcN5WbORJAhQX7JJ76w78Ywe0vUSnUUSa96kaoVlgB0b
+pDSViKHkJLEASmGJ2945FksYUTDnyOBiOUiHEp9um3+vBEdracA1WIpC14bFtBJ7
+NEluZcHwECkpSkXjWrGq33ENPecTmr3C8UPcUKIZFJk2JwuF9K9sfHAcD9DOKUls
+EwKR0hAOUCgEUbTJwuGpkrfmCI71hzZfIgzObBmBHXXWXk+LCBQeQ3qTKgD48e7q
+wmypjXELsBx0fXMpou03q+K0wyQmkdMMb4u09H5MXD/mULZZ8aT3loNSg4jRyIaV
+Z0KzQ0DZPZkx1q+6XgyOatLjCHAQ+0mB2cRQpLQ5o8MtklxkQOo8hLGePWmQKdpr
+QGiTL0cE4lokxr8GIkDeKAuAFXuU35qw8pgeMSkgHl3iSKaYFjtQicenNz813y0H
+cGwXXRlQHnZooOh1SLeMMVFYLdWOc5B9g1QAN3DFeqRjkDL7p/d6MLDwK8IF7U2X
+8C5LRtRW8vnWF16W10pq0ek+UnEX1AveHcqAlD/IFqn941ZD0ebQ3yaDAMy/WV/g
+YnXZUCPm+paK3Z12reRQFTYH/Fx28tLnx34cUCN3YduA9OXb2C8GlO0xEqiKYTGC
+jptM1tRwDTgX0S6DMFjQbDBd1P7A+H2vQS3fKdTvhGI4LeZ9wYdyMPygkCAVvs66
+rd9EuzzGgJIc2WFjUEgOqEoQFg5AMKgW8C8AhvERJQGp6WdsL5gTCI2NOKvNnXz0
+9mS/FZCrHhEKBIbDczJ1n6V5bwmSRKLBY5zJkPxxqGwnlMg/noHZRA323j0QRQAd
+V1CYj8md7dhz7fhoTpZ4wtthl39ZaDFEnHzIep2BYsItIFXdeMXRoIyX3wqeytXy
+l89evQ3+FvVmkCLz0GVwpVISOrt0RXyfMDLRwC1IFkjoLbUjYKLauouAPLaVpsq4
+uNld+jYPm6gDCbcB+Tggzl6djqq+CfC8uMIqcKXiWwXFsueSqoKJm1o+FNHM4prd
+3QUYTn9o3bWI3xEuli6R7tgs88ElJnZTjVS0pbnKz7MMFq/T16Nys+T0eDkk9MFF
+vgvs70WKmLEVNrx75K6ZJxjgGbD5qJqiYpGUMDWuIz859z/aT5FXd9qA+aExKQxh
+Ewc4mP1zrV5I9xd7Ubg0LWZRucq4ZzUdCiLB1TTbIfBRLyfsOAe+ynMtu+jBqURm
+GOVcc0zWuhIqdVhVUOHOdCQ25x2blWgh
+
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : SessionKey|ABjOCBuoXVE/8w8rJih/TBrf4lfKoj3QOFRVQ3OFy1sYy0lc5lL3/xVQt7bah95L
+CgK9NrVg3Mf7MR3JBrNzePk5YyNtmwTZnXcVuXYaD1EmsZzGlIdp+/sMiS0pyw13
+gtAq6upAOiwqg7Iujk3mQ6zINRPITls8/r24KiYFFigytHNOqebZaEY=
+
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : GoodsPrice|33000
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : GoodsCntS|1
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : GoodsName|마스터샵 충전 B형
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : SMID|kthskytest
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : Currency|WON
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : MOID|orderid_of_merchant
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : GoodsCnt|1
+[11:00:18]DEBUG <00002> TX_RESULTMSG : [120000|정상처리되었습니다.]
+[11:00:18]DEBUG <00002> TX_RESULTCODE : 00
+[11:00:18]DEBUG <00002> signChecked=true
+[11:00:18] INFO <00002> SIGN CHECK OK
+[11:00:18] INFO <00002> DECRYPT OK
+[11:00:18]DEBUG <00002> <?xml version="1.0" encoding="UTF-8"?>
+<PaymentInfo>
+  <Payment>
+    <EASYPAY/>
+    <Card>
+      <CARD_ApplPrice>33000</CARD_ApplPrice>
+      <CARD_Num>524144000924</CARD_Num>
+      <CARD_Expire></CARD_Expire>
+      <CARD_Code>11</CARD_Code>
+      <CARD_BankCode>27</CARD_BankCode>
+      <CARD_Quota>00</CARD_Quota>
+      <CARD_Interest>0</CARD_Interest>
+      <CARD_Point></CARD_Point>
+      <CARD_AuthType>99</CARD_AuthType>
+      <CARD_RegNum></CARD_RegNum>
+      <CARD_ApplDate>20141007</CARD_ApplDate>
+      <CARD_ApplTime>110020</CARD_ApplTime>
+      <CARD_ApplNum>36061006</CARD_ApplNum>
+      <CARD_TerminalNum>0198822000</CARD_TerminalNum>
+      <CARD_MemberNum></CARD_MemberNum>
+      <CARD_PurchaseCode></CARD_PurchaseCode>
+      <CARD_ResultCode>120000</CARD_ResultCode>
+      <CARD_ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</CARD_ResultMsg>
+      <CARD_PrtcCode>1</CARD_PrtcCode>
+      <CARD_Quota_Point>00</CARD_Quota_Point>
+      <CARD_CheckFlag>0</CARD_CheckFlag>
+      <CARD_PurchaseName urlencode="1"></CARD_PurchaseName>
+      <CARD_IssuerName urlencode="1"></CARD_IssuerName>
+      <CARD_JoinUsePoint></CARD_JoinUsePoint>
+    </Card>
+  </Payment>
+</PaymentInfo>
+
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_CheckFlag|0
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_Quota_Point|00
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_PrtcCode|1
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_ResultMsg|정상처리되었습니다.
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_ResultCode|120000
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_TerminalNum|0198822000
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_ApplNum|36061006
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_ApplTime|110020
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_ApplDate|20141007
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_AuthType|99
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_Interest|0
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_Quota|00
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_BankCode|27
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_Code|11
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_Num|524144000924
+[11:00:18]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_ApplPrice|33000
+[11:00:18] INFO <00002> ApplDate : 20141007
+[11:00:18] INFO <00002> ApplTime : 110020
+[11:00:18] INFO <00002> ApplNum : 36061006
+[11:00:18] INFO <00002> WAIT ACK...
+[11:00:18] INFO <00002> ACK SEND LEN=150
+[11:00:18] INFO <00002> ACK SEND OK
+[11:00:18] INFO <00002> ACK RECV OK
+[11:00:18]DEBUG <00002> 0000000000R SHA1                   0                  39                  300810kthskytest               33000INIjspCARDkthskytest20141007110013240834
+[11:00:18] INFO <00002> SOCKET CONNECTION CLOSE
+[11:00:18] INFO <00002> TRANSACTION COMPLETE 
+[11:00:18] INFO <00002> END securepay, [ TID:INIjspCARDkthskytest20141007110013240834 ], 00|[120000|정상처리되었습니다.],  LapTime[5.033 sec. ] 
+[11:00:18] INFO --------------------------------------------------------------------------------
+[11:04:12] INFO <00003> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[11:04:12] INFO <00003> DEBUG PRINT : 
+[11:04:12]DEBUG <00003> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[11:04:12]DEBUG <00003> MID          : kthskytest
+[11:04:12]DEBUG <00003> ADMIN(KEYPW) : 1111
+[11:04:12]DEBUG <00003> TX_PGPUBSN : 30
+[11:04:12]DEBUG <00003> TX_MPUBSN : 0
+[11:04:12] INFO <00003> price : 55000
+[11:04:12] INFO <00003> nointerest : no
+[11:04:12] INFO <00003> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[11:04:12]DEBUG <00003> src value       = cHJpY2U9NTUwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[11:04:12]DEBUG <00003> Hashed value    = phx3cWAK6H8PLq68240No45W28s=
+
+[11:04:12]DEBUG <00003> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[11:04:12] INFO <00003> TRANSACTION COMPLETE 
+[11:04:12] INFO <00003> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.015 sec. ] 
+[11:04:12] INFO --------------------------------------------------------------------------------
+[11:05:02] INFO <00004> START securepay (5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60)
+[11:05:02] INFO <00004> DEBUG PRINT : 
+[11:05:02] INFO <00004> PAYMETHOD   : Card
+[11:05:02] INFO <00004> OID         : orderid_of_merchant
+[11:05:02] INFO <00004> PRICE       : 55000
+[11:05:02] INFO <00004> CURRENCY    : WON
+[11:05:02] INFO <00004> GOODNAME    : 마스터샵 충전 C형
+[11:05:02] INFO <00004> BUYERNAME   : 조상현
+[11:05:02] INFO <00004> BUYERTEL    : null
+[11:05:02] INFO <00004> BUYEREMAIL  : hasiki@nate.com
+[11:05:02] INFO <00004> SESSIONKEY : K7tWz/H2WS7ohE6gz2vv1E+SGQr/2oLSkz3LXK6SOerXSxUDWRYnc4c77ndzHIYs
+RJh1jaG2I/F4bBppIFblvRN35uosvFqtYJbohRHxDNm5fsUgUauZn6BBz3u9RExr
+BwG579TdtE3R3DYXNhZJ94s5z1Hlxg/MLSnjF/pQgEw=
+[11:05:02] INFO <00004> ENCRYPTED  : Version=4.1&PayMethod=Card&RsaKeyNum=1&EncryptionAlgorithm=SEED-CBC&SignAlgorithm=RSAwithSHA1&CertVer=39&moid=orderid_of_merchant&ver_trace=main(6086,6053)card(6115,6105)n(6008)Cs(6022)Dt(6002)Pa(6002)Cf(6024)Fv(0000)La(6131)Re(6083)Vr(6006)P(6033)en(6039)nP(6006)&pg1=203.238.37.3&pg2=211.219.96.180&pg1ip=203.238.37.3&pg2ip=211.219.96.180&agreeflag=1111&Data=vYg9cr5pOUTJ+hrnenXszgzBOkT3KtI9HddLhBL5JjwD/DP3cylON/9gv0jqsNMj
+rTh9Ik+x+1grcSzz4SYpnycUHD1iiA4PV9ScYpxyl3bCPftIQGnjeqpVGYU9qaui
+39RBOu6TiwL4x4tk4NJxp2p83gefKv8eRJ1Q15Lt9olkIgZ4ycjleSFmhZmMee+k
+4IWIZE3qZu9UtiqzGqsEMJ8lpksNYleDytcwttMhwnWNLdySo0413k7+Th3xsaQs
+XHuVCFpM/HTIDZCTH7tmiyvPzcdyef412Q9Axq6JEvxneNU3etj8liS7yUjStW2B
+Iz9o/+Xi1mzoMihJuquITGQXIxhgYUBKZ+GYNppsscSb8uBWbzzQe9lfxNtWIPht
+N5TfcPl+hnzzKQyp/cusklq7l6KscB+13KxbDurb5wLckplvOg0i6EqND2UJ1C9Z
+EHL+DV2wX3dWCAlCzHvIjNLauZeXNXISXbHOKN0kKs0NcBGn2l5bYCBZw5zvJeKL
+zK+EsJN8m9JJSHhMTtXceXPn8M2SgCJTbDInSqm1mdGSNkO0d6ozwORAYR3qFbh0
+2Ou7xDJCJIy7QK3wH2z5QBSihGeBSyzLrZr/5wySfpPjvP4MA4yjwEEUj1TJksda
+vne2OfYSheEW1CHUQ98X
+[11:05:02] INFO <00004> MAKE TID OK INIjspCARDkthskytest20141007110502215451
+[11:05:02]DEBUG <00004> PL_ENCRYPTED_PARSING, CertVer=39
+[11:05:02]DEBUG <00004> PL_ENCRYPTED_PARSING, pg1=203.238.37.3
+[11:05:02]DEBUG <00004> PL_ENCRYPTED_PARSING, pg2=211.219.96.180
+[11:05:02]DEBUG <00004> PL_ENCRYPTED_PARSING, pg1ip=203.238.37.3
+[11:05:02]DEBUG <00004> PL_ENCRYPTED_PARSING, pg2ip=211.219.96.180
+[11:05:02]DEBUG <00004> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[11:05:02]DEBUG <00004> MID          : kthskytest
+[11:05:02]DEBUG <00004> ADMIN(KEYPW) : 1111
+[11:05:02]DEBUG <00004> TX_PGPUBSN : 30
+[11:05:02]DEBUG <00004> TX_MPUBSN : 0
+[11:05:02]DEBUG <00004> 0295900177R SHA1                   0                  39                  300200kthskytest               55000INIjspCARDkthskytest20141007110502215451<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <GoodsInfo>
+    <GoodsCnt urlencode="1">1</GoodsCnt>
+    <MOID urlencode="1">orderid_of_merchant</MOID>
+    <Currency urlencode="1">WON</Currency>
+    <Goods no="1">
+      <SMID>kthskytest</SMID>
+      <GoodsName urlencode="1">%B8%B6%BD%BA%C5%CD%BC%A5+%C3%E6%C0%FC+C%C7%FC</GoodsName>
+      <GoodsCntS>1</GoodsCntS>
+      <GoodsPrice>55000</GoodsPrice>
+    </Goods>
+  </GoodsInfo>
+  <BuyerInfo>
+    <BuyerName urlencode="1">%C1%B6%BB%F3%C7%F6</BuyerName>
+    <BuyerTel urlencode="1">null</BuyerTel>
+    <BuyerEmail urlencode="1">hasiki%40nate.com</BuyerEmail>
+    <ParentEmail></ParentEmail>
+    <RecvName></RecvName>
+    <RecvTel></RecvTel>
+    <RecvMsg></RecvMsg>
+    <RecvAddr></RecvAddr>
+    <RecvPostNum></RecvPostNum>
+  </BuyerInfo>
+  <PaymentInfo>
+    <Payment>
+      <PayMethod>Card</PayMethod>
+      <JoinCard></JoinCard>
+      <JoinExpire></JoinExpire>
+      <MailOrder></MailOrder>
+      <SessionKey>K7tWz/H2WS7ohE6gz2vv1E+SGQr/2oLSkz3LXK6SOerXSxUDWRYnc4c77ndzHIYs
+RJh1jaG2I/F4bBppIFblvRN35uosvFqtYJbohRHxDNm5fsUgUauZn6BBz3u9RExr
+BwG579TdtE3R3DYXNhZJ94s5z1Hlxg/MLSnjF/pQgEw=</SessionKey>
+      <Encrypted urlencode="1">Version%3D4.1%26PayMethod%3DCard%26RsaKeyNum%3D1%26EncryptionAlgorithm%3DSEED-CBC%26SignAlgorithm%3DRSAwithSHA1%26CertVer%3D39%26moid%3Dorderid_of_merchant%26ver_trace%3Dmain%286086%2C6053%29card%286115%2C6105%29n%286008%29Cs%286022%29Dt%286002%29Pa%286002%29Cf%286024%29Fv%280000%29La%286131%29Re%286083%29Vr%286006%29P%286033%29en%286039%29nP%286006%29%26pg1%3D203.238.37.3%26pg2%3D211.219.96.180%26pg1ip%3D203.238.37.3%26pg2ip%3D211.219.96.180%26agreeflag%3D1111%26Data%3DvYg9cr5pOUTJ%2BhrnenXszgzBOkT3KtI9HddLhBL5JjwD%2FDP3cylON%2F9gv0jqsNMj%0ArTh9Ik%2Bx%2B1grcSzz4SYpnycUHD1iiA4PV9ScYpxyl3bCPftIQGnjeqpVGYU9qaui%0A39RBOu6TiwL4x4tk4NJxp2p83gefKv8eRJ1Q15Lt9olkIgZ4ycjleSFmhZmMee%2Bk%0A4IWIZE3qZu9UtiqzGqsEMJ8lpksNYleDytcwttMhwnWNLdySo0413k7%2BTh3xsaQs%0AXHuVCFpM%2FHTIDZCTH7tmiyvPzcdyef412Q9Axq6JEvxneNU3etj8liS7yUjStW2B%0AIz9o%2F%2BXi1mzoMihJuquITGQXIxhgYUBKZ%2BGYNppsscSb8uBWbzzQe9lfxNtWIPht%0AN5TfcPl%2BhnzzKQyp%2Fcusklq7l6KscB%2B13KxbDurb5wLckplvOg0i6EqND2UJ1C9Z%0AEHL%2BDV2wX3dWCAlCzHvIjNLauZeXNXISXbHOKN0kKs0NcBGn2l5bYCBZw5zvJeKL%0AzK%2BEsJN8m9JJSHhMTtXceXPn8M2SgCJTbDInSqm1mdGSNkO0d6ozwORAYR3qFbh0%0A2Ou7xDJCJIy7QK3wH2z5QBSihGeBSyzLrZr%2F5wySfpPjvP4MA4yjwEEUj1TJksda%0Avne2OfYSheEW1CHUQ98X</Encrypted>
+      <Card>
+        <CARD_Code>11</CARD_Code>
+      </Card>
+    </Payment>
+  </PaymentInfo>
+  <ManageInfo>
+    <Language></Language>
+    <URL urlencode="1">www.mastershop.kr</URL>
+    <TXVersion>5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60</TXVersion>
+    <TXUserID></TXUserID>
+    <Ack>1</Ack>
+    <TXRN>5572143672</TXRN>
+    <TXRegNum></TXRegNum>
+  </ManageInfo>
+  <ReservedInfo>
+    <MReserved1></MReserved1>
+    <MReserved2></MReserved2>
+    <MReserved3></MReserved3>
+  </ReservedInfo>
+</INIpay>
+AQ1UDbqZGZ+ItGSkbUcYkVzKnJUbjpZqsOkVcf/wrqV8b19k9qUX+AzBBjbCKoEg
+ntFu4GwmUMjiiQq6bbL4MTc2MzRX2RqpENEj0lKqgqzoLJ76Mz+guUL1CepZjc3x
+Ueu+b9DSonJOVTObGl3MD0mws6m9ouKYiwj6t2UZ4Rfm
+
+
+[11:05:02]DEBUG <00004> TO PG : 0295900177R SHA1                   0                  39                  300200kthskytest               55000INIjspCARDkthskytest20141007110502215451<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <GoodsInfo>
+    <GoodsCnt urlencode="1">1</GoodsCnt>
+    <MOID urlencode="1">orderid_of_merchant</MOID>
+    <Currency urlencode="1">WON</Currency>
+    <Goods no="1">
+      <SMID>kthskytest</SMID>
+      <GoodsName urlencode="1">%B8%B6%BD%BA%C5%CD%BC%A5+%C3%E6%C0%FC+C%C7%FC</GoodsName>
+      <GoodsCntS>1</GoodsCntS>
+      <GoodsPrice>55000</GoodsPrice>
+    </Goods>
+  </GoodsInfo>
+  <BuyerInfo>
+    <BuyerName urlencode="1">%C1%B6%BB%F3%C7%F6</BuyerName>
+    <BuyerTel urlencode="1">null</BuyerTel>
+    <BuyerEmail urlencode="1">hasiki%40nate.com</BuyerEmail>
+    <ParentEmail></ParentEmail>
+    <RecvName></RecvName>
+    <RecvTel></RecvTel>
+    <RecvMsg></RecvMsg>
+    <RecvAddr></RecvAddr>
+    <RecvPostNum></RecvPostNum>
+  </BuyerInfo>
+  <PaymentInfo>
+    <Payment>
+      <PayMethod>Card</PayMethod>
+      <JoinCard></JoinCard>
+      <JoinExpire></JoinExpire>
+      <MailOrder></MailOrder>
+      <SessionKey>K7tWz/H2WS7ohE6gz2vv1E+SGQr/2oLSkz3LXK6SOerXSxUDWRYnc4c77ndzHIYs
+RJh1jaG2I/F4bBppIFblvRN35uosvFqtYJbohRHxDNm5fsUgUauZn6BBz3u9RExr
+BwG579TdtE3R3DYXNhZJ94s5z1Hlxg/MLSnjF/pQgEw=</SessionKey>
+      <Encrypted urlencode="1">Version%3D4.1%26PayMethod%3DCard%26RsaKeyNum%3D1%26EncryptionAlgorithm%3DSEED-CBC%26SignAlgorithm%3DRSAwithSHA1%26CertVer%3D39%26moid%3Dorderid_of_merchant%26ver_trace%3Dmain%286086%2C6053%29card%286115%2C6105%29n%286008%29Cs%286022%29Dt%286002%29Pa%286002%29Cf%286024%29Fv%280000%29La%286131%29Re%286083%29Vr%286006%29P%286033%29en%286039%29nP%286006%29%26pg1%3D203.238.37.3%26pg2%3D211.219.96.180%26pg1ip%3D203.238.37.3%26pg2ip%3D211.219.96.180%26agreeflag%3D1111%26Data%3DvYg9cr5pOUTJ%2BhrnenXszgzBOkT3KtI9HddLhBL5JjwD%2FDP3cylON%2F9gv0jqsNMj%0ArTh9Ik%2Bx%2B1grcSzz4SYpnycUHD1iiA4PV9ScYpxyl3bCPftIQGnjeqpVGYU9qaui%0A39RBOu6TiwL4x4tk4NJxp2p83gefKv8eRJ1Q15Lt9olkIgZ4ycjleSFmhZmMee%2Bk%0A4IWIZE3qZu9UtiqzGqsEMJ8lpksNYleDytcwttMhwnWNLdySo0413k7%2BTh3xsaQs%0AXHuVCFpM%2FHTIDZCTH7tmiyvPzcdyef412Q9Axq6JEvxneNU3etj8liS7yUjStW2B%0AIz9o%2F%2BXi1mzoMihJuquITGQXIxhgYUBKZ%2BGYNppsscSb8uBWbzzQe9lfxNtWIPht%0AN5TfcPl%2BhnzzKQyp%2Fcusklq7l6KscB%2B13KxbDurb5wLckplvOg0i6EqND2UJ1C9Z%0AEHL%2BDV2wX3dWCAlCzHvIjNLauZeXNXISXbHOKN0kKs0NcBGn2l5bYCBZw5zvJeKL%0AzK%2BEsJN8m9JJSHhMTtXceXPn8M2SgCJTbDInSqm1mdGSNkO0d6ozwORAYR3qFbh0%0A2Ou7xDJCJIy7QK3wH2z5QBSihGeBSyzLrZr%2F5wySfpPjvP4MA4yjwEEUj1TJksda%0Avne2OfYSheEW1CHUQ98X</Encrypted>
+      <Card>
+        <CARD_Code>11</CARD_Code>
+      </Card>
+    </Payment>
+  </PaymentInfo>
+  <ManageInfo>
+    <Language></Language>
+    <URL urlencode="1">www.mastershop.kr</URL>
+    <TXVersion>5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60</TXVersion>
+    <TXUserID></TXUserID>
+    <Ack>1</Ack>
+    <TXRN>5572143672</TXRN>
+    <TXRegNum></TXRegNum>
+  </ManageInfo>
+  <ReservedInfo>
+    <MReserved1></MReserved1>
+    <MReserved2></MReserved2>
+    <MReserved3></MReserved3>
+  </ReservedInfo>
+</INIpay>
+AQ1UDbqZGZ+ItGSkbUcYkVzKnJUbjpZqsOkVcf/wrqV8b19k9qUX+AzBBjbCKoEg
+ntFu4GwmUMjiiQq6bbL4MTc2MzRX2RqpENEj0lKqgqzoLJ76Mz+guUL1CepZjc3x
+Ueu+b9DSonJOVTObGl3MD0mws6m9ouKYiwj6t2UZ4Rfm
+
+
+[11:05:02] INFO <00004> Connect to 203.238.37.3, 34049
+[11:05:02] INFO <00004> PG ADDRESS(PORT) : 203.238.37.3(34049)
+[11:05:02] INFO <00004> IP ADDRESS(PORT) : 203.238.37.3(34049)
+[11:05:02] INFO <00004> Connect TimeOut  : 5 sec.
+[11:05:03]ERROR <00004> FAIL SOCKET CONNECTION(pg1).
+[11:05:03] INFO <00004> Connect to 203.238.37.3, 34049
+[11:05:03] INFO <00004> PG ADDRESS(PORT) : 203.238.37.3(34049)
+[11:05:03] INFO <00004> IP ADDRESS(PORT) : 203.238.37.3(34049)
+[11:05:03] INFO <00004> Connect TimeOut  : 5 sec.
+[11:05:04]ERROR <00004> FAIL SOCKET CONNECTION(pg1ip).
+[11:05:04] INFO <00004> Connect to 211.219.96.180, 34049
+[11:05:04] INFO <00004> PG ADDRESS(PORT) : 211.219.96.180(34049)
+[11:05:04] INFO <00004> IP ADDRESS(PORT) : 211.219.96.180(34049)
+[11:05:04] INFO <00004> Connect TimeOut  : 5 sec.
+[11:05:04] INFO <00004> SET TX_ENCODECHARSET:KSC5601, SYSTEM ENCODING:UTF-8
+[11:05:04] INFO <00004> SEND OK
+[11:05:05] INFO <00004> RECV OK
+[11:05:05]DEBUG <00004> 0300900175D SHA1                   0                  39                  300210kthskytest               55000INIjspCARDkthskytest20141007110502215451<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <GoodsInfo>
+    <GoodsCnt>1</GoodsCnt>
+    <MOID urlencode="1">orderid_of_merchant</MOID>
+    <Currency>WON</Currency>
+    <Goods no="1">
+      <SMID>kthskytest</SMID>
+      <GoodsName urlencode="1">%B8%B6%BD%BA%C5%CD%BC%A5+%C3%E6%C0%FC+C%C7%FC</GoodsName>
+      <GoodsCntS>1</GoodsCntS>
+      <GoodsPrice>55000</GoodsPrice>
+    </Goods>
+  </GoodsInfo>
+  <PaymentInfo>
+    <Payment>
+      <SessionKey>AOWoAeuh3c4gwisjymYABzmsYeHqCTjTAx7EUN/8Lfnn37Z3BpiRvelesydsx/y3
+I9iPZInOvQNt5PypACUjdJEbU07mk9bSKZ3pxJ+VPBJX8pA6+zJnJ9xBS3i7+0f2
+mgyGoPaWhTPt3FF1bMrMrDH0YAbeqaiAL6eoYy8Y2JfLiDZex8neP/Y=
+</SessionKey>
+      <Encrypted>IZZBnFdG1PS0vxmGQuZUw+yXQOB1rez3dcuuyqwjKs43hGQK85EllfM3cvsZ6E1n
+fuQ7VqTPK+Hb1QPykZEoOoVMrFF3SAu4m9A6nVGClQRZSVBplxT+hn0IvU/lvVk0
+OONfSRMWtEBcnEjU5zXjEMQVrHACKq6TwXXy00HGqJlG6hx0yeT5J0u1Wy+++dC/
+gtZZ19+ROybIkUMSFvijfXKiMSXc5lcbfcTefogYlbvb8wBZjN2EFA+DnUH6jaFL
+IHa+nfoozxLgN/Dqi5B9N/S7W6QkgJNMPlqOzJV3xKxXeXz34sXgIf7FadA2GUlF
+5UvqugZjMcB9hVP9lzXCIYPPfOIkN3RVjf1SZsvfaqjEBzqzWwF1cbDndX9rPGZY
+nFwNb3M3ZOxTIX9ooZIsLrJlxHPr3ZWp+HiOhwFQ/WMZuCQKopUcog6ZKAw8wPVF
+AZk4JCzd5QnF3a7MJWhRIfiAjI1wL19evQvCQHjVM/554WxIqWb787bfXv/wj9kx
+4mRIVV9OEYlaBNtOvuBV1x34ooKhDT7ZICnxXJWPFwABVc6GDNKihXDwcED1GFKX
+WYTdSNKyL6UdoYyh/TKwxfr3dOurXb/m6N/VP+KZ4jh3AIYX2rOJczUggdD3oTLc
+TbjXnAxlM6N4oL3ghl70NePCxtFLmtQFbWZacWwCwjGxjvh6Gysj72U9w0by4tTz
+afQGPyacRWKVN/+tiAn/x763OAcK/HvAkzphiGLqEj202CCDb+iExhuptmWwnuoT
+U69UuXqcxuAScehw8anE0IRk9nqQhBhT0eu8HnZZNsPGHFhevhfHVHaD7We1vbu8
+JhZbleeq3UNREJHzZbFQ7s2JlgHC6InpOa7e0dEW3sDbWj8aknKv0/YPXx9v9Tz9
+70WxjGwW1iGXflCceUjMHkuF3cF/zg7Y1tIDC5FEyD2eYtBf/wfzo6C1KIgPOw+2
+fT/V4NbVcqVMoqViGlM2rbR8LAZiFd2yH6czM76kmJgbr+d6ughI9oguUZ9OwzV2
+xmj+fHir63BHj/wm0ANHwzL2YHIfUnEx1Ncmk64OC3+dqnfO8Qv2hpigut5kaTb7
+ZVjIX3PmeoLZCttNILc35UVvOw/yOdsIOcr+zByDF0Ohr8zY+8Td5VpNXNBzmM2j
+Ub1RkqrRbGxXCTCouO1a4l6/IXJbZlEuHoNQmIkPmJ53frq2GP42zVHmbP+NdDPJ
+D5MTCEWf9/kcYWlyA2JlKsbYzd7vbjU63gslb4gjdTfaiNmZmRsGwGmre0DSmShi
+S8jxE5Yp7+TlAG8JJpWwHr9UTGkNG6N5xjA3CQARtJxQA5/z5aZl8BvOelzZR+YF
+1e3zqPjZbzABd1jYyqWQIAZjmtYFiY+xnBshAvvEMWjhL/l1zLK4X18JM4NUuGNe
+ng9foC4Ne/Ji6uKrtbj/TR7J4+Ezdr4/3IGb/kcXDG6I6qTLwyN3tDz9B7ft4ikp
+/cSLfMbM4KBcA7wM9l/vmqr7KPD0B+2wTvkEKyw1DpiO6TksD+bgXCYy4NZHqPF4
+8F5KYNXFEyiSv6w/+OpTTwz2Odean+DxU38dGRC39VyVBE7dfa02kKtH1slR8Oys
+7+DrAuPfEaS0RcLvinMzM9vswYlS648a
+</Encrypted>
+      <PayMethod>Card</PayMethod>
+      <ResultCode>120000</ResultCode>
+      <ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+    </Payment>
+  </PaymentInfo>
+  <ManageInfo>
+    <EventCode></EventCode>
+    <OrgCurrency></OrgCurrency>
+    <ExchangeRate></ExchangeRate>
+    <OrgPrice></OrgPrice>
+  </ManageInfo>
+  <ReservedInfo>
+    <MReserved1 urlencode="1"></MReserved1>
+    <MReserved2 urlencode="1"></MReserved2>
+    <MReserved3 urlencode="1"></MReserved3>
+    <PGReserved1 urlencode="1"></PGReserved1>
+    <PGReserved2 urlencode="1"></PGReserved2>
+    <PGReserved3 urlencode="1"></PGReserved3>
+  </ReservedInfo>
+</INIpay>
+XRg1y8lBOJfWhxNvKEsk2lJdGPfpI3cWIatBLsmSvXvq52pReWWvl313wW38mCGe
+OpXNBHCQG+zWYJuQRcJh/5+D6UVGmMG447CHp2AcRro/8DgFaITZkyFOrt9PaOyC
+WKb5VREimoGle/0KKdwPa2c98fxQsK1oAVL+wpnyQaU=
+
+[11:05:05] INFO <00004> Pay Connection  LapTime[2.954 sec. ] 
+[11:05:05] INFO <00004> TotPrice = 55000
+[11:05:05] INFO <00004> TID      = INIjspCARDkthskytest20141007110502215451
+[11:05:05] INFO <00004> MID      = kthskytest
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : ResultMsg|정상처리되었습니다.
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : ResultCode|120000
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : PayMethod|Card
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : Encrypted|IZZBnFdG1PS0vxmGQuZUw+yXQOB1rez3dcuuyqwjKs43hGQK85EllfM3cvsZ6E1n
+fuQ7VqTPK+Hb1QPykZEoOoVMrFF3SAu4m9A6nVGClQRZSVBplxT+hn0IvU/lvVk0
+OONfSRMWtEBcnEjU5zXjEMQVrHACKq6TwXXy00HGqJlG6hx0yeT5J0u1Wy+++dC/
+gtZZ19+ROybIkUMSFvijfXKiMSXc5lcbfcTefogYlbvb8wBZjN2EFA+DnUH6jaFL
+IHa+nfoozxLgN/Dqi5B9N/S7W6QkgJNMPlqOzJV3xKxXeXz34sXgIf7FadA2GUlF
+5UvqugZjMcB9hVP9lzXCIYPPfOIkN3RVjf1SZsvfaqjEBzqzWwF1cbDndX9rPGZY
+nFwNb3M3ZOxTIX9ooZIsLrJlxHPr3ZWp+HiOhwFQ/WMZuCQKopUcog6ZKAw8wPVF
+AZk4JCzd5QnF3a7MJWhRIfiAjI1wL19evQvCQHjVM/554WxIqWb787bfXv/wj9kx
+4mRIVV9OEYlaBNtOvuBV1x34ooKhDT7ZICnxXJWPFwABVc6GDNKihXDwcED1GFKX
+WYTdSNKyL6UdoYyh/TKwxfr3dOurXb/m6N/VP+KZ4jh3AIYX2rOJczUggdD3oTLc
+TbjXnAxlM6N4oL3ghl70NePCxtFLmtQFbWZacWwCwjGxjvh6Gysj72U9w0by4tTz
+afQGPyacRWKVN/+tiAn/x763OAcK/HvAkzphiGLqEj202CCDb+iExhuptmWwnuoT
+U69UuXqcxuAScehw8anE0IRk9nqQhBhT0eu8HnZZNsPGHFhevhfHVHaD7We1vbu8
+JhZbleeq3UNREJHzZbFQ7s2JlgHC6InpOa7e0dEW3sDbWj8aknKv0/YPXx9v9Tz9
+70WxjGwW1iGXflCceUjMHkuF3cF/zg7Y1tIDC5FEyD2eYtBf/wfzo6C1KIgPOw+2
+fT/V4NbVcqVMoqViGlM2rbR8LAZiFd2yH6czM76kmJgbr+d6ughI9oguUZ9OwzV2
+xmj+fHir63BHj/wm0ANHwzL2YHIfUnEx1Ncmk64OC3+dqnfO8Qv2hpigut5kaTb7
+ZVjIX3PmeoLZCttNILc35UVvOw/yOdsIOcr+zByDF0Ohr8zY+8Td5VpNXNBzmM2j
+Ub1RkqrRbGxXCTCouO1a4l6/IXJbZlEuHoNQmIkPmJ53frq2GP42zVHmbP+NdDPJ
+D5MTCEWf9/kcYWlyA2JlKsbYzd7vbjU63gslb4gjdTfaiNmZmRsGwGmre0DSmShi
+S8jxE5Yp7+TlAG8JJpWwHr9UTGkNG6N5xjA3CQARtJxQA5/z5aZl8BvOelzZR+YF
+1e3zqPjZbzABd1jYyqWQIAZjmtYFiY+xnBshAvvEMWjhL/l1zLK4X18JM4NUuGNe
+ng9foC4Ne/Ji6uKrtbj/TR7J4+Ezdr4/3IGb/kcXDG6I6qTLwyN3tDz9B7ft4ikp
+/cSLfMbM4KBcA7wM9l/vmqr7KPD0B+2wTvkEKyw1DpiO6TksD+bgXCYy4NZHqPF4
+8F5KYNXFEyiSv6w/+OpTTwz2Odean+DxU38dGRC39VyVBE7dfa02kKtH1slR8Oys
+7+DrAuPfEaS0RcLvinMzM9vswYlS648a
+
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : SessionKey|AOWoAeuh3c4gwisjymYABzmsYeHqCTjTAx7EUN/8Lfnn37Z3BpiRvelesydsx/y3
+I9iPZInOvQNt5PypACUjdJEbU07mk9bSKZ3pxJ+VPBJX8pA6+zJnJ9xBS3i7+0f2
+mgyGoPaWhTPt3FF1bMrMrDH0YAbeqaiAL6eoYy8Y2JfLiDZex8neP/Y=
+
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : GoodsPrice|55000
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : GoodsCntS|1
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : GoodsName|마스터샵 충전 C형
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : SMID|kthskytest
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : Currency|WON
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : MOID|orderid_of_merchant
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : GoodsCnt|1
+[11:05:05]DEBUG <00004> TX_RESULTMSG : [120000|정상처리되었습니다.]
+[11:05:05]DEBUG <00004> TX_RESULTCODE : 00
+[11:05:05]DEBUG <00004> signChecked=true
+[11:05:05] INFO <00004> SIGN CHECK OK
+[11:05:05] INFO <00004> DECRYPT OK
+[11:05:05]DEBUG <00004> <?xml version="1.0" encoding="UTF-8"?>
+<PaymentInfo>
+  <Payment>
+    <EASYPAY/>
+    <Card>
+      <CARD_ApplPrice>55000</CARD_ApplPrice>
+      <CARD_Num>524144000924</CARD_Num>
+      <CARD_Expire></CARD_Expire>
+      <CARD_Code>11</CARD_Code>
+      <CARD_BankCode>53</CARD_BankCode>
+      <CARD_Quota>00</CARD_Quota>
+      <CARD_Interest>0</CARD_Interest>
+      <CARD_Point></CARD_Point>
+      <CARD_AuthType>99</CARD_AuthType>
+      <CARD_RegNum></CARD_RegNum>
+      <CARD_ApplDate>20141007</CARD_ApplDate>
+      <CARD_ApplTime>110508</CARD_ApplTime>
+      <CARD_ApplNum>36070727</CARD_ApplNum>
+      <CARD_TerminalNum>0198822000</CARD_TerminalNum>
+      <CARD_MemberNum></CARD_MemberNum>
+      <CARD_PurchaseCode></CARD_PurchaseCode>
+      <CARD_ResultCode>120000</CARD_ResultCode>
+      <CARD_ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</CARD_ResultMsg>
+      <CARD_PrtcCode>1</CARD_PrtcCode>
+      <CARD_Quota_Point>00</CARD_Quota_Point>
+      <CARD_CheckFlag>0</CARD_CheckFlag>
+      <CARD_PurchaseName urlencode="1"></CARD_PurchaseName>
+      <CARD_IssuerName urlencode="1"></CARD_IssuerName>
+      <CARD_JoinUsePoint></CARD_JoinUsePoint>
+    </Card>
+  </Payment>
+</PaymentInfo>
+
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_CheckFlag|0
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_Quota_Point|00
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_PrtcCode|1
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_ResultMsg|정상처리되었습니다.
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_ResultCode|120000
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_TerminalNum|0198822000
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_ApplNum|36070727
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_ApplTime|110508
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_ApplDate|20141007
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_AuthType|99
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_Interest|0
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_Quota|00
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_BankCode|53
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_Code|11
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_Num|524144000924
+[11:05:05]DEBUG <00004> RESULT_PARSE_DATA(NM|VL) : CARD_ApplPrice|55000
+[11:05:05] INFO <00004> ApplDate : 20141007
+[11:05:05] INFO <00004> ApplTime : 110508
+[11:05:05] INFO <00004> ApplNum : 36070727
+[11:05:05] INFO <00004> WAIT ACK...
+[11:05:05] INFO <00004> ACK SEND LEN=150
+[11:05:05] INFO <00004> ACK SEND OK
+[11:05:05] INFO <00004> ACK RECV OK
+[11:05:05]DEBUG <00004> 0000000000R SHA1                   0                  39                  300810kthskytest               55000INIjspCARDkthskytest20141007110502215451
+[11:05:05] INFO <00004> SOCKET CONNECTION CLOSE
+[11:05:05] INFO <00004> TRANSACTION COMPLETE 
+[11:05:05] INFO <00004> END securepay, [ TID:INIjspCARDkthskytest20141007110502215451 ], 00|[120000|정상처리되었습니다.],  LapTime[3.017 sec. ] 
+[11:05:05] INFO --------------------------------------------------------------------------------
+[22:49:17] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[22:49:17] INFO <00001> DEBUG PRINT : 
+[22:49:17]DEBUG <00001> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[22:49:17]DEBUG <00001> MID          : kthskytest
+[22:49:17]DEBUG <00001> ADMIN(KEYPW) : 1111
+[22:49:17]DEBUG <00001> TX_PGPUBSN : 30
+[22:49:17]DEBUG <00001> TX_MPUBSN : 0
+[22:49:17] INFO <00001> price : 33000
+[22:49:17] INFO <00001> nointerest : no
+[22:49:17] INFO <00001> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[22:49:17]DEBUG <00001> src value       = cHJpY2U9MzMwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[22:49:17]DEBUG <00001> Hashed value    = FIrFr0iN++nPPZxoCjw7k8DiXM8=
+
+[22:49:17]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[22:49:17] INFO <00001> TRANSACTION COMPLETE 
+[22:49:17] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.432 sec. ] 
+[22:49:17] INFO --------------------------------------------------------------------------------
+[22:51:30] INFO <00002> START securepay (5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60)
+[22:51:30] INFO <00002> DEBUG PRINT : 
+[22:51:30] INFO <00002> PAYMETHOD   : Card
+[22:51:30] INFO <00002> OID         : orderid_of_merchant
+[22:51:30] INFO <00002> PRICE       : 33000
+[22:51:30] INFO <00002> CURRENCY    : WON
+[22:51:30] INFO <00002> GOODNAME    : 마스터샵 충전 B형
+[22:51:30] INFO <00002> BUYERNAME   : 조상현
+[22:51:30] INFO <00002> BUYERTEL    : null
+[22:51:30] INFO <00002> BUYEREMAIL  : hasiki@nate.com
+[22:51:30] INFO <00002> SESSIONKEY : cKv4d7gaqxeE0ZEojRoe+QTYlXGR+G8i/vFEj52rDyw+O4syZ/yHOotIu4bZuX9n
+9qxWtYctp/qTABIFs2fnKSpa0XYWd8lgdZlZbIDGpBU6IlnnhuADPrttH/nmzVZ5
+FVwOn+B1vSbmyxXa57xATp0nN/hnH9VHheBW0Lmgg6g=
+[22:51:30] INFO <00002> ENCRYPTED  : Version=4.1&PayMethod=Card&RsaKeyNum=1&EncryptionAlgorithm=SEED-CBC&SignAlgorithm=RSAwithSHA1&CertVer=39&moid=orderid_of_merchant&ver_trace=main(6086,6053)card(6115,6105)n(6008)Cs(6022)Dt(6002)Pa(6002)Cf(6024)Fv(0000)La(6131)Re(6083)Vr(6006)P(6033)en(6039)nP(6006)&pg1=203.238.37.3&pg2=211.219.96.180&pg1ip=203.238.37.3&pg2ip=211.219.96.180&agreeflag=1111&Data=EcS1H5k//wUbM0i0FAxMRoTDO3ZE7NAdUdyWcQ7/6uHshG2D3yp4iamArI05lqzN
+uTyYgDreDmkzXk9wZW2ETNdT39J3QdsDcXyehvH59OYFFNDTDR9tFvxpnTmV/iAm
+uALKVxQCCu1DtyUxytCJ+pEh8Nb6Aw9GdSMnaVb/9a+8v2oGqfo/AWQnul8wKpep
+57D8yKwxiBJbz2EKsjy98QWwyIHmJmGFr1PPe+vuYG08ny1s5gCV4eQ7WRTvqHgc
+OXS+lLUZXwGJAE+L/flUBYzrm8sakYlBQt+kPSOnDH9I4wIzTMTlCCfWo8E4Qhn6
+Zixn+e7/btyAI1BQKA97gbq0AG4a+Ch7xue1my9usP//vLkEIevyHATQEDodxIqN
+0ePKVzbz9oZF49ZaFJxD1Px5tQhAo0a26AIPd+eGlB+pLxu0LVxb7gl/WQcVZ7p/
+rZg5SY2SyIAqTkaSOrjh8jVy6sBlQZlT4iA+xZ8Km312hVteyaAtfcsyj9PLrGPY
+IKW4GGPYoYnODqo3jRjEIdax6butvyIMy0f70EI/yG+U6nFEx3EkrcmyGqjz8viS
+3kXpCMRDVwxFTBM99Q0QJKxrwpieMAntTb/U++4e/h0sXQZ3Nwn6zZ2IuHx8OjVN
+Z7L96/2LJT1tr37WI4Ls
+[22:51:30] INFO <00002> MAKE TID OK INIjspCARDkthskytest20141007225130565770
+[22:51:30]DEBUG <00002> PL_ENCRYPTED_PARSING, CertVer=39
+[22:51:30]DEBUG <00002> PL_ENCRYPTED_PARSING, pg1=203.238.37.3
+[22:51:30]DEBUG <00002> PL_ENCRYPTED_PARSING, pg2=211.219.96.180
+[22:51:30]DEBUG <00002> PL_ENCRYPTED_PARSING, pg1ip=203.238.37.3
+[22:51:30]DEBUG <00002> PL_ENCRYPTED_PARSING, pg2ip=211.219.96.180
+[22:51:30]DEBUG <00002> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[22:51:30]DEBUG <00002> MID          : kthskytest
+[22:51:30]DEBUG <00002> ADMIN(KEYPW) : 1111
+[22:51:30]DEBUG <00002> TX_PGPUBSN : 30
+[22:51:30]DEBUG <00002> TX_MPUBSN : 0
+[22:51:31]DEBUG <00002> 0298500177R SHA1                   0                  39                  300200kthskytest               33000INIjspCARDkthskytest20141007225130565770<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <GoodsInfo>
+    <GoodsCnt urlencode="1">1</GoodsCnt>
+    <MOID urlencode="1">orderid_of_merchant</MOID>
+    <Currency urlencode="1">WON</Currency>
+    <Goods no="1">
+      <SMID>kthskytest</SMID>
+      <GoodsName urlencode="1">%B8%B6%BD%BA%C5%CD%BC%A5+%C3%E6%C0%FC+B%C7%FC</GoodsName>
+      <GoodsCntS>1</GoodsCntS>
+      <GoodsPrice>33000</GoodsPrice>
+    </Goods>
+  </GoodsInfo>
+  <BuyerInfo>
+    <BuyerName urlencode="1">%C1%B6%BB%F3%C7%F6</BuyerName>
+    <BuyerTel urlencode="1">null</BuyerTel>
+    <BuyerEmail urlencode="1">hasiki%40nate.com</BuyerEmail>
+    <ParentEmail></ParentEmail>
+    <RecvName></RecvName>
+    <RecvTel></RecvTel>
+    <RecvMsg></RecvMsg>
+    <RecvAddr></RecvAddr>
+    <RecvPostNum></RecvPostNum>
+  </BuyerInfo>
+  <PaymentInfo>
+    <Payment>
+      <PayMethod>Card</PayMethod>
+      <JoinCard></JoinCard>
+      <JoinExpire></JoinExpire>
+      <MailOrder></MailOrder>
+      <SessionKey>cKv4d7gaqxeE0ZEojRoe+QTYlXGR+G8i/vFEj52rDyw+O4syZ/yHOotIu4bZuX9n
+9qxWtYctp/qTABIFs2fnKSpa0XYWd8lgdZlZbIDGpBU6IlnnhuADPrttH/nmzVZ5
+FVwOn+B1vSbmyxXa57xATp0nN/hnH9VHheBW0Lmgg6g=</SessionKey>
+      <Encrypted urlencode="1">Version%3D4.1%26PayMethod%3DCard%26RsaKeyNum%3D1%26EncryptionAlgorithm%3DSEED-CBC%26SignAlgorithm%3DRSAwithSHA1%26CertVer%3D39%26moid%3Dorderid_of_merchant%26ver_trace%3Dmain%286086%2C6053%29card%286115%2C6105%29n%286008%29Cs%286022%29Dt%286002%29Pa%286002%29Cf%286024%29Fv%280000%29La%286131%29Re%286083%29Vr%286006%29P%286033%29en%286039%29nP%286006%29%26pg1%3D203.238.37.3%26pg2%3D211.219.96.180%26pg1ip%3D203.238.37.3%26pg2ip%3D211.219.96.180%26agreeflag%3D1111%26Data%3DEcS1H5k%2F%2FwUbM0i0FAxMRoTDO3ZE7NAdUdyWcQ7%2F6uHshG2D3yp4iamArI05lqzN%0AuTyYgDreDmkzXk9wZW2ETNdT39J3QdsDcXyehvH59OYFFNDTDR9tFvxpnTmV%2FiAm%0AuALKVxQCCu1DtyUxytCJ%2BpEh8Nb6Aw9GdSMnaVb%2F9a%2B8v2oGqfo%2FAWQnul8wKpep%0A57D8yKwxiBJbz2EKsjy98QWwyIHmJmGFr1PPe%2BvuYG08ny1s5gCV4eQ7WRTvqHgc%0AOXS%2BlLUZXwGJAE%2BL%2FflUBYzrm8sakYlBQt%2BkPSOnDH9I4wIzTMTlCCfWo8E4Qhn6%0AZixn%2Be7%2FbtyAI1BQKA97gbq0AG4a%2BCh7xue1my9usP%2F%2FvLkEIevyHATQEDodxIqN%0A0ePKVzbz9oZF49ZaFJxD1Px5tQhAo0a26AIPd%2BeGlB%2BpLxu0LVxb7gl%2FWQcVZ7p%2F%0ArZg5SY2SyIAqTkaSOrjh8jVy6sBlQZlT4iA%2BxZ8Km312hVteyaAtfcsyj9PLrGPY%0AIKW4GGPYoYnODqo3jRjEIdax6butvyIMy0f70EI%2FyG%2BU6nFEx3EkrcmyGqjz8viS%0A3kXpCMRDVwxFTBM99Q0QJKxrwpieMAntTb%2FU%2B%2B4e%2Fh0sXQZ3Nwn6zZ2IuHx8OjVN%0AZ7L96%2F2LJT1tr37WI4Ls</Encrypted>
+      <Card>
+        <CARD_Code>11</CARD_Code>
+      </Card>
+    </Payment>
+  </PaymentInfo>
+  <ManageInfo>
+    <Language></Language>
+    <URL urlencode="1">www.mastershop.kr</URL>
+    <TXVersion>5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60</TXVersion>
+    <TXUserID></TXUserID>
+    <Ack>1</Ack>
+    <TXRN>6052262298</TXRN>
+    <TXRegNum></TXRegNum>
+  </ManageInfo>
+  <ReservedInfo>
+    <MReserved1></MReserved1>
+    <MReserved2></MReserved2>
+    <MReserved3></MReserved3>
+  </ReservedInfo>
+</INIpay>
+AY+v3almLghUX9rvSuHjc4em7/TL+GEi8BBOBA+5UKzMgnjqE+cQEJYD3zxvWGwp
+PyIhbwp1tbLV6pdIUlcKl7N8XBe79y4LfD1WPzxoSmGuijcd6GZ+NwinYojH13Ss
+JCX03Kt5SkTyj/0JKYhh2/ZM89FSLHob2lriDdjfdxe1
+
+
+[22:51:31]DEBUG <00002> TO PG : 0298500177R SHA1                   0                  39                  300200kthskytest               33000INIjspCARDkthskytest20141007225130565770<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <GoodsInfo>
+    <GoodsCnt urlencode="1">1</GoodsCnt>
+    <MOID urlencode="1">orderid_of_merchant</MOID>
+    <Currency urlencode="1">WON</Currency>
+    <Goods no="1">
+      <SMID>kthskytest</SMID>
+      <GoodsName urlencode="1">%B8%B6%BD%BA%C5%CD%BC%A5+%C3%E6%C0%FC+B%C7%FC</GoodsName>
+      <GoodsCntS>1</GoodsCntS>
+      <GoodsPrice>33000</GoodsPrice>
+    </Goods>
+  </GoodsInfo>
+  <BuyerInfo>
+    <BuyerName urlencode="1">%C1%B6%BB%F3%C7%F6</BuyerName>
+    <BuyerTel urlencode="1">null</BuyerTel>
+    <BuyerEmail urlencode="1">hasiki%40nate.com</BuyerEmail>
+    <ParentEmail></ParentEmail>
+    <RecvName></RecvName>
+    <RecvTel></RecvTel>
+    <RecvMsg></RecvMsg>
+    <RecvAddr></RecvAddr>
+    <RecvPostNum></RecvPostNum>
+  </BuyerInfo>
+  <PaymentInfo>
+    <Payment>
+      <PayMethod>Card</PayMethod>
+      <JoinCard></JoinCard>
+      <JoinExpire></JoinExpire>
+      <MailOrder></MailOrder>
+      <SessionKey>cKv4d7gaqxeE0ZEojRoe+QTYlXGR+G8i/vFEj52rDyw+O4syZ/yHOotIu4bZuX9n
+9qxWtYctp/qTABIFs2fnKSpa0XYWd8lgdZlZbIDGpBU6IlnnhuADPrttH/nmzVZ5
+FVwOn+B1vSbmyxXa57xATp0nN/hnH9VHheBW0Lmgg6g=</SessionKey>
+      <Encrypted urlencode="1">Version%3D4.1%26PayMethod%3DCard%26RsaKeyNum%3D1%26EncryptionAlgorithm%3DSEED-CBC%26SignAlgorithm%3DRSAwithSHA1%26CertVer%3D39%26moid%3Dorderid_of_merchant%26ver_trace%3Dmain%286086%2C6053%29card%286115%2C6105%29n%286008%29Cs%286022%29Dt%286002%29Pa%286002%29Cf%286024%29Fv%280000%29La%286131%29Re%286083%29Vr%286006%29P%286033%29en%286039%29nP%286006%29%26pg1%3D203.238.37.3%26pg2%3D211.219.96.180%26pg1ip%3D203.238.37.3%26pg2ip%3D211.219.96.180%26agreeflag%3D1111%26Data%3DEcS1H5k%2F%2FwUbM0i0FAxMRoTDO3ZE7NAdUdyWcQ7%2F6uHshG2D3yp4iamArI05lqzN%0AuTyYgDreDmkzXk9wZW2ETNdT39J3QdsDcXyehvH59OYFFNDTDR9tFvxpnTmV%2FiAm%0AuALKVxQCCu1DtyUxytCJ%2BpEh8Nb6Aw9GdSMnaVb%2F9a%2B8v2oGqfo%2FAWQnul8wKpep%0A57D8yKwxiBJbz2EKsjy98QWwyIHmJmGFr1PPe%2BvuYG08ny1s5gCV4eQ7WRTvqHgc%0AOXS%2BlLUZXwGJAE%2BL%2FflUBYzrm8sakYlBQt%2BkPSOnDH9I4wIzTMTlCCfWo8E4Qhn6%0AZixn%2Be7%2FbtyAI1BQKA97gbq0AG4a%2BCh7xue1my9usP%2F%2FvLkEIevyHATQEDodxIqN%0A0ePKVzbz9oZF49ZaFJxD1Px5tQhAo0a26AIPd%2BeGlB%2BpLxu0LVxb7gl%2FWQcVZ7p%2F%0ArZg5SY2SyIAqTkaSOrjh8jVy6sBlQZlT4iA%2BxZ8Km312hVteyaAtfcsyj9PLrGPY%0AIKW4GGPYoYnODqo3jRjEIdax6butvyIMy0f70EI%2FyG%2BU6nFEx3EkrcmyGqjz8viS%0A3kXpCMRDVwxFTBM99Q0QJKxrwpieMAntTb%2FU%2B%2B4e%2Fh0sXQZ3Nwn6zZ2IuHx8OjVN%0AZ7L96%2F2LJT1tr37WI4Ls</Encrypted>
+      <Card>
+        <CARD_Code>11</CARD_Code>
+      </Card>
+    </Payment>
+  </PaymentInfo>
+  <ManageInfo>
+    <Language></Language>
+    <URL urlencode="1">www.mastershop.kr</URL>
+    <TXVersion>5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60</TXVersion>
+    <TXUserID></TXUserID>
+    <Ack>1</Ack>
+    <TXRN>6052262298</TXRN>
+    <TXRegNum></TXRegNum>
+  </ManageInfo>
+  <ReservedInfo>
+    <MReserved1></MReserved1>
+    <MReserved2></MReserved2>
+    <MReserved3></MReserved3>
+  </ReservedInfo>
+</INIpay>
+AY+v3almLghUX9rvSuHjc4em7/TL+GEi8BBOBA+5UKzMgnjqE+cQEJYD3zxvWGwp
+PyIhbwp1tbLV6pdIUlcKl7N8XBe79y4LfD1WPzxoSmGuijcd6GZ+NwinYojH13Ss
+JCX03Kt5SkTyj/0JKYhh2/ZM89FSLHob2lriDdjfdxe1
+
+
+[22:51:31] INFO <00002> Connect to 203.238.37.3, 34049
+[22:51:31] INFO <00002> PG ADDRESS(PORT) : 203.238.37.3(34049)
+[22:51:31] INFO <00002> IP ADDRESS(PORT) : 203.238.37.3(34049)
+[22:51:31] INFO <00002> Connect TimeOut  : 5 sec.
+[22:51:32]ERROR <00002> FAIL SOCKET CONNECTION(pg1).
+[22:51:32] INFO <00002> Connect to 203.238.37.3, 34049
+[22:51:32] INFO <00002> PG ADDRESS(PORT) : 203.238.37.3(34049)
+[22:51:32] INFO <00002> IP ADDRESS(PORT) : 203.238.37.3(34049)
+[22:51:32] INFO <00002> Connect TimeOut  : 5 sec.
+[22:51:33]ERROR <00002> FAIL SOCKET CONNECTION(pg1ip).
+[22:51:33] INFO <00002> Connect to 211.219.96.180, 34049
+[22:51:33] INFO <00002> PG ADDRESS(PORT) : 211.219.96.180(34049)
+[22:51:33] INFO <00002> IP ADDRESS(PORT) : 211.219.96.180(34049)
+[22:51:33] INFO <00002> Connect TimeOut  : 5 sec.
+[22:51:33] INFO <00002> SET TX_ENCODECHARSET:KSC5601, SYSTEM ENCODING:UTF-8
+[22:51:33] INFO <00002> SEND OK
+[22:51:34] INFO <00002> RECV OK
+[22:51:34]DEBUG <00002> 0300900175D SHA1                   0                  39                  300210kthskytest               33000INIjspCARDkthskytest20141007225130565770<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <GoodsInfo>
+    <GoodsCnt>1</GoodsCnt>
+    <MOID urlencode="1">orderid_of_merchant</MOID>
+    <Currency>WON</Currency>
+    <Goods no="1">
+      <SMID>kthskytest</SMID>
+      <GoodsName urlencode="1">%B8%B6%BD%BA%C5%CD%BC%A5+%C3%E6%C0%FC+B%C7%FC</GoodsName>
+      <GoodsCntS>1</GoodsCntS>
+      <GoodsPrice>33000</GoodsPrice>
+    </Goods>
+  </GoodsInfo>
+  <PaymentInfo>
+    <Payment>
+      <SessionKey>AF7yzxUC6aVVCll/G9QH1eEzmURZnUCyl4HRnwiXuWu7K1OKjJlaZyYxz8J84wH/
+HYNR4CwIary02OuvhSuZ37po2lT6mJH9yifx/aKdA6Wzxpa0l9lg0r7wn4ySdmzP
+GKwiDIsg7mG8OIM0Mz0AX9Q32Dc+CZZPlmL4BHnQGhHe5ERsSlidkzQ=
+</SessionKey>
+      <Encrypted>vr5vdIXi7/+bW1ufXwdO06k+b0axoGy9XWI66NVl5u7q4Ke0/rFpvyGxopVUd+bO
+FKpGiMvCgJhzbkRMUQsqsjilJeefMeSxuoMwTzUNyh0uuGBXmXZW/EcQOxLA8l6n
+0ZFeysVLhYyqw6bPiAwMwsiCNXu1X9rdnwxLkDHl+293OdnsqzG/nKv44Bhmy4O/
+ofzuvazH6wf+QPCV7SgpEo4I/x7IexnRTaRlCWffjl3Ci6p2APYhLZPlCHbE3Hgj
+qwbTvv0eXs+bA8qQlc/U3Kt+hlXpf1A1HVXJA6ZFtMThndffLcrb+ecTCRyKYwto
+c86ABAm071I3U7fooySpbR7nzbvUjJonQii6NfOXPj21AynwhZjxYuBUxyOZ8b9E
+hBJRAxDD3e1bTsi/rSEWq8mBIk4f1sg6CnBGuG2v16cAe6bifT+iRChZZZH4F3V+
+tYbyz8gqFOXM4ZPJlKgcJ1cxu8Fg7fH0IlAFsyd4FXdL6zjlG0HfE35FhSpfZJ9z
+U5Pov61U/VkdbNzRa6JfDVIrjEJpsnrKjsO+7SmkMCiJGHZbnXQ88M1NQEL5+1bc
+KADM3EA1PWQCqLtxwROJeBXloFK1poFSnacp2Vxx3WBXFz310OWBJzsL1mLM2tZ0
+FBw16p4K2PKxuhHAJ/wSG+14Z25PhHipjqLHlzPjSrEdN4N6Yrh7Wj22uNJqdZ6u
+A9btJTPBKNcQmcx/w1fx3qjD0Xw5Ac5xvw77pnYyvAkYsmZgtx60JwLTGZrJBCHQ
+SGhDHVZD8fMHtQb9cAazKnljJ2ZTZslkL6YzJeuZhjoTirYQdJ9gpSdyLd8BYF0m
+KWjiKSKOoL3lPmBARcjL0EjmFNCNChoSMJnUbuSLeWDZrxTd+lqwSlXxjLhACg3O
+O/zkjET9g/YHD2EvTG+giNy46qCjlQwlUneD/TY4WQ/DW1oD8baB5wMryR0erRpO
+o0ZhtpczQjDF6WFa9qccHddo+Iq+cAeouKE2aFlFdakTmpBB1mEDhvvzQBSwCNPK
+BUZKp1bv3aq2UYjz7YTljOZe/l846q3Lam0/LkNvgn8ouHTRQjWr6u3o28tlGY5Q
+pwegRyRgTAzYplCGfPsDS5h7XO6QorZ9s5KqwuEgsbsO1W0FF2/f2Ki3HIQoFflQ
+nA47/2jeVCUWNrHd6lHSO1pbUZ5dLEpvCZ6L7cc+xBxLCCR0zWgDeZyrWW6GE9q1
+bK2xD5eRA3VyxKO3oceHUgTNBcHM17VE5O4zL66o3EQKW7TAWKSVbs8EpbCoBcxZ
+rTgYncaStrqZ+sIu4u49ejLa2M1rJLX2W2u1vE9zZBu7Cp9AzcktnynO+y7cE7T0
+9wGBo9E+tEC4R9bbUPArEaz5dyXhd33d2PmhGq1QRN1HxofxDN2N0XArGKvlwbVC
+1Hg2HOePz2dZmKbCXopCrW9s1vnkgR+64jJPApr6wrWqVoj5sHGW3fdJfbY4AU8V
+PkWNeZmwAvShpJXgZFlzJD8M/NHKdMLhDZSywcaMW80FHXpdIlMx3JATiS8Ad06y
+zcnNQvkJ053f/Y6T6LlHZRUwSGbMwYhGv6abXb6IKVlbLD+7YXZEXIm+96V3vjRB
+OzZfHlZNZi1+J9MsI0RS9XbuWrHklFjb
+</Encrypted>
+      <PayMethod>Card</PayMethod>
+      <ResultCode>120000</ResultCode>
+      <ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+    </Payment>
+  </PaymentInfo>
+  <ManageInfo>
+    <EventCode></EventCode>
+    <OrgCurrency></OrgCurrency>
+    <ExchangeRate></ExchangeRate>
+    <OrgPrice></OrgPrice>
+  </ManageInfo>
+  <ReservedInfo>
+    <MReserved1 urlencode="1"></MReserved1>
+    <MReserved2 urlencode="1"></MReserved2>
+    <MReserved3 urlencode="1"></MReserved3>
+    <PGReserved1 urlencode="1"></PGReserved1>
+    <PGReserved2 urlencode="1"></PGReserved2>
+    <PGReserved3 urlencode="1"></PGReserved3>
+  </ReservedInfo>
+</INIpay>
+H9BV6ZKhz76Ed03Ck6w1NYzhn3LZ+9N2gt2fkGeEFkVm5ePQvmS7VwCCA2KTiCWL
+dMyenXWXL+Np9dox70fmT1YfRK0cOmIChSZBCJtZTtiX+CxBiBjeRYKG7RfXry65
+C1jj7568yENOP9pCuxbLHhIqomlR440/346tO4DOjnY=
+
+[22:51:34] INFO <00002> Pay Connection  LapTime[3.096 sec. ] 
+[22:51:34] INFO <00002> TotPrice = 33000
+[22:51:34] INFO <00002> TID      = INIjspCARDkthskytest20141007225130565770
+[22:51:34] INFO <00002> MID      = kthskytest
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : ResultMsg|정상처리되었습니다.
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : ResultCode|120000
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : PayMethod|Card
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : Encrypted|vr5vdIXi7/+bW1ufXwdO06k+b0axoGy9XWI66NVl5u7q4Ke0/rFpvyGxopVUd+bO
+FKpGiMvCgJhzbkRMUQsqsjilJeefMeSxuoMwTzUNyh0uuGBXmXZW/EcQOxLA8l6n
+0ZFeysVLhYyqw6bPiAwMwsiCNXu1X9rdnwxLkDHl+293OdnsqzG/nKv44Bhmy4O/
+ofzuvazH6wf+QPCV7SgpEo4I/x7IexnRTaRlCWffjl3Ci6p2APYhLZPlCHbE3Hgj
+qwbTvv0eXs+bA8qQlc/U3Kt+hlXpf1A1HVXJA6ZFtMThndffLcrb+ecTCRyKYwto
+c86ABAm071I3U7fooySpbR7nzbvUjJonQii6NfOXPj21AynwhZjxYuBUxyOZ8b9E
+hBJRAxDD3e1bTsi/rSEWq8mBIk4f1sg6CnBGuG2v16cAe6bifT+iRChZZZH4F3V+
+tYbyz8gqFOXM4ZPJlKgcJ1cxu8Fg7fH0IlAFsyd4FXdL6zjlG0HfE35FhSpfZJ9z
+U5Pov61U/VkdbNzRa6JfDVIrjEJpsnrKjsO+7SmkMCiJGHZbnXQ88M1NQEL5+1bc
+KADM3EA1PWQCqLtxwROJeBXloFK1poFSnacp2Vxx3WBXFz310OWBJzsL1mLM2tZ0
+FBw16p4K2PKxuhHAJ/wSG+14Z25PhHipjqLHlzPjSrEdN4N6Yrh7Wj22uNJqdZ6u
+A9btJTPBKNcQmcx/w1fx3qjD0Xw5Ac5xvw77pnYyvAkYsmZgtx60JwLTGZrJBCHQ
+SGhDHVZD8fMHtQb9cAazKnljJ2ZTZslkL6YzJeuZhjoTirYQdJ9gpSdyLd8BYF0m
+KWjiKSKOoL3lPmBARcjL0EjmFNCNChoSMJnUbuSLeWDZrxTd+lqwSlXxjLhACg3O
+O/zkjET9g/YHD2EvTG+giNy46qCjlQwlUneD/TY4WQ/DW1oD8baB5wMryR0erRpO
+o0ZhtpczQjDF6WFa9qccHddo+Iq+cAeouKE2aFlFdakTmpBB1mEDhvvzQBSwCNPK
+BUZKp1bv3aq2UYjz7YTljOZe/l846q3Lam0/LkNvgn8ouHTRQjWr6u3o28tlGY5Q
+pwegRyRgTAzYplCGfPsDS5h7XO6QorZ9s5KqwuEgsbsO1W0FF2/f2Ki3HIQoFflQ
+nA47/2jeVCUWNrHd6lHSO1pbUZ5dLEpvCZ6L7cc+xBxLCCR0zWgDeZyrWW6GE9q1
+bK2xD5eRA3VyxKO3oceHUgTNBcHM17VE5O4zL66o3EQKW7TAWKSVbs8EpbCoBcxZ
+rTgYncaStrqZ+sIu4u49ejLa2M1rJLX2W2u1vE9zZBu7Cp9AzcktnynO+y7cE7T0
+9wGBo9E+tEC4R9bbUPArEaz5dyXhd33d2PmhGq1QRN1HxofxDN2N0XArGKvlwbVC
+1Hg2HOePz2dZmKbCXopCrW9s1vnkgR+64jJPApr6wrWqVoj5sHGW3fdJfbY4AU8V
+PkWNeZmwAvShpJXgZFlzJD8M/NHKdMLhDZSywcaMW80FHXpdIlMx3JATiS8Ad06y
+zcnNQvkJ053f/Y6T6LlHZRUwSGbMwYhGv6abXb6IKVlbLD+7YXZEXIm+96V3vjRB
+OzZfHlZNZi1+J9MsI0RS9XbuWrHklFjb
+
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : SessionKey|AF7yzxUC6aVVCll/G9QH1eEzmURZnUCyl4HRnwiXuWu7K1OKjJlaZyYxz8J84wH/
+HYNR4CwIary02OuvhSuZ37po2lT6mJH9yifx/aKdA6Wzxpa0l9lg0r7wn4ySdmzP
+GKwiDIsg7mG8OIM0Mz0AX9Q32Dc+CZZPlmL4BHnQGhHe5ERsSlidkzQ=
+
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : GoodsPrice|33000
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : GoodsCntS|1
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : GoodsName|마스터샵 충전 B형
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : SMID|kthskytest
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : Currency|WON
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : MOID|orderid_of_merchant
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : GoodsCnt|1
+[22:51:35]DEBUG <00002> TX_RESULTMSG : [120000|정상처리되었습니다.]
+[22:51:35]DEBUG <00002> TX_RESULTCODE : 00
+[22:51:35]DEBUG <00002> signChecked=true
+[22:51:35] INFO <00002> SIGN CHECK OK
+[22:51:35] INFO <00002> DECRYPT OK
+[22:51:35]DEBUG <00002> <?xml version="1.0" encoding="UTF-8"?>
+<PaymentInfo>
+  <Payment>
+    <EASYPAY/>
+    <Card>
+      <CARD_ApplPrice>33000</CARD_ApplPrice>
+      <CARD_Num>524144000924</CARD_Num>
+      <CARD_Expire></CARD_Expire>
+      <CARD_Code>11</CARD_Code>
+      <CARD_BankCode>53</CARD_BankCode>
+      <CARD_Quota>00</CARD_Quota>
+      <CARD_Interest>0</CARD_Interest>
+      <CARD_Point></CARD_Point>
+      <CARD_AuthType>99</CARD_AuthType>
+      <CARD_RegNum></CARD_RegNum>
+      <CARD_ApplDate>20141007</CARD_ApplDate>
+      <CARD_ApplTime>225139</CARD_ApplTime>
+      <CARD_ApplNum>38481640</CARD_ApplNum>
+      <CARD_TerminalNum>0198822000</CARD_TerminalNum>
+      <CARD_MemberNum></CARD_MemberNum>
+      <CARD_PurchaseCode></CARD_PurchaseCode>
+      <CARD_ResultCode>120000</CARD_ResultCode>
+      <CARD_ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</CARD_ResultMsg>
+      <CARD_PrtcCode>1</CARD_PrtcCode>
+      <CARD_Quota_Point>00</CARD_Quota_Point>
+      <CARD_CheckFlag>0</CARD_CheckFlag>
+      <CARD_PurchaseName urlencode="1"></CARD_PurchaseName>
+      <CARD_IssuerName urlencode="1"></CARD_IssuerName>
+      <CARD_JoinUsePoint></CARD_JoinUsePoint>
+    </Card>
+  </Payment>
+</PaymentInfo>
+
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_CheckFlag|0
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_Quota_Point|00
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_PrtcCode|1
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_ResultMsg|정상처리되었습니다.
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_ResultCode|120000
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_TerminalNum|0198822000
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_ApplNum|38481640
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_ApplTime|225139
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_ApplDate|20141007
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_AuthType|99
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_Interest|0
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_Quota|00
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_BankCode|53
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_Code|11
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_Num|524144000924
+[22:51:35]DEBUG <00002> RESULT_PARSE_DATA(NM|VL) : CARD_ApplPrice|33000
+[22:51:35] INFO <00002> ApplDate : 20141007
+[22:51:35] INFO <00002> ApplTime : 225139
+[22:51:35] INFO <00002> ApplNum : 38481640
+[22:51:35] INFO <00002> WAIT ACK...
+[22:51:35] INFO <00002> ACK SEND LEN=150
+[22:51:35] INFO <00002> ACK SEND OK
+[22:51:35] INFO <00002> ACK RECV OK
+[22:51:35]DEBUG <00002> 0000000000R SHA1                   0                  39                  300810kthskytest               33000INIjspCARDkthskytest20141007225130565770
+[22:51:35] INFO <00002> SOCKET CONNECTION CLOSE
+[22:51:35] INFO <00002> TRANSACTION COMPLETE 
+[22:51:35] INFO <00002> END securepay, [ TID:INIjspCARDkthskytest20141007225130565770 ], 00|[120000|정상처리되었습니다.],  LapTime[4.739 sec. ] 
+[22:51:35] INFO --------------------------------------------------------------------------------

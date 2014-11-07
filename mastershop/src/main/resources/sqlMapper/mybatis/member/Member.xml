@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Member">
+
+	<sql id="where">
+		<where>
+			<if test="searchString != '' and searchString != null">
+				<if test="searchColumn == 'aId'">
+					pk_admin_id = #{searchString}
+				</if>				
+				<if test="searchColumn == 'aName'">
+					fd_admin_name like CONCAT('%', #{searchString}, '%')
+				</if>
+			</if>
+		</where>  	
+	</sql>
+	
+	<!-- 내정보 > 가입정보(회원아이디로 정보를 갖고옴.) -->
+	<select id="getJoinInfo" parameterType="String" resultType="Member">
+		SELECT 
+		tmt.pk_tel,									<!-- 전화번호(join table : tbl_member_tel.pk_tel) -->
+	   tm.pk_member_id,
+       tm.fd_member_pwd,
+       tm.fd_openapi_member_id,
+       tm.fd_openapi_member_pwd,
+       tm.fd_mobile,
+       tm.fd_user_name,
+       tm.fd_business_type,
+       tm.fd_business_type1,
+       tm.fd_business_type2,
+       tm.fd_company_name,
+       tm.fd_addr,
+       tm.fd_addr_detail,
+       tm.fd_post_num,
+       tm.fd_regist_num,
+       tm.fd_corp_regist_num,
+       tm.fd_file1,
+       tm.fd_file2,
+       tm.fd_user_access,
+       tm.fd_user_access_cont,
+       tm.fd_user_access_file1,
+       tm.fd_reg_date,
+       tm.fd_member_state,
+       tm.fd_member_end_date,
+       tm.fd_file1_org,
+       tm.fd_file2_org,
+       tm.fd_file3_org,
+       tm.fd_file1_path,
+       tm.fd_file2_path,
+       tm.fd_file3_path,
+       tm.fd_view_name,
+       tm.fd_sex,
+       tm.fd_birthday,
+       tm.fd_email,
+       tm.fd_openapi_autologin,
+       tm.fd_send_limit,
+       tm.fd_modify_date,
+       tm.fd_admin_id,
+       tm.fd_admin_ip
+		FROM tbl_member tm LEFT JOIN tbl_member_tel tmt 
+  			ON tm.pk_member_id = tmt.fk_member_id
+		WHERE  tm.pk_member_id = #{pk_member_id}
+		LIMIT 0, 1
+	</select>
+	
+	
+	
+	<!-- 비지니스 타입 -->
+	<select id="getBusinessName" parameterType="Map" resultType="String">
+		SELECT fd_name
+		FROM tbl_code_business 
+		WHERE  fd_code1 = #{fd_business_type1}
+			and fd_code2 = #{fd_business_type2}
+	</select>
+	
+	
+	
+	<!--  회원 정보 전화번호, 포인트, 가입상품 리스트  -->
+	<select id="getTelInfoList" parameterType="PageHelper" resultType="MemberSub">
+		select mt.pk_tel, p.fd_reg_date, p.fd_product_type, p.fd_reg_state
+		from tbl_member_tel mt left outer join tbl_product p on (mt.fk_member_id=p.fk_member_id and mt.pk_tel=p.fk_tel)
+		<trim prefix="where" prefixOverrides="and">
+		    <if test="searchString != ''">
+		        <if test="searchColumn == 'id'">
+		            and mt.fk_member_id = #{searchString}
+		        </if>
+		        <if test="searchColumn == 'tel'">
+		            and mt.pk_tel = #{searchString}
+		        </if>
+		    </if>
+		</trim>
+	</select>
+	
+	
+	<!-- 내정보 > 포인트 사용내역(회원아이디로 오늘부터 6개월전까지의 포인트 사용내역을 갖고옴.) -->
+	<select id="getPointChargeLogList" parameterType="String" resultType="HashMap">
+		SELECT 
+  			pk_member_id
+  			, pk_tel
+  			, fd_base_coin
+  			, fd_recharge_coin
+  			, fd_bonus_coin
+  			, (fd_recharge_coin + fd_bonus_coin) AS sum_coin
+  			, fd_pay_mount
+  			, fd_pay_type
+  			, fd_reg_date
+		FROM tbl_coin_charge_log
+		WHERE 	pk_member_id = #{pk_member_id} 
+      				AND fd_reg_date >= DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 6 MONTH), '%Y%m%d')
+	</select>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="changePw"  parameterType="Member">
+		update tbl_member
+		 <set>
+			fd_member_pwd = #{fd_member_pwd}
+		 </set>
+	       where pk_member_id = #{pk_member_id}		 
+	</update>	
+	
+	
+	<select id="getCount"  parameterType="PageHelper" resultType="int">
+		SELECT COUNT(*) AS cnt 
+		FROM tbl_member
+		<trim prefix="where" prefixOverrides="and">
+		    <if test="searchString != ''">
+		        <if test="searchColumn == 'id'">
+		            and pk_member_id like CONCAT('%', #{searchString}, '%')
+		        </if>
+		        <if test="searchColumn == 'name'">
+		            and fd_member_name like CONCAT('%', #{searchString}, '%')
+		        </if>                
+		    </if> 			               
+			<if test="state != ''">
+				 and fd_member_status_cd = #{state}
+			</if>
+			<if test="start_date != ''">
+				 and fd_reg_date <![CDATA[>=]]> CONCAT(#{start_date},'00') 
+			</if>
+			<if test="finish_date != ''">
+				 and fd_reg_date <![CDATA[<=]]> CONCAT(#{finish_date},'59') 
+			</if>	
+		</trim> 
+	</select>
+	
+	
+	<select id="getAgreeCount"  parameterType="String" resultType="int">
+		SELECT count(*) as cnt
+		FROM tbl_agreement
+		WHERE 	fk_member_id = #{pk_member_id} 
+				and fd_agree_yn = 'Y'
+				and fd_agree_code = '3401'
+	</select>
+	
+	
+	<insert id="insAgreement" parameterType="String">
+		INSERT INTO tbl_agreement(fk_member_id,
+	                                     fd_agree_yn,
+	                                     fd_agree_date,
+	                                     fd_agree_code)
+		VALUES (#{member_id}, 'Y', now(), '3401');
+	</insert>
+	
+	
+	<select id="getGubun"  parameterType="int"  resultType="Code" >
+		select * 
+		from tbl_code 
+		where fd_up_code= '1300'
+	</select>
+	
+
+	<select id="getList" parameterType="PageHelper" resultType="Member">	
+	  	select * 
+	    from tbl_member
+		<trim prefix="where" prefixOverrides="and">
+		    <if test="searchString != ''">
+		        <if test="searchColumn == 'id'">
+		            and pk_member_id like CONCAT('%', #{searchString}, '%')
+		        </if>
+		        <if test="searchColumn == 'name'">
+		            and fd_member_name like CONCAT('%', #{searchString}, '%')
+		        </if>                
+		    </if> 			               
+			<if test="state != ''">
+				 and fd_member_status_cd = #{state}
+			</if>
+			<if test="start_date != ''">
+				 and fd_reg_date <![CDATA[>=]]> CONCAT(#{start_date},'00') 
+			</if>
+			<if test="finish_date != ''">
+				 and fd_reg_date <![CDATA[<=]]> CONCAT(#{finish_date},'59') 
+			</if>							        
+		</trim> 
+  	    order by fd_reg_date desc
+	    limit #{pageStart}, #{pageSize}
+	</select>
+	
+	
+	<select id="getList_old" parameterType="PageHelper" resultType="Member">	
+	  	select * 
+	    from tbl_member, tbl_code
+		<trim prefix="where" prefixOverrides="and">
+			tbl_code.pk_code = tbl_member.fd_member_status_cd                           
+		    <if test="searchString != ''">
+		        <if test="searchColumn == 'id'">
+		            and pk_member_id like CONCAT('%', #{searchString}, '%')
+		        </if>
+		        <if test="searchColumn == 'name'">
+		            and fd_member_name like CONCAT('%', #{searchString}, '%')
+		        </if>                
+		    </if> 			               
+			<if test="state != ''">
+				 and fd_member_status_cd = #{state}
+			</if>
+			<if test="start_date != ''">
+				 and fd_reg_date <![CDATA[>=]]> CONCAT(#{start_date},'00') 
+			</if>
+			<if test="finish_date != ''">
+				 and fd_reg_date <![CDATA[<=]]> CONCAT(#{finish_date},'59') 
+			</if>							        
+		</trim> 
+  	    order by fd_reg_date desc
+	    limit #{pageStart}, #{pageSize}
+	</select>
+
+
+	<select id="checkId" parameterType="String" resultType="String">
+		select pk_member_id 
+		from tbl_member 
+		where pk_member_id = #{inputid}	
+	</select>
+	
+
+	<insert id="register" parameterType="Member">
+		INSERT INTO tbl_member(pk_member_id,
+                                fd_member_pwd,
+                                fd_tel,
+                                fd_mobile,
+                                fd_user_name,
+                                fd_business_type,
+                                fd_shop_name,
+                                fd_addr,
+                                fd_addr_detail,
+                                fd_post_num,
+                                fd_regist_num,
+                                fd_corp_regist_num,
+                                fd_file1,
+                                fd_file2,
+                                fd_file1_path, fd_file2_path, fd_file3_path, 
+                                fd_file1_org, fd_file2_org, fd_file2_org,
+                                fd_user_access, fd_user_access_cont, fd_user_access_file1,
+                                fd_reg_date)
+			VALUES (
+					#{pk_member_id},
+			        #{fd_member_pwd},
+			        #{fd_tel},
+			        #{fd_mobile},
+			        #{fd_user_name},
+			        #{fd_business_type},
+			        #{fd_shop_name},
+			        #{fd_addr},
+			        #{fd_addr_detail},
+			        #{fd_post_num},
+			        #{fd_regist_num},
+			        #{fd_corp_regist_num},
+			        #{fd_file1},
+			        #{fd_file2},
+			        #{fd_file1_path}, #{fd_file2_path}, #{fd_file3_path},
+			        #{fd_file1_org}, #{fd_file2_org}, #{fd_file2_org},
+			        #{fd_user_access}, #{fd_user_access_cont}, #{fd_user_access_file1},
+			        now()
+			        )
+	</insert>
+
+
+	<select id="get" parameterType="String" resultType="Member">
+		SELECT *
+		FROM tbl_member 
+		WHERE pk_member_id = #{pk_member_id}			
+	</select>	
+	
+	
+	<update id="modify"  parameterType="Member">
+	UPDATE tbl_member
+		<trim prefix="set" prefixOverrides=",">
+			<if test="fd_mobile 		     !='' and fd_mobile 		!= null">,  fd_mobile 			= #{fd_mobile}</if>
+			<if test="fd_addr 		 		 !='' and fd_addr 		 	!= null">,  fd_addr 			= #{fd_addr}</if>
+			<if test="fd_addr_detail		 !='' and fd_addr_detail 	!= null">,  fd_addr_detail 		= #{fd_addr_detail}</if>
+			<if test="fd_post_num 			 !='' and fd_post_num 		!= null">,  fd_post_num 		= #{fd_post_num}</if>
+			<if test="fd_view_name 			 !='' and fd_view_name 		!= null">,  fd_view_name 		= #{fd_view_name}</if>
+			<if test="fd_openapi_member_id 	!='' and fd_openapi_member_id 	!= null">,  fd_openapi_member_id	= #{fd_openapi_member_id}</if>
+			<if test="fd_openapi_member_pwd !='' and fd_openapi_member_pwd 	!= null">,  fd_openapi_member_pwd 	= #{fd_openapi_member_pwd}</if>
+			<if test="fd_openapi_autologin 	!='' and fd_openapi_autologin 	!= null">,  fd_openapi_autologin 	= #{fd_openapi_autologin}</if>
+			<if test="fd_member_state 		!='' and fd_member_state 		!= null">,  fd_member_state 	= #{fd_member_state}</if>
+			<if test="fd_member_end_date 	!='' and fd_member_end_date 	!= null">,  fd_member_end_date 	= now()</if>
+		</trim>
+		WHERE PK_MEMBER_ID = #{pk_member_id}	
+	</update>
+
+
+	<select id="checkPw" parameterType="String" resultType="String">
+		select fd_member_pw 
+		  from tbl_member 
+		 where pk_member_id = #{pk_member_id}	
+	</select>
+
+
+	<select id="checkPay" parameterType="String" resultType="HashMap">
+	select sum(fd_price) sum_fd_price, sum(fd_pay_price) sum_pay_price ,
+    	(select count(*) cnt
+     	from tbl_bill_report
+     	where fk_member_id = #{pk_member_id}	
+     	and fd_pay_price = 0) as cnt
+	from tbl_bill_report 
+	where fk_member_id = #{pk_member_id}	
+ 		and fd_end_date >= date_add(now(), interval -3 month)
+ 	</select>
+		
+	<delete id="remove"  parameterType="String">
+		delete 
+		from tbl_member 
+		where pk_member_id = #{pk_member_id}
+	</delete>
+	
+	
+	<!-- 지번 주소 -->
+	<select id="searchZipcode" parameterType="String" resultType="Zipcode">	
+		select post, addr1, addr2, addr3, addr4, addr5, bunji, seqno
+		from tbl_zipcode
+		where addr3 like CONCAT(#{searchDong}, '%')
+			or addr4 like CONCAT(#{searchDong}, '%')
+		order by addr1, addr2, addr3, addr4, addr5, bunji
+	</select>
+
+	<!-- 도로명 주소 -->
+	<select id="searchZipcodeDoro" parameterType="ZipcodeDoro" resultType="ZipcodeDoro">	
+		SELECT post_num,
+		       si_do,
+		       si_gun_gu,
+		       eup_myn,
+		       street_name,
+		       building1,
+		       building2,
+		       beopjeong,
+		       ri,
+		       jebun1,
+		       jebun2
+		  FROM ${tblName} 
+  		  WHERE street_name like CONCAT(#{searchDoro}, '%')
+  		  order by si_do, si_gun_gu, street_name, building1, building2
+	</select>
+	
+</mapper>

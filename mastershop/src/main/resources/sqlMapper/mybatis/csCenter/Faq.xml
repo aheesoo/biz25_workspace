@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Faq">	
+	<select id="getFaqList"   parameterType="hashMap" resultType="Faq">		 
+		SELECT 	pk_seq, 			fd_type,			fd_user_id,
+					fd_title,			fd_content, 	fd_user_ip,
+					fd_open_yn, 	fd_hit,		 	fd_reg_date, 
+					fd_mod_date, fd_type_code, 
+					code.fd_name as fd_code_name
+		FROM 	tbl_board_faq as faq left outer join (select pk_code, fd_name from tbl_code where fd_up_code = '3600')as code
+		 	on  faq.fd_type_code = code.pk_code
+		WHERE fd_open_yn = 'Y'
+				<if test="searchColumn != ''">
+				AND fd_type_code = #{searchColumn}
+				</if>
+				<if test="searchString != ''">
+				 AND fd_title like CONCAT('%', #{searchString}, '%')
+				</if>
+		ORDER BY pk_seq desc
+		LIMIT #{pageStart}, #{pageSize}
+	</select>
+	
+	<select id="getFaqListCount"   parameterType="hashMap" resultType="int">		 
+			SELECT 	count(*) as cnt      
+			FROM 	tbl_board_faq as faq left outer join (select pk_code, fd_name from tbl_code where fd_up_code = '3600')as code
+		 	on  faq.fd_type_code = code.pk_code
+			WHERE 	fd_open_yn = 'Y'
+				<if test="searchColumn != ''">
+				AND fd_type_code = #{searchColumn}
+				</if>
+				<if test="searchString != ''">
+				  AND fd_title like CONCAT('%', #{searchString}, '%')
+				</if>
+	</select>
+	
+	<update id="updateViewHit"  parameterType="String">
+		UPDATE tbl_board_faq SET
+			 fd_hit = fd_hit+1
+		WHERE pk_seq = #{pk_seq}
+	</update>
+	
+	<select id="getFaqView" parameterType="String" resultType="Faq">
+		SELECT 
+			pk_seq
+			, fd_title
+			, fd_hit
+			, fd_open_yn
+			, fd_content
+			, date_format(fd_reg_date, '%Y-%m-%d %H:%i') as fd_reg_date
+			, fd_user_id			
+			, fd_user_ip
+			, fd_mod_date
+			, fd_type_code
+			, code.fd_name as fd_code_name
+		FROM 	tbl_board_faq as faq left outer join (select pk_code, fd_name from tbl_code where fd_up_code = '3600')as code
+		 	on  faq.fd_type_code = code.pk_code
+		WHERE pk_seq = #{pk_seq}
+			AND fd_open_yn = 'Y'
+	</select>
+	
+	<select id="getFaqViewPre" parameterType="String" resultType="Faq">
+		SELECT    pk_seq
+					, fd_title
+					, fd_hit
+					, fd_open_yn
+					, fd_content
+					, date_format(fd_reg_date, '%Y-%m-%d %H:%i') as fd_reg_date
+					, fd_user_id					
+					, fd_user_ip
+					, fd_mod_date
+					, fd_type_code
+					, code.fd_name as fd_code_name
+		FROM 	tbl_board_faq as faq left outer join (select pk_code, fd_name from tbl_code where fd_up_code = '3600')as code
+		 	on  faq.fd_type_code = code.pk_code
+		WHERE pk_seq IN (select max(pk_seq) from tbl_board_faq where pk_seq &lt; #{pk_seq} and fd_open_yn = 'Y')
+	</select>
+	
+	<select id="getFaqViewNext" parameterType="String" resultType="Faq">
+		SELECT    pk_seq
+					, fd_title
+					, fd_hit
+					, fd_open_yn
+					, fd_content
+					, date_format(fd_reg_date, '%Y-%m-%d %H:%i') as fd_reg_date
+					, fd_user_id					
+					, fd_user_ip
+					, fd_mod_date
+					, fd_type_code
+					, code.fd_name as fd_code_name
+		FROM 	tbl_board_faq as faq left outer join (select pk_code, fd_name from tbl_code where fd_up_code = '3600')as code
+		 	on  faq.fd_type_code = code.pk_code
+		WHERE pk_seq IN (select min(pk_seq) from tbl_board_faq where pk_seq &gt; #{pk_seq} and fd_open_yn = 'Y')
+		
+	</select>
+	<select id="getFaqCodeList" parameterType="String" resultType="Faq">
+		SELECT 	pk_code, fd_up_code, fd_name as fd_code_name
+				, 	memo		
+		FROM	 tbl_code
+		WHERE fd_up_code = #{fd_up_code}
+	</select>
+	
+</mapper>	

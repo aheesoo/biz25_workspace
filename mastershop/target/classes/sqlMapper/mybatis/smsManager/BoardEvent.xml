@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+수정전 
+  `pk_seq` int(9) unsigned NOT NULL AUTO_INCREMENT COMMENT '일련번호',
+  `fd_view_date` varchar(8) NOT NULL COMMENT '이벤트날짜(년월일)',
+  `fd_reg_date` varchar(14) NOT NULL COMMENT '등록일',
+  `fd_title` varchar(255) NOT NULL COMMENT '타이틀',
+  `fd_user_id` varchar(32) DEFAULT NULL COMMENT '작성자 ID',
+  `fd_user_ip` varchar(15) DEFAULT NULL COMMENT '작성자 IP',
+  `fd_user_name` varchar(127) DEFAULT NULL COMMENT '작성자 이름',
+  `fd_mod_date` varchar(14) DEFAULT NULL COMMENT '수정 날짜',
+  
+  수정후
+  `pk_seq` int(9) unsigned NOT NULL AUTO_INCREMENT COMMENT '일련번호',
+  `fd_title` varchar(255) NOT NULL COMMENT '타이틀',
+  `fd_user_id` varchar(32) DEFAULT NULL COMMENT '작성자 ID',
+  `fd_user_ip` varchar(15) DEFAULT NULL COMMENT '작성자 IP',
+  `fd_yy` varchar(4) DEFAULT NULL COMMENT '적용날짜_년',
+  `fd_mm` varchar(2) DEFAULT NULL COMMENT '적용날짜_월',
+  `fd_dd` varchar(2) DEFAULT NULL COMMENT '적용날짜_일',
+  `fd_reg_date` datetime DEFAULT NULL,
+  `fd_mod_id` varchar(32) DEFAULT NULL COMMENT '수정자 ID',
+  `fd_mod_ip` varchar(15) DEFAULT NULL COMMENT '수정자ip',
+  `fd_mod_date` datetime DEFAULT NULL COMMENT '수정일자',
+ -->
+<mapper namespace="BoardEvent">
+
+	<!-- 월별 공휴일 및 이벤트 날짜 갖고오기  -->
+	<select id="getListCal" parameterType="HashMap" resultType="BoardEvent">
+		select
+			pk_seq
+			, fd_title
+			, fd_user_id
+			, fd_user_ip
+			, fd_yy
+			, fd_mm
+			, fd_dd
+			, fd_reg_date
+			, fd_mod_id
+			, fd_mod_ip
+			, fd_mod_date
+		from tbl_board_event
+		<trim prefix="where" prefixOverrides="and">
+			<!-- <if test="searchString != ''">
+				<if test="searchColumn == 'seq'">
+					and pk_seq = #{searchString}
+				</if>
+				<if test="searchColumn == 'view_date'">
+					and fd_view_date like CONCAT('%', #{searchString}, '%')
+				</if>
+			</if> -->
+			<if test="year != '' and year != null">
+				AND fd_yy = #{year}
+			</if>
+			<if test="month != '' and month != null">
+				AND fd_mm = #{month}
+			</if>
+			<if test="day != '' and day != null">
+				AND fd_dd = #{day}
+			</if>
+		</trim>
+		order by fd_reg_date desc
+	</select>
+
+	<!-- 리스트안의 Tel Select 박스 전화번호 갖고오기 -->
+	<select id="getMemberTelList" parameterType="HashMap" resultType="BoardEvent">
+	<!-- tbl_member_tel -->
+		select
+			fk_member_id
+			,pk_tel			,fd_use_yn			,fd_reg_date			,fd_del_date
+		from
+			tbl_member_tel
+			<trim prefix="where" prefixOverrides="and">
+				<if test="fk_member_id != '' and fk_member_id != null">
+					and fk_member_id = #{fk_member_id}
+				</if>
+				<if test="pk_tel != '' and pk_tel != null">
+					and pk_tel = #{pk_tel}
+				</if>
+				<if test="fd_use_yn != '' and fd_use_yn != null">
+					and fd_use_yn = #{fd_use_yn}
+				</if>
+			</trim>
+		order by fd_reg_date desc
+	</select>
+
+	<!-- 일별 발송 건수 및 상태 갖고오기  -->
+	<select id="getSmsGroupList" parameterType="HashMap" resultType="BoardEvent">
+	<!-- tbl_sms_group -->
+		select
+			pk_group_code					,fk_custom_msg_id					,search_week
+			,search_time					,search_req_cnt					,search_month
+			,search_call_rcv_cnt_type		,search_call_rcv_cnt			,search_customer
+			,fk_member_id					,fk_tel							,reserve_time
+			,reserve_type					,msg_type						,msg_sub_type
+			,reg_date						,msg_send_finish				,req_count
+			,res_count						,cancel_yn
+		from tbl_sms_group
+			<trim prefix="where" prefixOverrides="and">
+				and fk_member_id = #{fk_member_id}
+				<if test="fk_tel != '' and fk_tel != null">
+					and fk_tel = #{fk_tel}
+				</if>
+				<if test="reserve_time_s != '' and reserve_time_s != null and reserve_time_e != '' and reserve_time_e != null" >
+					and (reserve_time <![CDATA[>=]]> #{reserve_time_s} and reserve_time <![CDATA[<=]]> #{reserve_time_e})
+				</if>
+				<if test="reg_date != '' and reg_date != null">
+					and reg_date like CONCAT(#{reg_date}, '%')
+				</if>
+				<if test="cancel_yn != '' and cancel_yn != null">
+					and cancel_yn = #{cancel_yn}
+				</if>
+			</trim>
+		order by reg_date desc
+	</select>
+
+	<!-- 일별 발송 건수 및 상태 갖고오기  -->
+	<select id="getSmsReserveGroupList" parameterType="HashMap" resultType="BoardEvent">
+	<!-- tbl_sms_group -->
+		select
+			pk_group_code					,fk_custom_msg_id					,search_week
+			,search_time					,search_req_cnt					,search_month
+			,search_call_rcv_cnt_type		,search_call_rcv_cnt			,search_customer
+			,fk_member_id					,fk_tel							,reserve_time
+			,reserve_type					,msg_type						,msg_sub_type
+			,reg_date						,msg_send_finish				,req_count
+			,res_count						,cancel_yn
+		from tbl_sms_group
+			<trim prefix="where" prefixOverrides="and">
+				and reserve_type = '2'
+				and fk_member_id = #{fk_member_id}
+				and cancel_yn = 'N'
+				and msg_send_finish = 'N'
+			</trim>
+		order by reg_date desc
+	</select>
+	
+	<!-- 리스트 페이징이 없으므로 현재 안씀.  -->
+	<select id="getCountCal"  parameterType="PageHelper" resultType="int">
+		<!-- select count(*) as cnt
+		from tbl_board_event
+		<trim prefix="where" prefixOverrides="and">
+			<if test="searchString != ''">
+				<if test="searchColumn == 'seq'">
+					and pk_seq = #{searchString}
+				</if>
+				<if test="searchColumn == 'view_date'">
+					and fd_view_date like CONCAT('%', #{searchString}, '%')
+				</if>
+			</if>
+		</trim> -->
+	</select>
+ </mapper>

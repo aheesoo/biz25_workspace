@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CMSMapping">
+	
+	<!-- 
+	<sql id="where">
+		WHERE pk_url_code = CASE WHEN #{pk_url_code} IS NULL THEN pk_url_code ELSE #{pk_url_code} END  
+		AND   pk_admin_id = CASE WHEN #{pk_admin_id} IS NULL THEN pk_admin_id ELSE #{pk_admin_id} END
+	</sql>
+	-->
+	<sql id="where">
+		WHERE fk_admin_id = #{pk_admin_id}
+	</sql>
+
+	<select id="get" parameterType="CMSMapping" resultType="CMSMapping">
+		SELECT * FROM tbl_cms_mapping <include refid="where"/>
+	</select>
+	
+	<select id="getCount"  parameterType="CMSMapping" resultType="int">
+		SELECT COUNT(*) AS cnt FROM tbl_cms_mapping <include refid="where"/>
+	</select>
+	
+	<select id="getList" parameterType="String" resultType="CMSMapping">	
+		SELECT * FROM tbl_cms_mapping <include refid="where"/>		 
+	</select>
+	
+	<insert id="register" parameterType="CMSMapping">
+		INSERT INTO tbl_cms_mapping
+		(
+			fk_url_code
+		,	fk_admin_id
+		)
+		VALUES
+		(
+			#{fk_url_code}
+		,	#{fk_admin_id}
+		)	
+	</insert>
+	
+	<update id="modify"  parameterType="CMSMapping">
+		UPDATE tbl_cms_mapping
+		<trim prefix="SET" prefixOverrides=",">
+			<if test="pk_url_code != '' and pk_url_code != null">, fk_url_code = #{fk_url_code}</if>
+			<if test="pk_admin_id != '' and pk_admin_id != null">, fk_admin_id = #{fk_admin_id}</if>		
+		</trim>
+		WHERE fk_url_code = #{org_fk_url_code} AND fk_admin_id = #{org_fk_admin_id}		
+	</update>
+	
+	<delete id="remove" parameterType="String">
+		DELETE FROM tbl_cms_mapping <include refid="where"/>
+	</delete>
+	
+</mapper>

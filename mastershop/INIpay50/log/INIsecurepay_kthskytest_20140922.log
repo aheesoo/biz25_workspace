@@ -1,0 +1,644 @@
+[14:00:03] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:00:03] INFO <00001> DEBUG PRINT : 
+[14:00:03]ERROR <00001> KEYPASSWORD(ADMIN) is NULL
+[14:00:03]ERROR TX9201
+com.inicis.util.etc.INIpayException: TX9201
+	at com.inicis.inipay.actions.INIcheckfakeAction.parameterCheck(INIcheckfakeAction.java:170)
+	at com.inicis.inipay.actions.INIAction.setParameter(INIAction.java:69)
+	at com.inicis.inipay.INIpay.startAction(INIpay.java:96)
+	at com.includesys.sm.controller.common.PgController.pgCall(PgController.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:219)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:745)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:686)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:827)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:620)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+[14:00:03] INFO <00001>  ERROR_MSG : TX9201
+[14:00:03] INFO <00001>  ResultMsg : 
+[14:00:03]ERROR <00001>  ResultMsg : [TX9201|필수항목 누락  - ADMIN(KEYPW)]
+[14:00:03] INFO <00001> TRANSACTION COMPLETE 
+[14:00:03] INFO <00001> END chkfake, 01|[TX9201|필수항목 누락  - ADMIN(KEYPW)],  LapTime[0.234 sec. ] 
+[14:00:03] INFO --------------------------------------------------------------------------------
+[14:00:50] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:00:50] INFO <00001> DEBUG PRINT : 
+[14:00:50]DEBUG <00001> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:00:50]DEBUG <00001> MID          : kthskytest
+[14:00:50]DEBUG <00001> ADMIN(KEYPW) : 1111
+[14:00:51]DEBUG <00001> TX_PGPUBSN : 30
+[14:00:51]DEBUG <00001> TX_MPUBSN : 0
+[14:00:51] INFO <00001> price : 1000
+[14:00:51] INFO <00001> nointerest : no
+[14:00:51] INFO <00001> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:00:51]DEBUG <00001> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:00:51]DEBUG <00001> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:00:51]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:00:51] INFO <00001> TRANSACTION COMPLETE 
+[14:00:51] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.234 sec. ] 
+[14:00:51] INFO --------------------------------------------------------------------------------
+[14:01:58] INFO <00002> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:01:58] INFO <00002> DEBUG PRINT : 
+[14:01:58]DEBUG <00002> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:01:58]DEBUG <00002> MID          : kthskytest
+[14:01:58]DEBUG <00002> ADMIN(KEYPW) : 1111
+[14:01:58]DEBUG <00002> TX_PGPUBSN : 30
+[14:01:58]DEBUG <00002> TX_MPUBSN : 0
+[14:01:58] INFO <00002> price : 1000
+[14:01:58] INFO <00002> nointerest : no
+[14:01:58] INFO <00002> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:01:58]DEBUG <00002> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:01:58]DEBUG <00002> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:01:58]DEBUG <00002> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:01:58] INFO <00002> TRANSACTION COMPLETE 
+[14:01:58] INFO <00002> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.017 sec. ] 
+[14:01:58] INFO --------------------------------------------------------------------------------
+[14:02:45] INFO <00003> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:02:45] INFO <00003> DEBUG PRINT : 
+[14:02:45]DEBUG <00003> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:02:45]DEBUG <00003> MID          : kthskytest
+[14:02:45]DEBUG <00003> ADMIN(KEYPW) : 1111
+[14:02:45]DEBUG <00003> TX_PGPUBSN : 30
+[14:02:45]DEBUG <00003> TX_MPUBSN : 0
+[14:02:45] INFO <00003> price : 1000
+[14:02:45] INFO <00003> nointerest : no
+[14:02:45] INFO <00003> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:02:45]DEBUG <00003> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:02:45]DEBUG <00003> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:02:45]DEBUG <00003> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:02:45] INFO <00003> TRANSACTION COMPLETE 
+[14:02:45] INFO <00003> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.016 sec. ] 
+[14:02:45] INFO --------------------------------------------------------------------------------
+[14:02:47] INFO <00004> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:02:47] INFO <00004> DEBUG PRINT : 
+[14:02:47]DEBUG <00004> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:02:47]DEBUG <00004> MID          : kthskytest
+[14:02:47]DEBUG <00004> ADMIN(KEYPW) : 1111
+[14:02:47]DEBUG <00004> TX_PGPUBSN : 30
+[14:02:47]DEBUG <00004> TX_MPUBSN : 0
+[14:02:47] INFO <00004> price : 1000
+[14:02:47] INFO <00004> nointerest : no
+[14:02:47] INFO <00004> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:02:47]DEBUG <00004> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:02:47]DEBUG <00004> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:02:47]DEBUG <00004> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:02:47] INFO <00004> TRANSACTION COMPLETE 
+[14:02:47] INFO <00004> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.064 sec. ] 
+[14:02:47] INFO --------------------------------------------------------------------------------
+[14:03:53] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:03:53] INFO <00001> DEBUG PRINT : 
+[14:03:53]DEBUG <00001> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:03:53]DEBUG <00001> MID          : kthskytest
+[14:03:53]DEBUG <00001> ADMIN(KEYPW) : 1111
+[14:03:53]DEBUG <00001> TX_PGPUBSN : 30
+[14:03:53]DEBUG <00001> TX_MPUBSN : 0
+[14:03:53] INFO <00001> price : 1000
+[14:03:53] INFO <00001> nointerest : no
+[14:03:53] INFO <00001> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:03:53]DEBUG <00001> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:03:53]DEBUG <00001> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:03:53]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:03:53] INFO <00001> TRANSACTION COMPLETE 
+[14:03:53] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.218 sec. ] 
+[14:03:53] INFO --------------------------------------------------------------------------------
+[14:04:29] INFO <00002> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:04:29] INFO <00002> DEBUG PRINT : 
+[14:04:29]DEBUG <00002> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:04:29]DEBUG <00002> MID          : kthskytest
+[14:04:29]DEBUG <00002> ADMIN(KEYPW) : 1111
+[14:04:29]DEBUG <00002> TX_PGPUBSN : 30
+[14:04:29]DEBUG <00002> TX_MPUBSN : 0
+[14:04:29] INFO <00002> price : 1000
+[14:04:29] INFO <00002> nointerest : no
+[14:04:29] INFO <00002> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:04:29]DEBUG <00002> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:04:29]DEBUG <00002> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:04:29]DEBUG <00002> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:04:29] INFO <00002> TRANSACTION COMPLETE 
+[14:04:29] INFO <00002> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.017 sec. ] 
+[14:04:29] INFO --------------------------------------------------------------------------------
+[14:10:15] INFO <00003> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:10:15] INFO <00003> DEBUG PRINT : 
+[14:10:15]DEBUG <00003> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:10:15]DEBUG <00003> MID          : kthskytest
+[14:10:15]DEBUG <00003> ADMIN(KEYPW) : 1111
+[14:10:15]DEBUG <00003> TX_PGPUBSN : 30
+[14:10:15]DEBUG <00003> TX_MPUBSN : 0
+[14:10:15] INFO <00003> price : 1000
+[14:10:15] INFO <00003> nointerest : no
+[14:10:15] INFO <00003> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:10:15]DEBUG <00003> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:10:15]DEBUG <00003> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:10:15]DEBUG <00003> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:10:15] INFO <00003> TRANSACTION COMPLETE 
+[14:10:15] INFO <00003> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.172 sec. ] 
+[14:10:15] INFO --------------------------------------------------------------------------------
+[14:11:58] INFO <00004> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:11:58] INFO <00004> DEBUG PRINT : 
+[14:11:58]DEBUG <00004> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:11:58]DEBUG <00004> MID          : kthskytest
+[14:11:58]DEBUG <00004> ADMIN(KEYPW) : 1111
+[14:11:58]DEBUG <00004> TX_PGPUBSN : 30
+[14:11:58]DEBUG <00004> TX_MPUBSN : 0
+[14:11:58] INFO <00004> price : 1000
+[14:11:58] INFO <00004> nointerest : no
+[14:11:58] INFO <00004> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:11:58]DEBUG <00004> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:11:58]DEBUG <00004> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:11:58]DEBUG <00004> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:11:58] INFO <00004> TRANSACTION COMPLETE 
+[14:11:58] INFO <00004> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.017 sec. ] 
+[14:11:58] INFO --------------------------------------------------------------------------------
+[14:12:37] INFO <00005> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:12:37] INFO <00005> DEBUG PRINT : 
+[14:12:37]DEBUG <00005> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:12:37]DEBUG <00005> MID          : kthskytest
+[14:12:37]DEBUG <00005> ADMIN(KEYPW) : 1111
+[14:12:37]DEBUG <00005> TX_PGPUBSN : 30
+[14:12:37]DEBUG <00005> TX_MPUBSN : 0
+[14:12:37] INFO <00005> price : 1000
+[14:12:37] INFO <00005> nointerest : no
+[14:12:37] INFO <00005> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:12:37]DEBUG <00005> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:12:37]DEBUG <00005> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:12:37]DEBUG <00005> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:12:37] INFO <00005> TRANSACTION COMPLETE 
+[14:12:37] INFO <00005> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.017 sec. ] 
+[14:12:37] INFO --------------------------------------------------------------------------------
+[14:24:13] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:24:13] INFO <00001> DEBUG PRINT : 
+[14:24:13]DEBUG <00001> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:24:13]DEBUG <00001> MID          : kthskytest
+[14:24:13]DEBUG <00001> ADMIN(KEYPW) : 1111
+[14:24:13]DEBUG <00001> TX_PGPUBSN : 30
+[14:24:13]DEBUG <00001> TX_MPUBSN : 0
+[14:24:13] INFO <00001> price : 1000
+[14:24:13] INFO <00001> nointerest : no
+[14:24:13] INFO <00001> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:24:13]DEBUG <00001> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:24:13]DEBUG <00001> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:24:13]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:24:14] INFO <00001> TRANSACTION COMPLETE 
+[14:24:14] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.359 sec. ] 
+[14:24:14] INFO --------------------------------------------------------------------------------
+[14:24:42] INFO <00002> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:24:42] INFO <00002> DEBUG PRINT : 
+[14:24:42]DEBUG <00002> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:24:42]DEBUG <00002> MID          : kthskytest
+[14:24:42]DEBUG <00002> ADMIN(KEYPW) : 1111
+[14:24:42]DEBUG <00002> TX_PGPUBSN : 30
+[14:24:42]DEBUG <00002> TX_MPUBSN : 0
+[14:24:42] INFO <00002> price : 1000
+[14:24:42] INFO <00002> nointerest : no
+[14:24:42] INFO <00002> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:24:42]DEBUG <00002> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:24:42]DEBUG <00002> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:24:42]DEBUG <00002> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:24:42] INFO <00002> TRANSACTION COMPLETE 
+[14:24:42] INFO <00002> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.017 sec. ] 
+[14:24:42] INFO --------------------------------------------------------------------------------
+[14:25:04] INFO <00003> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:25:04] INFO <00003> DEBUG PRINT : 
+[14:25:04]DEBUG <00003> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:25:04]DEBUG <00003> MID          : kthskytest
+[14:25:04]DEBUG <00003> ADMIN(KEYPW) : 1111
+[14:25:04]DEBUG <00003> TX_PGPUBSN : 30
+[14:25:04]DEBUG <00003> TX_MPUBSN : 0
+[14:25:04] INFO <00003> price : 1000
+[14:25:04] INFO <00003> nointerest : no
+[14:25:04] INFO <00003> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:25:04]DEBUG <00003> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:25:04]DEBUG <00003> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:25:04]DEBUG <00003> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:25:04] INFO <00003> TRANSACTION COMPLETE 
+[14:25:04] INFO <00003> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.048 sec. ] 
+[14:25:04] INFO --------------------------------------------------------------------------------
+[14:26:05] INFO <00004> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:26:05] INFO <00004> DEBUG PRINT : 
+[14:26:05]DEBUG <00004> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:26:05]DEBUG <00004> MID          : kthskytest
+[14:26:05]DEBUG <00004> ADMIN(KEYPW) : 1111
+[14:26:05]DEBUG <00004> TX_PGPUBSN : 30
+[14:26:05]DEBUG <00004> TX_MPUBSN : 0
+[14:26:05] INFO <00004> price : 1000
+[14:26:05] INFO <00004> nointerest : no
+[14:26:05] INFO <00004> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:26:05]DEBUG <00004> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:26:05]DEBUG <00004> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:26:05]DEBUG <00004> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:26:05] INFO <00004> TRANSACTION COMPLETE 
+[14:26:05] INFO <00004> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.017 sec. ] 
+[14:26:05] INFO --------------------------------------------------------------------------------
+[14:33:09] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:33:09] INFO <00001> DEBUG PRINT : 
+[14:33:09]DEBUG <00001> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:33:09]DEBUG <00001> MID          : kthskytest
+[14:33:09]DEBUG <00001> ADMIN(KEYPW) : 1111
+[14:33:10]DEBUG <00001> TX_PGPUBSN : 30
+[14:33:10]DEBUG <00001> TX_MPUBSN : 0
+[14:33:10] INFO <00001> price : 1000
+[14:33:10] INFO <00001> nointerest : no
+[14:33:10] INFO <00001> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:33:10]DEBUG <00001> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:33:10]DEBUG <00001> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:33:10]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:33:10] INFO <00001> TRANSACTION COMPLETE 
+[14:33:10] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.190 sec. ] 
+[14:33:10] INFO --------------------------------------------------------------------------------
+[14:33:56] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:33:56] INFO <00001> DEBUG PRINT : 
+[14:33:56]DEBUG <00001> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:33:56]DEBUG <00001> MID          : kthskytest
+[14:33:56]DEBUG <00001> ADMIN(KEYPW) : 1111
+[14:33:56]DEBUG <00001> TX_PGPUBSN : 30
+[14:33:56]DEBUG <00001> TX_MPUBSN : 0
+[14:33:56] INFO <00001> price : 1000
+[14:33:56] INFO <00001> nointerest : no
+[14:33:56] INFO <00001> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:33:56]DEBUG <00001> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:33:56]DEBUG <00001> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:33:56]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:33:56] INFO <00001> TRANSACTION COMPLETE 
+[14:33:56] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.218 sec. ] 
+[14:33:56] INFO --------------------------------------------------------------------------------
+[14:34:31] INFO <00002> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:34:31] INFO <00002> DEBUG PRINT : 
+[14:34:31]DEBUG <00002> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:34:31]DEBUG <00002> MID          : kthskytest
+[14:34:31]DEBUG <00002> ADMIN(KEYPW) : 1111
+[14:34:31]DEBUG <00002> TX_PGPUBSN : 30
+[14:34:31]DEBUG <00002> TX_MPUBSN : 0
+[14:34:31] INFO <00002> price : 1000
+[14:34:31] INFO <00002> nointerest : no
+[14:34:31] INFO <00002> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:34:31]DEBUG <00002> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:34:31]DEBUG <00002> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:34:31]DEBUG <00002> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:34:31] INFO <00002> TRANSACTION COMPLETE 
+[14:34:31] INFO <00002> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.021 sec. ] 
+[14:34:31] INFO --------------------------------------------------------------------------------
+[14:34:42] INFO <00003> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:34:42] INFO <00003> DEBUG PRINT : 
+[14:34:42]DEBUG <00003> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:34:42]DEBUG <00003> MID          : kthskytest
+[14:34:42]DEBUG <00003> ADMIN(KEYPW) : 1111
+[14:34:42]DEBUG <00003> TX_PGPUBSN : 30
+[14:34:42]DEBUG <00003> TX_MPUBSN : 0
+[14:34:42] INFO <00003> price : 1000
+[14:34:42] INFO <00003> nointerest : no
+[14:34:42] INFO <00003> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:34:42]DEBUG <00003> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:34:42]DEBUG <00003> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:34:42]DEBUG <00003> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:34:42] INFO <00003> TRANSACTION COMPLETE 
+[14:34:42] INFO <00003> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.030 sec. ] 
+[14:34:42] INFO --------------------------------------------------------------------------------
+[14:35:44] INFO <00004> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:35:44] INFO <00004> DEBUG PRINT : 
+[14:35:44]DEBUG <00004> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:35:44]DEBUG <00004> MID          : kthskytest
+[14:35:44]DEBUG <00004> ADMIN(KEYPW) : 1111
+[14:35:44]DEBUG <00004> TX_PGPUBSN : 30
+[14:35:44]DEBUG <00004> TX_MPUBSN : 0
+[14:35:44] INFO <00004> price : 1000
+[14:35:44] INFO <00004> nointerest : no
+[14:35:44] INFO <00004> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:35:44]DEBUG <00004> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:35:44]DEBUG <00004> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:35:44]DEBUG <00004> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:35:44] INFO <00004> TRANSACTION COMPLETE 
+[14:35:44] INFO <00004> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.017 sec. ] 
+[14:35:44] INFO --------------------------------------------------------------------------------
+[14:37:39] INFO <00005> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:37:39] INFO <00005> DEBUG PRINT : 
+[14:37:39]DEBUG <00005> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[14:37:39]DEBUG <00005> MID          : kthskytest
+[14:37:39]DEBUG <00005> ADMIN(KEYPW) : 1111
+[14:37:39]DEBUG <00005> TX_PGPUBSN : 30
+[14:37:39]DEBUG <00005> TX_MPUBSN : 0
+[14:37:39] INFO <00005> price : 1000
+[14:37:39] INFO <00005> nointerest : no
+[14:37:39] INFO <00005> quotabase : 선택:일시불:2개월:3개월:6개월
+[14:37:39]DEBUG <00005> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[14:37:39]DEBUG <00005> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[14:37:39]DEBUG <00005> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:37:39] INFO <00005> TRANSACTION COMPLETE 
+[14:37:39] INFO <00005> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.064 sec. ] 
+[14:37:39] INFO --------------------------------------------------------------------------------
+[16:58:38] INFO <00006> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[16:58:38] INFO <00006> DEBUG PRINT : 
+[16:58:38]DEBUG <00006> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[16:58:38]DEBUG <00006> MID          : kthskytest
+[16:58:38]DEBUG <00006> ADMIN(KEYPW) : 1111
+[16:58:38]DEBUG <00006> TX_PGPUBSN : 30
+[16:58:38]DEBUG <00006> TX_MPUBSN : 0
+[16:58:38] INFO <00006> price : 1000
+[16:58:38] INFO <00006> nointerest : no
+[16:58:38] INFO <00006> quotabase : 선택:일시불:2개월:3개월:6개월
+[16:58:38]DEBUG <00006> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[16:58:38]DEBUG <00006> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[16:58:38]DEBUG <00006> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[16:58:38] INFO <00006> TRANSACTION COMPLETE 
+[16:58:38] INFO <00006> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.063 sec. ] 
+[16:58:38] INFO --------------------------------------------------------------------------------
+[16:58:52] INFO <00007> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[16:58:52] INFO <00007> DEBUG PRINT : 
+[16:58:52]DEBUG <00007> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[16:58:52]DEBUG <00007> MID          : kthskytest
+[16:58:52]DEBUG <00007> ADMIN(KEYPW) : 1111
+[16:58:52]DEBUG <00007> TX_PGPUBSN : 30
+[16:58:52]DEBUG <00007> TX_MPUBSN : 0
+[16:58:52] INFO <00007> price : 1000
+[16:58:52] INFO <00007> nointerest : no
+[16:58:52] INFO <00007> quotabase : 선택:일시불:2개월:3개월:6개월
+[16:58:52]DEBUG <00007> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[16:58:52]DEBUG <00007> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[16:58:52]DEBUG <00007> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[16:58:52] INFO <00007> TRANSACTION COMPLETE 
+[16:58:52] INFO <00007> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.017 sec. ] 
+[16:58:52] INFO --------------------------------------------------------------------------------
+[16:58:52] INFO <00008> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[16:58:52] INFO <00008> DEBUG PRINT : 
+[16:58:52]DEBUG <00008> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[16:58:52]DEBUG <00008> MID          : kthskytest
+[16:58:52]DEBUG <00008> ADMIN(KEYPW) : 1111
+[16:58:52]DEBUG <00008> TX_PGPUBSN : 30
+[16:58:52]DEBUG <00008> TX_MPUBSN : 0
+[16:58:52] INFO <00008> price : 1000
+[16:58:52] INFO <00008> nointerest : no
+[16:58:52] INFO <00008> quotabase : 선택:일시불:2개월:3개월:6개월
+[16:58:52]DEBUG <00008> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[16:58:52]DEBUG <00008> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[16:58:52]DEBUG <00008> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[16:58:52] INFO <00008> TRANSACTION COMPLETE 
+[16:58:52] INFO <00008> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.016 sec. ] 
+[16:58:52] INFO --------------------------------------------------------------------------------
+[16:59:47] INFO <00009> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[16:59:47] INFO <00009> DEBUG PRINT : 
+[16:59:47]DEBUG <00009> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[16:59:47]DEBUG <00009> MID          : kthskytest
+[16:59:47]DEBUG <00009> ADMIN(KEYPW) : 1111
+[16:59:47]DEBUG <00009> TX_PGPUBSN : 30
+[16:59:47]DEBUG <00009> TX_MPUBSN : 0
+[16:59:47] INFO <00009> price : 1000
+[16:59:47] INFO <00009> nointerest : no
+[16:59:47] INFO <00009> quotabase : 선택:일시불:2개월:3개월:6개월
+[16:59:47]DEBUG <00009> src value       = cHJpY2U9MTAwMCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc
+67aIOjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[16:59:47]DEBUG <00009> Hashed value    = RihnWEFWgRTyVTbks7tPiIajFHI=
+
+[16:59:47]DEBUG <00009> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[16:59:47] INFO <00009> TRANSACTION COMPLETE 
+[16:59:47] INFO <00009> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.016 sec. ] 
+[16:59:47] INFO --------------------------------------------------------------------------------
+[19:55:30] INFO <00002> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[19:55:30] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[19:55:30] INFO <00002> DEBUG PRINT : 
+[19:55:30] INFO <00001> DEBUG PRINT : 
+[19:55:30]DEBUG <00001> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[19:55:30]DEBUG <00002> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[19:55:30]DEBUG <00001> MID          : kthskytest
+[19:55:30]DEBUG <00002> MID          : kthskytest
+[19:55:30]DEBUG <00001> ADMIN(KEYPW) : 1111
+[19:55:30]DEBUG <00002> ADMIN(KEYPW) : 1111
+[19:55:30]DEBUG <00002> TX_PGPUBSN : 30
+[19:55:30]DEBUG <00001> TX_PGPUBSN : 30
+[19:55:30]DEBUG <00002> TX_MPUBSN : 0
+[19:55:30] INFO <00002> price : 0
+[19:55:30] INFO <00002> nointerest : no
+[19:55:30] INFO <00002> quotabase : 선택:일시불:2개월:3개월:6개월
+[19:55:30]DEBUG <00002> src value       = cHJpY2U9MCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc67aI
+OjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[19:55:30]DEBUG <00002> Hashed value    = 3pACtOVGbn+dSpbU1Ku3S5x9XV0=
+
+[19:55:30]DEBUG <00002> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[19:55:30]DEBUG <00001> TX_MPUBSN : 0
+[19:55:30] INFO <00002> TRANSACTION COMPLETE 
+[19:55:30] INFO <00002> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.350 sec. ] 
+[19:55:30] INFO --------------------------------------------------------------------------------
+[19:55:30] INFO <00001> price : 33000
+[19:55:30] INFO <00001> nointerest : no
+[19:55:30] INFO <00001> quotabase : 선택:일시불:2개월:3개월:6개월
+[19:55:30]DEBUG <00001> src value       = cHJpY2U9MzMwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U97ISg7YOdOuydvOyL
+nOu2iDoy6rCc7JuUOjPqsJzsm5Q6NuqwnOyblA==
+
+[19:55:30]DEBUG <00001> Hashed value    = bOowsvdQek8mVgZ78yhPcdqwdc8=
+
+[19:55:30]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[19:55:30] INFO <00001> TRANSACTION COMPLETE 
+[19:55:30] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.380 sec. ] 
+[19:55:30] INFO --------------------------------------------------------------------------------
+[20:15:28] INFO <00002> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[20:15:28] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[20:15:28] INFO <00002> DEBUG PRINT : 
+[20:15:28] INFO <00001> DEBUG PRINT : 
+[20:15:28]DEBUG <00001> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[20:15:28]DEBUG <00002> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[20:15:28]DEBUG <00001> MID          : kthskytest
+[20:15:28]DEBUG <00002> MID          : kthskytest
+[20:15:28]DEBUG <00001> ADMIN(KEYPW) : 1111
+[20:15:28]DEBUG <00002> ADMIN(KEYPW) : 1111
+[20:15:28]DEBUG <00001> TX_PGPUBSN : 30
+[20:15:28]DEBUG <00002> TX_PGPUBSN : 30
+[20:15:28]DEBUG <00002> TX_MPUBSN : 0
+[20:15:28] INFO <00002> price : 0
+[20:15:28] INFO <00002> nointerest : no
+[20:15:28] INFO <00002> quotabase : 선택:일시불:2개월:3개월:6개월
+[20:15:28]DEBUG <00001> TX_MPUBSN : 0
+[20:15:28] INFO <00001> price : 33000
+[20:15:28] INFO <00001> nointerest : no
+[20:15:28] INFO <00001> quotabase : 선택:일시불:2개월:3개월:6개월
+[20:15:28]DEBUG <00001> src value       = cHJpY2U9MzMwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U97ISg7YOdOuydvOyL
+nOu2iDoy6rCc7JuUOjPqsJzsm5Q6NuqwnOyblA==
+
+[20:15:28]DEBUG <00001> Hashed value    = bOowsvdQek8mVgZ78yhPcdqwdc8=
+
+[20:15:28]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[20:15:28]DEBUG <00002> src value       = cHJpY2U9MCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc67aI
+OjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[20:15:28]DEBUG <00002> Hashed value    = 3pACtOVGbn+dSpbU1Ku3S5x9XV0=
+
+[20:15:28]DEBUG <00002> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[20:15:28] INFO <00001> TRANSACTION COMPLETE 
+[20:15:28] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.359 sec. ] 
+[20:15:28] INFO --------------------------------------------------------------------------------
+[20:15:28] INFO <00002> TRANSACTION COMPLETE 
+[20:15:28] INFO <00002> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.359 sec. ] 
+[20:15:28] INFO --------------------------------------------------------------------------------
+[20:15:39] INFO <00003> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[20:15:39] INFO <00003> DEBUG PRINT : 
+[20:15:39]DEBUG <00003> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[20:15:39]DEBUG <00003> MID          : kthskytest
+[20:15:39]DEBUG <00003> ADMIN(KEYPW) : 1111
+[20:15:39]DEBUG <00003> TX_PGPUBSN : 30
+[20:15:39]DEBUG <00003> TX_MPUBSN : 0
+[20:15:39] INFO <00003> price : 0
+[20:15:39] INFO <00003> nointerest : no
+[20:15:39] INFO <00003> quotabase : 선택:일시불:2개월:3개월:6개월
+[20:15:39]DEBUG <00003> src value       = cHJpY2U9MCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc67aI
+OjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[20:15:39]DEBUG <00003> Hashed value    = 3pACtOVGbn+dSpbU1Ku3S5x9XV0=
+
+[20:15:39]DEBUG <00003> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[20:15:39] INFO <00003> TRANSACTION COMPLETE 
+[20:15:39] INFO <00003> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.021 sec. ] 
+[20:15:39] INFO --------------------------------------------------------------------------------
+[20:15:39] INFO <00004> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[20:15:39] INFO <00004> DEBUG PRINT : 
+[20:15:39]DEBUG <00004> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[20:15:39]DEBUG <00004> MID          : kthskytest
+[20:15:39]DEBUG <00004> ADMIN(KEYPW) : 1111
+[20:15:39]DEBUG <00004> TX_PGPUBSN : 30
+[20:15:39]DEBUG <00004> TX_MPUBSN : 0
+[20:15:39] INFO <00004> price : 55000
+[20:15:39] INFO <00004> nointerest : no
+[20:15:39] INFO <00004> quotabase : 선택:일시불:2개월:3개월:6개월
+[20:15:39]DEBUG <00004> src value       = cHJpY2U9NTUwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U97ISg7YOdOuydvOyL
+nOu2iDoy6rCc7JuUOjPqsJzsm5Q6NuqwnOyblA==
+
+[20:15:39]DEBUG <00004> Hashed value    = odGdojeNs0WHF7Z9c8Sc157RcGo=
+
+[20:15:39]DEBUG <00004> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[20:15:39] INFO <00004> TRANSACTION COMPLETE 
+[20:15:39] INFO <00004> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.020 sec. ] 
+[20:15:39] INFO --------------------------------------------------------------------------------
+[20:17:02] INFO <00005> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[20:17:02] INFO <00005> DEBUG PRINT : 
+[20:17:02]DEBUG <00005> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[20:17:02]DEBUG <00005> MID          : kthskytest
+[20:17:02]DEBUG <00005> ADMIN(KEYPW) : 1111
+[20:17:02] INFO <00006> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[20:17:02] INFO <00006> DEBUG PRINT : 
+[20:17:02]DEBUG <00006> INIPAYHOME   : D:\Project\Eclipse\ShopMaster\Web\INIpay50
+[20:17:02]DEBUG <00006> MID          : kthskytest
+[20:17:02]DEBUG <00006> ADMIN(KEYPW) : 1111
+[20:17:02]DEBUG <00005> TX_PGPUBSN : 30
+[20:17:02]DEBUG <00006> TX_PGPUBSN : 30
+[20:17:02]DEBUG <00005> TX_MPUBSN : 0
+[20:17:02]DEBUG <00006> TX_MPUBSN : 0
+[20:17:02] INFO <00005> price : 0
+[20:17:02] INFO <00005> nointerest : no
+[20:17:02] INFO <00005> quotabase : 선택:일시불:2개월:3개월:6개월
+[20:17:02] INFO <00006> price : 11000
+[20:17:02] INFO <00006> nointerest : no
+[20:17:02] INFO <00006> quotabase : 선택:일시불:2개월:3개월:6개월
+[20:17:02]DEBUG <00006> src value       = cHJpY2U9MTEwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U97ISg7YOdOuydvOyL
+nOu2iDoy6rCc7JuUOjPqsJzsm5Q6NuqwnOyblA==
+
+[20:17:02]DEBUG <00005> src value       = cHJpY2U9MCZub2ludGVyZXN0PW5vJnF1b3RhYmFzZT3shKDtg5067J287Iuc67aI
+OjLqsJzsm5Q6M+qwnOyblDo26rCc7JuU
+
+[20:17:02]DEBUG <00006> Hashed value    = sHLZS6FF+iuARyJtDo4VICX/hJ0=
+
+[20:17:02]DEBUG <00005> Hashed value    = 3pACtOVGbn+dSpbU1Ku3S5x9XV0=
+
+[20:17:02]DEBUG <00006> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[20:17:02]DEBUG <00005> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[20:17:03] INFO <00005> TRANSACTION COMPLETE 
+[20:17:03] INFO <00005> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.111 sec. ] 
+[20:17:03] INFO --------------------------------------------------------------------------------
+[20:17:03] INFO <00006> TRANSACTION COMPLETE 
+[20:17:03] INFO <00006> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.100 sec. ] 
+[20:17:03] INFO --------------------------------------------------------------------------------

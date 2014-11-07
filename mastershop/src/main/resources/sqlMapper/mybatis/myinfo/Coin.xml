@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Coin">
+
+	<!-- 코인 정보 -->	
+	<select id="getCoin"   parameterType="hashMap" resultType="Coin">		 
+			SELECT 	*
+			FROM 	tbl_coin
+			WHERE 	fk_member_id = #{ member_id}
+	</select>
+	
+	
+	<!-- 코인 충전 로그 리스트 -->	
+	<select id="getCoinChargeLogList"   parameterType="hashMap" resultType="Coin">		 
+			SELECT 	fk_member_id,   	fd_base_coin, 		fd_recharge_coin,
+			       		fd_bonus_coin,  	fd_pay_mount, 		fd_pay_type, 
+			      		fd_reg_date,		fd_product_code      
+			FROM 	tbl_coin_charge_log
+			WHERE 	fk_member_id = #{ fk_member_id}
+				AND	fd_reg_date <![CDATA[ >= ]]> DATE_sub(now(), interval 6 month)				
+			ORDER BY fd_reg_date desc
+	</select>
+	
+	<!-- 코인 충전 로그 리스트 카운트 -->
+	<select id="getCoinChargeLogListCount"   parameterType="hashMap" resultType="int">
+			SELECT 	count(*) as cnt      
+			FROM 	tbl_coin_charge_log
+			WHERE 	fk_member_id = #{ fk_member_id}			
+				AND  	fd_reg_date <![CDATA[ >= ]]> DATE_sub(now(), interval 6 month)
+	</select>
+	
+	<!-- 코인사용 로그 리스트  -->
+	<select id="getCoinUseLogList"   parameterType="hashMap" resultType="Coin">
+		SELECT 	tcul.fd_tel, 
+		       	 	tcul.fk_member_id, 
+		        	tcul.fd_group_code, 
+		      		tcul.fd_base_coin, 
+		       	 	tcul.fd_recharge_coin, 
+		      	  	tcul.fd_total_coin, 
+		        	tcul.fd_reg_date,
+		        	tcul.fd_cancel_date,
+		        	tcul.fd_use_yn,
+		    	    tsg.msg_type,
+		    	    tsg.msg_sub_type,
+		       	 	tsg.req_count,
+		     	   	tsg.res_count,
+		     	   	tsg.mcs_res_result_success,
+		        	tsg.mcs_res_result_fail,
+		        	tsg.reserve_time
+		FROM	 	tbl_coin_use_log as tcul, (SELECT 	fk_member_id, 
+							                                        fk_tel,
+							                                        pk_group_code, 
+							                                        msg_type, 
+							                                        msg_sub_type, 
+							                                        req_count, 
+							                                        res_count, 
+							                                        mcs_res_result_success,
+							                                        mcs_res_result_fail,
+							                                        reserve_time
+		                               		 			FROM tbl_sms_group
+		                               		 			WHERE 	fk_member_id = #{fk_member_id}
+		                               		 				AND 	fk_tel = #{fk_tel}		                               		 				
+		                               		 			) as tsg
+		WHERE 	tcul.fd_tel = tsg.fk_tel
+			AND	tcul.fk_member_id = tsg.fk_member_id
+			AND	tcul.fd_group_code = tsg.pk_group_code
+			AND 	tcul.fk_member_id = #{fk_member_id}
+			AND  tcul.fd_tel = #{pk_tel}	
+			AND  date_format(tcul.fd_reg_date, '%Y%m') = #{req_date}
+		ORDER BY tsg.reserve_time DESC
+	</select>
+	
+	<!-- 코인사용 로그 리스트 카운트 -->
+	<select id="getCoinUseLogListCount"   parameterType="hashMap" resultType="int">
+		SELECT	count(*) as cnt
+		FROM	(
+				SELECT 	tcul.fd_tel, 
+				       	 	tcul.fk_member_id, 
+				        	tcul.fd_group_code, 
+				      		tcul.fd_base_coin, 
+				       	 	tcul.fd_recharge_coin, 
+				      	  	tcul.fd_total_coin, 
+				        	tcul.fd_reg_date,
+				        	tcul.fd_cancel_date,
+				        	tcul.fd_use_yn,
+				    	    tsg.msg_type,
+				    	    tsg.msg_sub_type,
+				       	 	tsg.req_count,
+				     	   	tsg.res_count,
+				     	   	tsg.mcs_res_result_success,
+				        	tsg.mcs_res_result_fail,
+				        	tsg.reserve_time
+				FROM	 	tbl_coin_use_log as tcul, (SELECT 	fk_member_id, 
+									                                        fk_tel,
+									                                        pk_group_code, 
+									                                        msg_type, 
+									                                        msg_sub_type, 
+									                                        req_count, 
+									                                        res_count, 
+									                                        mcs_res_result_success,
+									                                        mcs_res_result_fail,
+									                                        reserve_time
+				                               		 			FROM tbl_sms_group
+				                               		 			WHERE 	fk_member_id = #{fk_member_id}
+				                               		 				AND 	fk_tel = #{fk_tel}		                               		 				
+				                               		 			) as tsg
+				WHERE 	tcul.fd_tel = tsg.fk_tel
+					AND	tcul.fk_member_id = tsg.fk_member_id
+					AND	tcul.fd_group_code = tsg.pk_group_code
+					AND 	tcul.fk_member_id = #{fk_member_id}
+					AND  tcul.fd_tel = #{pk_tel}	
+					AND  date_format(tcul.fd_reg_date, '%Y%m') = #{req_date}
+		)as result
+	
+	</select>
+	
+	<!-- 사용자 전화번호 리스트 -->
+	<select id="getUserTelList"   parameterType="hashMap" resultType="Coin">	
+		SELECT  fk_member_id,	pk_tel, 
+        			fd_use_yn,      	fd_reg_date,
+        			fd_del_date
+		FROM 	tbl_member_tel
+		WHERE fk_member_id = #{fk_member_id}
+	</select>
+	
+	<insert id="insertCoinCharge" parameterType="hashMap">
+		INSERT INTO tbl_coin (
+				fk_member_id, 
+				fd_base_coin, 
+				fd_recharge_coin, 
+				fd_bonus_coin, 
+				fd_total_coin
+		)VALUES (
+				#{fk_member_id}, 
+				#{fd_base_coin}, 
+				#{fd_recharge_coin}, 
+				#{fd_bonus_coin}, 
+				#{fd_total_coin}
+		)
+		ON DUPLICATE KEY
+			UPDATE
+		    		fd_recharge_coin = fd_recharge_coin+#{fd_recharge_coin},
+		      		fd_bonus_coin = fd_bonus_coin+#{fd_bonus_coin},
+		       		fd_total_coin = fd_total_coin+#{fd_total_coin}
+	</insert>
+	
+	<insert id="insertCoinChargeLog" parameterType="hashMap">
+		INSERT INTO tbl_coin_charge_log(
+				fk_member_id, 
+				fd_base_coin,
+				fd_recharge_coin,
+				fd_bonus_coin, 
+				fd_pay_mount, 
+				fd_pay_type, 
+				fd_reg_date,
+				fd_product_code				
+		)VALUES (
+				#{fk_member_id},
+				#{fd_base_coin},
+				#{fd_recharge_coin},
+				#{fd_bonus_coin},
+				#{fd_pay_mount},
+				#{fd_pay_type},
+				now(),
+				#{fd_product_code}
+		)
+		
+	</insert>
+	
+	<insert id="insertCoinChargePgLog" parameterType="hashMap">
+		INSERT INTO tbl_pg_log(
+				fd_member_id,
+				fd_tid, 
+				fd_result_code, 
+				fd_result_msg, 
+				fd_moid,
+				fd_appl_date, 
+				fd_appl_time, 
+				fd_appl_num, 
+				fd_paymethod, 
+				fd_tot_price, 
+				fd_card_event_code, 
+				fd_card_event_code_msg,
+				fd_card_num, 
+				fd_card_interest,
+				fd_card_quota, 
+				fd_card_code,
+				fd_card_bank_code, 
+				fd_card_org_currency, 
+				fd_card_exchangerate,
+				fd_ocb_num, 
+				fd_ocb_svae_appl_num, 
+				fd_ocb_pay_appl_num,
+				fd_ocb_appl_date, 
+				fd_ocb_pay_price,
+				fd_acct_bank_code,
+				fd_cshr_result_code,
+				fd_cshr_type,
+				fd_vact_num, 
+				fd_vact_bank_code,
+				fd_vact_name, 
+				fd_vact_input_name, 
+				fd_vact_date,
+				fd_vact_time,
+				fd_hpp_num, 
+				fd_reg_date
+			)VALUES (
+				#{fd_member_id}, 
+				#{fd_tid}, 
+				#{fd_result_code}, 
+				#{fd_result_msg},
+				#{fd_moid}, 
+				#{fd_appl_date}, 
+				#{fd_appl_time},
+				#{fd_appl_num}, 
+				#{fd_paymethod},
+				#{fd_tot_price},
+				#{fd_card_event_code}, 
+				#{fd_card_event_code_msg}, 
+				#{fd_card_num}, 
+				#{fd_card_interest}, 
+				#{fd_card_quota},
+				#{fd_card_code},
+				#{fd_card_bank_code}, 
+				#{fd_card_org_currency}, 
+				#{fd_card_exchangerate},
+				#{fd_ocb_num},
+				#{fd_ocb_svae_appl_num},
+				#{fd_ocb_pay_appl_num}, 
+				#{fd_ocb_appl_date},
+				#{fd_ocb_pay_price}, 
+				#{fd_acct_bank_code}, 
+				#{fd_cshr_result_code},
+				#{fd_cshr_type},
+				#{fd_vact_num},
+				#{fd_vact_bank_code}, 
+				#{fd_vact_name},
+				#{fd_vact_input_name}, 
+				#{fd_vact_date},
+				#{fd_vact_time},
+				#{fd_hpp_num}, 
+				now()
+			);
+	</insert>
+	
+	<insert id="insertCoinChargePgFailLog" parameterType="hashMap">
+		INSERT INTO tbl_pg_fail_log(
+				fd_member_id,
+				fd_tid, 
+				fd_result_code, 
+				fd_result_msg, 				
+				fd_reg_date
+			)VALUES (
+				#{fd_member_id}, 
+				#{fd_tid}, 
+				#{fd_result_code}, 
+				#{fd_result_msg},				
+				now()
+			);
+	</insert>
+	
+	
+	
+</mapper>	

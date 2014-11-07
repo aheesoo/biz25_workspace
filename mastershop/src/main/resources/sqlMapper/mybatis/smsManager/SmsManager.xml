@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="SmsManager">
+
+	<sql id="where"> <!-- where문 자체를 함수화 시킨다. -->
+		<where>
+				book.fk_member_id = #{fk_member_id}
+   				AND book.fd_rev_sms_flag = 'N'
+				AND (SUBSTRING(pk_customer_tel, 1, 2) = '01' OR SUBSTRING(pk_customer_tel, 1, 2) = '07')
+				<!-- 주소록 전체고객이 아닐때 -->
+				<if test="search_customer != 4">
+					<!-- 통화 횟수 --> 
+					<if test="search_call_rcv_cnt != '' and search_call_rcv_cnt != null">
+						<if test="search_call_rcv_cnt_type == -1"> <!-- 이하 -->
+							AND s_list.total_count <![CDATA[ <=  ]]> #{search_call_rcv_cnt}
+						</if>
+						<if test="search_call_rcv_cnt_type == 1"> <!-- 이상 -->
+							AND s_list.total_count <![CDATA[ >=  ]]> #{search_call_rcv_cnt}
+						</if>
+					</if>
+					<!-- 기간 년, 월-->
+					<if test="extraction_year != '' and extraction_year != null">
+						<if test="extraction_month != '' and extraction_month != null">
+							AND CONCAT(fd_reg_yy + fd_reg_mm) <![CDATA[ >=  ]]> CONCAT(#{extraction_year} + #{extraction_month})
+						</if>
+					</if>
+					
+					<!-- 요일 -->
+					<trim prefix="AND (" prefixOverrides="OR" suffix=")">
+						<!-- 일요일  -->
+						<if test="extraction_day1 != '' and extraction_day1 != null">
+							OR fd_reg_week = #{extraction_day1}
+						</if>
+						
+						<!-- 월요일  -->
+						<if test="extraction_day2 != '' and extraction_day2 != null">
+							OR fd_reg_week = #{extraction_day2}
+						</if>
+						
+						<!-- 화요일  -->
+						<if test="extraction_day3 != '' and extraction_day3 != null">
+							OR fd_reg_week = #{extraction_day3}
+						</if>
+						
+						<!-- 수요일  -->
+						<if test="extraction_day4 != '' and extraction_day4 != null">
+							OR fd_reg_week = #{extraction_day4}
+						</if>
+						
+						<!-- 목요일  -->
+						<if test="extraction_day5 != '' and extraction_day5 != null">
+							OR fd_reg_week = #{extraction_day5}
+						</if>
+						
+						<!-- 금요일  -->
+						<if test="extraction_day6 != '' and extraction_day6 != null">
+							OR fd_reg_week = #{extraction_day6}
+						</if>
+						
+						<!-- 토요일  -->
+						<if test="extraction_day7 != '' and extraction_day7 != null">
+							OR fd_reg_week = #{extraction_day7}
+						</if>
+					</trim>
+					
+					<!-- 시간대 -->
+					<trim prefix="AND (" prefixOverrides="OR" suffix=")">
+						<!-- 새벽(00~07)  -->
+						<if test="extraction_time1 != '' and extraction_time1 != null">
+							OR fd_search_time = #{extraction_time1}
+						</if>
+						
+						<!-- 아침(07~09)  -->
+						<if test="extraction_time2 != '' and extraction_time2 != null">
+							OR fd_search_time = #{extraction_time2}
+						</if>
+						
+						<!-- 오전(09~11)  -->
+						<if test="extraction_time3 != '' and extraction_time3 != null">
+							OR fd_search_time = #{extraction_time3}
+						</if>
+						
+						<!-- 점심(11~14)  -->
+						<if test="extraction_time4 != '' and extraction_time4 != null">
+							OR fd_search_time = #{extraction_time4}
+						</if>
+						
+						<!-- 오후(14~17)  -->
+						<if test="extraction_time5 != '' and extraction_time5 != null">
+							OR fd_search_time = #{extraction_time5}
+						</if>
+						
+						<!-- 저녁(17~21)  -->
+						<if test="extraction_time6 != '' and extraction_time6 != null">
+							OR fd_search_time = #{extraction_time6}
+						</if>
+						
+						<!-- 야간(21~24)  -->
+						<if test="extraction_time7 != '' and extraction_time7 != null">
+							OR fd_search_time = #{extraction_time7}
+						</if>
+					</trim>
+				</if>
+		</where>
+	</sql>
+	
+	<!-- 발송완료 상세보기 사용자 전화번호 리스트 -->
+	<select id="getSmsCustomerTelList" parameterType="HashMap" resultType="SmsManager">
+		SELECT  slog.reserve_date
+        			, book.fd_user_name
+        			, slog.receive_number
+		FROM 	tbl_sms_log slog LEFT JOIN tbl_phonebook book 
+						ON slog.receive_number = book.pk_customer_tel
+		WHERE 	slog.fk_member_id = #{member_id}
+		     	 	AND slog.fk_group_code = #{group_code}
+		ORDER BY slog.receive_number ASC
+	</select>
+	
+	<!-- 문자 발송된 고객들에게 수신받은 응답건수 -->
+	<select id="getCallCount" parameterType="String" resultType="int">
+		SELECT  IFNULL(SUM(call_cnt.fd_tot_day), 0) AS fd_tot_day
+		FROM    tbl_sms_log sms_log LEFT JOIN (
+		
+		          SELECT  	fd_rcv_tel
+		          			  	, fd_member_tel
+		              	  		, SUM(fd_tot_day) AS fd_tot_day
+		          FROM 		tbl_report_call_day_cnt
+		          WHERE 	CONCAT(fd_yy,fd_mm,fd_dd) <![CDATA[ >=  ]]> DATE_FORMAT(DATE_ADD(NOW(), INTERVAL -14 DAY), '%Y%m%d')
+		          GROUP BY fd_rcv_tel
+		          
+		)call_cnt ON sms_log.fk_tel = call_cnt.fd_member_tel AND sms_log.receive_number = call_cnt.fd_rcv_tel 
+		
+		WHERE fk_group_code = #{fk_group_code}
+		GROUP BY sms_log.fk_group_code
+	</select>
+	
+	<!-- 해당 날짜 예약불가인지 판별 -->
+	<select id="getUnvailDay"   parameterType="HashMap" resultType="String">		 
+		SELECT 	fd_memo
+		FROM 	tbl_sms_unavail_day
+		WHERE 	fd_yy = #{year} AND fd_mm = #{month} AND fd_dd = #{day}
+	</select>
+	
+	<!-- 발송500건이상 제한 유무 -->
+	<select id="getSendLimit"   parameterType="String" resultType="String">		 
+		SELECT 	fd_send_limit
+		FROM 	tbl_member
+		WHERE 	pk_member_id = #{pk_member_id}
+	</select>
+
+	<!-- 가입 상품 전화번호 리스트 -->
+	<select id="getProductTel"   parameterType="String" resultType="HashMap">		 
+		SELECT 	pk_tel AS fk_tel
+		FROM 	tbl_member_tel
+		WHERE 	fk_member_id = #{member_id}
+	</select>
+	
+	<!-- 사용자의 현재 코인 -->
+	<select id="getCoin"   parameterType="String" resultType="Coin">		 
+		SELECT 	fk_member_id
+					, fd_base_coin
+					, fd_recharge_coin
+					, fd_bonus_coin
+					, fd_total_coin
+		FROM 	tbl_coin
+		WHERE 	fk_member_id = #{member_id}
+	</select>
+	
+	<!-- 문자관리 수정 group_code로 정보를 갖고옴. -->
+	<select id="getSmsManager"   parameterType="String" resultType="SmsManager">		 
+		SELECT 	fk_tel
+  					, pk_group_code AS group_code
+					, msg_type
+  					, msg_sub_type
+  					, req_count
+  					, res_count
+  					, DATE_FORMAT(reg_date, '%Y%m%d%H%i%S') AS reg_date
+  					, msg_send_finish
+  					, send_subject
+  					, send_content
+  					, attachment_path
+  					, attachment_file_size
+  					, reserve_type
+  					, reserve_time
+  					, cancel_yn
+  					, cancel_time
+  					, search_month
+  					, search_customer
+  					, search_week
+  					, search_time
+  					, search_call_rcv_cnt
+  					, search_call_rcv_cnt_type
+  					, search_req_cnt
+		FROM 	tbl_sms_group
+		WHERE 	pk_group_code = #{pk_group_code}
+	</select>
+	
+	<!-- 사용 코인 업데이트 -->
+	<update id="modifyCoin" parameterType="HashMap">
+		UPDATE tbl_coin SET
+		  fd_base_coin	=	#{fd_base_coin}
+		, fd_recharge_coin =	 #{fd_recharge_coin}
+		, fd_bonus_coin =	 #{fd_bonus_coin}
+		, fd_total_coin	= #{fd_total_coin}
+		WHERE fk_member_id = #{fk_member_id}
+	</update>
+	
+	<!-- 사용 코인 로그 저장 -->
+	<insert id="registerCoinUseLog" parameterType="HashMap">
+		INSERT INTO tbl_coin_use_log (
+		   fk_member_id
+		   ,fd_tel
+		   , fd_base_coin 
+		   , fd_recharge_coin
+		   , fd_bonus_coin
+		   , fd_total_coin
+		   , fd_reg_date
+		   , fd_cancel_date
+		   , fd_group_code
+		) VALUES (
+			#{fk_member_id}
+			, #{fd_tel}
+			, #{log_fd_base_coin}
+			, #{log_fd_recharge_coin}
+			, #{log_fd_bonus_coin}
+			, #{log_fd_total_coin}
+			, #{fd_reg_date}
+			, #{fd_cancel_date}
+			, #{fd_group_code}
+		)
+	</insert>
+	
+	<!-- 발송 대상 수 -->
+	<select id="getCustomerCount"   parameterType="SmsManager" resultType="int">		 
+		SELECT 	COUNT(*)
+		FROM 	tbl_phonebook book LEFT JOIN (
+		
+						      SELECT	summ.fd_member_id
+						              		, summ.fd_rcv_tel
+						              		, summ.fd_reg_yy
+						              		, summ.fd_reg_mm
+						              		, summ.fd_search_time
+						              		, summ.fd_reg_week
+						              	  , SUM(summ.fd_tot_cnt) AS total_count
+						      FROM 		tbl_call_summary summ 
+						      GROUP BY summ.fd_rcv_tel
+						      
+   		)s_list ON book.pk_customer_tel = s_list.fd_rcv_tel
+		<include refid="where"/>
+	</select>
+	
+	<!-- 발송 대상 전화번호 리스트 -->
+	<select id="getCustomerTelList"   parameterType="SmsManager" resultType="SmsManager">		 
+		SELECT 	pk_customer_tel AS receive_number
+		FROM 	tbl_phonebook book LEFT JOIN (
+		
+						      SELECT	summ.fd_member_id
+						              		, summ.fd_rcv_tel
+						              		, summ.fd_reg_yy
+						              		, summ.fd_reg_mm
+						              		, summ.fd_search_time
+						              		, summ.fd_reg_week
+						              	  , SUM(summ.fd_tot_cnt) AS total_count
+						      FROM 		tbl_call_summary summ 
+						      GROUP BY summ.fd_rcv_tel
+						      
+		      		)s_list ON book.pk_customer_tel = s_list.fd_rcv_tel
+		<include refid="where"/>
+		<if test="pageSize != '' and pageSize != null">
+			limit #{pageStart}, #{pageSize}
+		</if>
+	</select>
+	
+	
+	
+	<!--  SMS Group 등록 -->
+	<insert id="registerSmsGroup" parameterType="SmsManager">
+		INSERT INTO tbl_sms_group (
+		   fk_member_id
+		  ,fk_tel
+		  ,pk_group_code
+		  ,fk_custom_msg_id
+		  ,msg_type
+		  ,msg_sub_type
+		  ,req_count
+		  ,reg_date
+		  ,send_subject
+		  ,send_content
+		  ,attachment_path 
+		  ,attachment_file_size 
+		  ,reserve_type
+		  ,reserve_time
+		  ,search_month 
+		  ,search_customer 
+		  ,search_week
+		  ,search_time	
+		  ,search_call_rcv_cnt
+		  ,search_call_rcv_cnt_type
+		  ,search_req_cnt	
+		  ,counsel_title
+		  ,counsel_content
+		  ,counsel_id_cancel
+		  ,counsel_id_regist
+		  ,counsel_ip
+		  ,member_ip
+		  ,req_member_type
+		) VALUES (
+			#{fk_member_id}
+			, #{fk_tel}
+			, #{group_code}
+			, #{fk_custom_msg_id}
+			, #{msg_type}
+			, #{msg_sub_type}
+			, #{req_count}
+			, #{reg_date}
+			, #{send_subject}
+			, #{send_content}
+			, #{attachment_path}
+			, #{attachment_file_size}
+			, #{reserve_type}
+			, #{reserve_time}
+			, #{search_month}
+			, #{search_customer}
+			, #{search_week}
+			, #{search_time}
+			, #{search_call_rcv_cnt}
+			, #{search_call_rcv_cnt_type}
+			, #{search_req_cnt}
+			,#{counsel_title}
+		    ,#{counsel_content}
+		  	,#{counsel_id_cancel}
+		  	,#{counsel_id_regist}
+		  	,#{counsel_ip}
+		  	,#{member_ip}
+		  	,#{req_member_type}
+		)
+		
+	</insert>
+	
+	<!--  SMS Reservation 등록 -->
+	<insert id="registerSmsReservation" parameterType="SmsManager">
+		INSERT INTO tbl_sms_reservation (
+		   fk_member_id
+		  ,fk_tel
+		  ,receive_number
+		  ,msg_type
+		  ,msg_sub_type
+		  ,send_subject
+		  ,send_content
+		  ,attachment_path
+		  ,attachment_file_size
+		  ,fk_group_code
+		  ,fk_custom_msg_id
+		  ,reserve_type
+		  ,reserve_date
+		  ,reg_date
+		) VALUES (
+			  #{fk_member_id}
+			, #{fk_tel}
+			, #{receive_number}
+			, #{msg_type}
+			, #{msg_sub_type}
+			, #{send_subject}
+			, #{send_content}
+			, #{attachment_path}
+			, #{attachment_file_size}
+			, #{group_code}
+			, #{fk_custom_msg_id}
+			, #{reserve_type}
+			, #{reserve_time}
+			, #{reg_date}
+		)
+	</insert>
+	
+	
+	
+	<!-- 문자 발송 수정 Start -->
+	<!-- 1. Sms Group 수정 -->
+	<update id="modifySmsGroup" parameterType="SmsManager">
+		UPDATE tbl_sms_group SET
+		  fk_tel = #{fk_tel}
+		  ,msg_type = #{msg_type}
+		  ,msg_sub_type = #{msg_sub_type}
+		  <!-- ,req_count = #{req_count} -->
+		  ,reg_date = #{reg_date}
+		  ,send_subject = #{send_subject}
+		  ,send_content = #{send_content}
+		  ,attachment_path  = #{attachment_path}
+		  ,attachment_file_size  = #{attachment_file_size}
+		  ,reserve_type = #{reserve_type}
+		  ,reserve_time = #{reserve_time}
+		  <!-- ,search_month = #{search_month}
+		  ,search_customer = #{search_customer}
+		  ,search_week = #{search_week}
+		  ,search_time	= #{search_time}
+		  ,search_call_rcv_cnt = #{search_call_rcv_cnt}
+		  ,search_call_rcv_cnt_type = #{search_call_rcv_cnt_type}
+		  ,search_req_cnt	 = #{search_req_cnt} -->
+		  ,modify_date = #{modify_date}
+		WHERE pk_group_code = #{group_code}
+	</update>
+	
+	<!-- 2. Sms Reservation 수정 -->
+	<update id="modifySmsReservation" parameterType="SmsManager">
+		UPDATE tbl_sms_reservation SET
+		  fk_tel = #{fk_tel}
+		  <!-- ,receive_number = #{receive_number} -->
+		  ,msg_type = #{msg_type}
+		  ,msg_sub_type = #{msg_sub_type}
+		  ,send_subject = #{send_subject}
+		  ,send_content = #{send_content}
+		  ,attachment_path = #{attachment_path}
+		  ,attachment_file_size = #{attachment_file_size}
+		  ,reserve_type = #{reserve_type}
+		  ,reserve_date = #{reserve_time}
+		  ,reg_date = #{reg_date}
+		  ,modify_date = #{modify_date}
+		WHERE fk_group_code = #{group_code}
+	</update>
+	
+	<!-- 3. 수정전 사용코인을 갖고와서 현재 코인과 합치고 수정된 사용코인을 차감 -->
+	<select id="getCoinUseLog" parameterType="SmsManager" resultType="Coin">
+		SELECT
+		   fd_base_coin 
+		   , fd_recharge_coin
+		   , fd_bonus_coin
+		   , fd_total_coin
+		FROM tbl_coin_use_log
+		WHERE fk_member_id = #{fk_member_id} AND fd_group_code = #{group_code}
+	</select>
+	
+	<!-- 4. 수정된 사용코인로그 업데이트 -->
+	<update id="modifyCoinUseLog" parameterType="HashMap">
+		UPDATE tbl_coin_use_log SET
+			fd_base_coin = #{log_fd_base_coin} 
+		   	, fd_recharge_coin = #{log_fd_recharge_coin}
+		   	, fd_bonus_coin = #{log_fd_bonus_coin}
+		   	, fd_total_coin = #{log_fd_total_coin}
+		WHERE fk_member_id = #{fk_member_id} AND fd_group_code = #{fd_group_code}
+	</update>
+	
+	<!-- 5. 차감된 코인을 현재 코인에 업데이트(modifyCoin)-->
+	<!-- 문자 발송 수정 Finish -->
+	
+	<!-- 문자 발송 취소 Start  -->
+	<!-- 1. SMS Group테이블 SMS 취소  -->
+	<update id="cancelationSmsGroup"  parameterType="SmsManager">
+		UPDATE tbl_sms_group SET
+		cancel_yn = #{cancel_yn}
+		,cancel_time = #{cancel_time}
+		WHERE pk_group_code IN
+		<foreach item="item" index="index" collection="group_code_arry"   open="(" separator="," close=")">
+        	#{item}
+  		</foreach> 
+	</update>
+	
+	<!-- 2. SMS Reservation테이블 SMS 취소  -->
+	<update id="cancelationSmsReservation"  parameterType="SmsManager">
+		UPDATE tbl_sms_reservation SET
+		cancel_yn = #{cancel_yn}
+		,cancel_time = #{cancel_time}
+		WHERE fk_group_code IN
+		<foreach item="item" index="index" collection="group_code_arry"   open="(" separator="," close=")">
+        	#{item}
+  		</foreach> 
+	</update>
+	
+	<!-- 3. tbl_coin_use_log에 코인사용로그 취소  -->
+	<update id="cancelationCoinLog"  parameterType="SmsManager">
+		UPDATE tbl_coin_use_log SET
+		fd_use_yn = 'N'
+		,fd_cancel_date = #{cancel_time}
+		,fd_base_coin = 0
+		,fd_recharge_coin = 0
+		,fd_bonus_coin = 0
+		,fd_total_coin = 0
+		WHERE fd_group_code IN
+		<foreach item="item" index="index" collection="group_code_arry"   open="(" separator="," close=")">
+        	#{item}
+  		</foreach>
+	</update>
+	
+	<!-- 4. 취소된 use coin 총합을 갖고옴.  -->
+	<select id="getSumCancelUseCoin" parameterType="SmsManager" resultType="Coin">
+		SELECT  ( 
+				SELECT SUM(fd_base_coin)
+    			FROM tbl_coin_use_log
+    			WHERE fd_group_code IN
+				<foreach item="item" index="index" collection="group_code_arry"   open="(" separator="," close=")">
+		        	#{item}
+		  		</foreach>
+        ) AS fd_base_coin, 
+        ( 
+        		SELECT SUM(fd_recharge_coin)
+    			FROM tbl_coin_use_log
+    			WHERE fd_group_code IN
+				<foreach item="item" index="index" collection="group_code_arry"   open="(" separator="," close=")">
+		        	#{item}
+		  		</foreach>
+        ) AS fd_recharge_coin,
+        ( 
+        		SELECT SUM(fd_bonus_coin)
+    			FROM tbl_coin_use_log
+    			WHERE fd_group_code IN
+				<foreach item="item" index="index" collection="group_code_arry"   open="(" separator="," close=")">
+		        	#{item}
+		  		</foreach>
+        ) AS fd_bonus_coin,
+        ( 
+        		SELECT SUM(fd_total_coin)
+    			FROM tbl_coin_use_log
+    			WHERE fd_group_code IN
+				<foreach item="item" index="index" collection="group_code_arry"   open="(" separator="," close=")">
+		        	#{item}
+		  		</foreach>
+        ) AS fd_total_coin
+	</select>
+	
+	<!-- 5. tbl_coin에 취소된 코인 업데이트  -->
+	<update id="updateCancelCoin"  parameterType="SmsManager">
+		UPDATE tbl_coin SET
+		fd_base_coin = #{fd_base_coin}
+		, fd_recharge_coin = #{fd_recharge_coin}
+		, fd_bonus_coin = #{fd_bonus_coin}
+		, fd_total_coin = #{fd_total_coin}
+		WHERE fk_member_id = #{fk_member_id}
+	</update>
+	
+	<!-- 6. SMS Reservation테이블에서 취소된 SMS 컬럼을 Log테이블로 복사 -->
+	<insert id="copySmsReservation" parameterType="String">
+		INSERT tbl_sms_log (
+									fk_seq
+									, fk_member_id
+									, fk_tel
+									, receive_number
+									, msg_type
+									, msg_sub_type
+									, send_subject
+									, send_content
+									, attachment_path
+									, attachment_file_size
+									, fk_group_code
+									, mcs_group_id
+									, res_result
+									, fk_custom_msg_id
+									, reserve_type
+									, reserve_date
+									, mcs_req_date
+									, mcs_res_date
+									, reg_date
+									, modify_date
+									, cancel_yn
+									, cancel_time
+									, job_id
+									, mcs_attachment_path
+									, mcs_attachment_req_result
+									, mcs_attachment_res_result
+									, reservation_reg_date
+									)
+			SELECT	pk_seq
+						, fk_member_id
+						, fk_tel
+						, receive_number
+						, msg_type
+						, msg_sub_type
+						, send_subject
+						, send_content
+						, attachment_path
+						, attachment_file_size
+						, fk_group_code
+						, mcs_group_id
+						, res_result
+						, fk_custom_msg_id
+						, reserve_type
+						, reserve_date
+						, mcs_req_date
+						, mcs_res_date
+						, DATE_FORMAT(NOW(), '%Y%m%d%H%i%S') AS reg_date
+						, modify_date
+						, cancel_yn
+						, cancel_time
+						, job_id
+						, mcs_attachment_path
+						, mcs_attachment_req_result
+						, mcs_attachment_res_result
+						, reg_date AS reservation_reg_date
+			FROM 	tbl_sms_reservation
+			WHERE 	fk_member_id = #{fk_member_id} AND cancel_yn = 'Y'
+	</insert>
+	
+	<!--  7. SMS Reservation테이블에서 Log로 복사가 완료된 SMS 컬럼을 삭제 -->
+	<delete id="deleteSmsReservation" parameterType="String">
+		DELETE FROM tbl_sms_reservation 
+		WHERE fk_member_id = #{fk_member_id} AND cancel_yn = 'Y'
+	</delete>
+	<!-- 문자 발송 취소 Finish  -->
+	
+</mapper>

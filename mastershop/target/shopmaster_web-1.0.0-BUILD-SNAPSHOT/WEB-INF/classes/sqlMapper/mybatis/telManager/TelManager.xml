@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="TelManager">
+	<sql id="where">
+		<trim prefix="where" prefixOverrides="and">
+			and log.fd_member_id=#{fd_member_id}
+			<if test="searchString != ''">
+				<if test="searchColumn == 'user_name'">
+					and cus.fd_user_name like CONCAT('%', #{searchString}, '%')
+				</if>
+				<if test="searchColumn == 'user_tel'">
+					and log.fd_rcv_tel like CONCAT('%', #{searchString}, '%')
+				</if>
+				<if test="searchColumn == 'member_tel'">
+					and log.fd_tel like CONCAT('%', #{searchString}, '%')
+				</if>
+				<if test="searchColumn == 'user_addr'">
+					and cus.fd_addr like CONCAT('%', #{searchString}, '%')
+				</if>
+			</if>
+			<if test="fd_reg_yy != ''">
+				and log.fd_reg_yy = #{fd_reg_yy}
+			</if>
+			<if test="fd_reg_mm != ''">
+				and log.fd_reg_mm = #{fd_reg_mm}
+			</if>
+		</trim>
+	</sql>
+
+<!-- 로그와 사용자 조인 리스트 -->
+	<select id="getListView" parameterType="HashMap" resultType="TelManager">
+		select log.fd_rcv_tel 
+				,log.fd_tel
+				,log.fd_member_id
+				,log.pk_seqno
+				,log.fd_reg_yy
+				,log.fd_reg_week 
+				,log.fd_reg_ss 
+				,log.fd_reg_mm
+				,log.fd_reg_mi
+				,log.fd_reg_hh
+				,log.fd_reg_dd
+				,log.fd_openapi_rc_code
+				
+				,callm.fd_memo
+				
+				,cus.fd_view_flag
+				,cus.fd_user_name
+				,cus.fd_rev_sms_flag
+				,cus.fd_new_date
+				,cus.fd_mod_date
+				,cus.fd_memo as fd_memo_cus 
+				,cus.fd_addr
+				
+		from tbl_call_log as log 
+		  left outer join tbl_call_memo_log as callm on(log.pk_seqno = callm.fk_seq) 
+		  left outer join tbl_phonebook as cus on(log.fd_rcv_tel = cus.pk_customer_tel and log.fd_member_id = cus.fk_member_id) 
+		<include refid="where"/>
+		<trim prefix="ORDER BY" prefixOverrides=","> 
+			<if test="orderColumn == 'fd_user_name_a'">, cus.fd_user_name asc</if>
+			<if test="orderColumn == 'fd_user_name_d'">, cus.fd_user_name desc</if>
+			<if test="orderColumn == 'fd_rcv_tel_a'">, log.fd_rcv_tel asc</if>
+			<if test="orderColumn == 'fd_rcv_tel_d'">, log.fd_rcv_tel desc</if>
+			<if test="orderColumn == 'fd_addr_a'">, cus.fd_addr asc</if>
+			<if test="orderColumn == 'fd_addr_d'">, cus.fd_addr desc</if>
+ 			<if test="orderColumn == 'fd_reg_date_a'">, log.fd_reg_date asc</if>
+			<if test="orderColumn == 'fd_reg_date_d'">, log.fd_reg_date desc</if>
+			, log.fd_reg_date desc
+		</trim> 
+		<if test="lType == null || lTime == ''">
+			limit #{pageStart}, #{pageSize}
+		</if>
+	</select>
+<!-- 로그와 사용자 조인 리스트 -->
+
+<!-- 로그와 사용자 조인 카운트 -->
+	<select id="getListCount" parameterType="HashMap" resultType="int">
+		select
+			count(*) 
+		from
+			tbl_call_log as log 
+			     left outer join	tbl_phonebook as cus
+		         on(log.fd_rcv_tel = cus.pk_customer_tel and log.fd_member_id = cus.fk_member_id) 
+		<include refid="where"/>
+	</select>
+<!-- 로그와 사용자 조인 카운트 -->
+
+<!-- 사용자 View
+  `fk_member_id` varchar(32) NOT NULL COMMENT '아이디',
+  `pk_customer_tel` varchar(14) NOT NULL DEFAULT '' COMMENT '고객 전화번호',
+  `fd_user_name` varchar(32) DEFAULT NULL COMMENT '고객 이름',
+  `fd_addr` varchar(128) DEFAULT NULL COMMENT '주소',
+  `fd_memo` varchar(2048) DEFAULT NULL COMMENT '고객 메모',
+  `fd_view_flag` varchar(1) DEFAULT NULL COMMENT '보기옵션 0:보기 1:숨김',
+  `fd_rev_sms_flag` varchar(1) DEFAULT 'N' COMMENT '수신거부 거부:Y 승락:N (기본값:N)',
+  `fd_new_date` varchar(8) DEFAULT NULL COMMENT '최초 등록 년월일 ex:20140101(신규고객 대상추출)',
+  `fd_mod_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '정보 수정일',
+-->
+
+	<select id="getView" parameterType="HashMap" resultType="TelManager">
+		select 
+			fk_member_id
+			,pk_customer_tel
+			,fd_user_name
+			,fd_addr
+			,fd_memo
+			,fd_view_flag
+			,fd_rev_sms_flag
+			,fd_new_date
+			,fd_mod_date
+		from
+			tbl_phonebook
+		<trim prefix="where" prefixOverrides="and">
+				and fk_member_id = #{fk_member_id}
+				and pk_customer_tel = #{pk_customer_tel}
+			<if test="fd_addr != '' and fd_addr != null">
+				and fd_addr like CONCAT('%', #{fd_addr},'%')
+			</if>
+			<if test="fd_user_name != '' and fd_user_name != null">
+				and fd_user_name like CONCAT('%', #{fd_user_name}, '%')
+			</if>
+			<if test="fd_rev_sms_flag != '' and fd_rev_sms_flag != null">
+				and fd_rev_sms_flag = #{fd_rev_sms_flag}
+			</if>
+		</trim>
+	</select>
+	
+	<select id="getViewCount" parameterType="TelManager" resultType="int">
+		select count(*)
+		from
+			tbl_phonebook
+		<trim prefix="where" prefixOverrides="and">
+				and fk_member_id = #{fk_member_id}
+				and pk_customer_tel = #{pk_customer_tel}
+<!-- 
+			<if test="fd_addr != '' and fd_addr != null">
+				and fd_addr like CONCAT('%', #{fd_addr},'%')
+			</if>
+			<if test="fd_user_name != '' and fd_user_name != null">
+				and fd_user_name like CONCAT('%', #{fd_user_name}, '%')
+			</if>
+			<if test="fd_rev_sms_flag != '' and fd_rev_sms_flag != null">
+				and fd_rev_sms_flag = #{fd_rev_sms_flag}
+			</if>
+ -->
+		</trim>
+	</select>
+	
+	<insert id="getViewModify" parameterType="TelManager">
+		INSERT INTO tbl_phonebook(
+			pk_customer_tel
+			, fk_member_id
+			, fd_view_flag
+			, fd_user_name
+			, fd_rev_sms_flag
+			, fd_new_date
+			, fd_mod_date
+			, fd_memo
+			, fd_addr
+		)
+		VALUES (
+			#{pk_customer_tel}
+			,#{fk_member_id}
+			,#{fd_view_flag}
+			,#{fd_user_name}
+			,#{fd_rev_sms_flag}
+			,#{fd_new_date}
+			,#{fd_mod_date}
+			,#{fd_memo}
+			,#{fd_addr}
+		)
+		ON DUPLICATE KEY UPDATE
+<!-- 			pk_customer_tel = #{pk_customer_tel} -->
+			fd_user_name = #{fd_user_name}
+			, fd_addr = #{fd_addr}
+			, fd_memo = #{fd_memo}
+			<if test="fd_view_flag		 !='' and fd_view_flag		 != null">, fd_view_flag = #{fd_view_flag}</if>
+<!-- 			<if test="fd_new_date		 !='' and fd_new_date		 != null">, fd_new_date = #{fd_new_date}</if> -->
+			<if test="fd_mod_date		 !='' and fd_mod_date		 != null">, fd_mod_date = #{fd_mod_date}</if>
+	</insert>
+<!-- 사용자 View -->
+
+<!-- 차트리스트 월별 -->
+	<select id="getChartList" parameterType="HashMap" resultType="TelManager">
+		SELECT
+			fd_yy
+			,fd_mm
+			,fd_dd
+			,sum(fd_tot_day) as fd_tot_day
+		FROM
+			tbl_report_call_day_cnt
+		WHERE
+			fd_yy = #{fd_yy}
+			and fd_MM = #{fd_mm}
+			and fd_member_id = #{fd_member_id}
+			<if test="fd_member_tel != '' and fd_member_tel != null">
+				and fd_member_tel = #{fd_member_tel}
+			</if>
+		GROUP BY fd_yy, fd_mm, fd_dd
+		ORDER BY fd_yy, fd_mm, fd_dd asc
+	</select>
+
+</mapper>

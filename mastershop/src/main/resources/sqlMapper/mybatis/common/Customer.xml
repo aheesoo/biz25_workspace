@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Customer">
+<!--
+  `fk_member_id` varchar(14) NOT NULL COMMENT '고객 전화번호',
+  `pk_customer_tel` varchar(14) DEFAULT NULL,
+  `fd_user_name` varchar(32) DEFAULT NULL COMMENT '고객 이름',
+  `fd_addr` varchar(128) DEFAULT NULL COMMENT '주소',
+  `fd_memo` varchar(2048) DEFAULT NULL COMMENT '고객 메모',
+  `fd_view_flag` varchar(1) DEFAULT NULL COMMENT '보기옵션 0:보기 1:숨김',
+  `fd_rev_sms_flag` varchar(1) DEFAULT 'N' COMMENT '수신거부 거부:Y 승락:N (기본값:N)',
+  `fd_new_date` varchar(8) DEFAULT NULL COMMENT '최초 등록 년월일 ex:20140101(신규고객 대상추출)',
+  `fd_mod_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '정보 수정일',
+ -->
+	<select id="get" parameterType="String" resultType="Customer">
+		select 
+			pk_customer_tel
+			, fk_member_id
+			, fd_view_flag
+			, fd_user_name
+			, fd_rev_sms_flag
+			, fd_new_date
+			, fd_mod_date
+			, fd_memo
+			, fd_addr
+		from tbl_phonebook
+		WHERE pk_customer_tel = #{pk_customer_tel}
+	</select>
+
+	<select id="getList" parameterType="PageHelper" resultType="Customer">
+		select 
+			pk_customer_tel
+			, fk_member_id
+			, fd_view_flag
+			, fd_user_name
+			, fd_rev_sms_flag
+			, fd_new_date
+			, fd_mod_date
+			, fd_memo
+			, fd_addr
+		from tbl_phonebook
+		<trim prefix="where" prefixOverrides="and">
+			<if test="searchString != ''">
+				<if test="searchColumn == 'tel'">
+					and pk_customer_tel like CONCAT('%', #{searchString}, '%')
+				</if>
+				<if test="searchColumn == 'user_name'">
+					and fd_user_name like CONCAT('%', #{searchString}, '%')
+				</if>
+				<if test="searchColumn == 'view_flag'">
+					and fd_view_flag like CONCAT('%', #{searchString}, '%')
+				</if>
+			</if>
+		</trim>
+  	    order by fd_new_date desc
+	    limit #{pageStart}, #{pageSize}
+	</select>
+
+	<select id="getCount"  parameterType="PageHelper" resultType="int">
+		select count(*) as cnt
+		from tbl_phonebook
+		<trim prefix="where" prefixOverrides="and">
+			<if test="searchString != '' and searchString != null">
+				<if test="searchColumn == 'tel'">
+					and pk_customer_tel like CONCAT('%', #{searchString}, '%')
+				</if>
+				<if test="searchColumn == 'user_name'">
+					and fd_user_name like CONCAT('%', #{searchString}, '%')
+				</if>
+				<if test="searchColumn == 'view_flag'">
+					and fd_view_flag like CONCAT('%', #{searchString}, '%')
+				</if>
+			</if>
+		</trim>
+	</select>
+
+	<insert id="register" parameterType="Customer">
+		INSERT INTO tbl_phonebook(
+			pk_customer_tel
+			, fk_member_id
+			, fd_view_flag
+			, fd_user_name
+			, fd_rev_sms_flag
+			, fd_new_date
+			, fd_mod_date
+			, fd_memo
+			, fd_addr
+		)
+		VALUES (
+			#{pk_customer_tel}
+			,#{fk_member_id}
+			,#{fd_view_flag}
+			,#{fd_user_name}
+			,#{fd_rev_sms_flag}
+			,#{fd_new_date}
+			,#{fd_mod_date}
+			,#{fd_memo}
+			,#{fd_addr}
+		)
+		ON DUPLICATE KEY UPDATE
+			pk_customer_tel = #{pk_customer_tel}
+			, fd_user_name = #{fd_user_name}
+			, fd_addr = #{fd_addr}
+			, fd_memo = #{fd_memo}
+			<if test="fd_view_flag		 !='' and fd_view_flag		 != null">, fd_view_flag = #{fd_view_flag}</if>
+<!-- 			<if test="fd_new_date		 !='' and fd_new_date		 != null">, fd_new_date = #{fd_new_date}</if> -->
+			<if test="fd_mod_date		 !='' and fd_mod_date		 != null">, fd_mod_date = #{fd_mod_date}</if>
+		
+	</insert>
+
+	<update id="modify"  parameterType="Customer">
+		UPDATE tbl_phonebook
+		<set>
+		
+			pk_customer_tel = #{pk_customer_tel}
+			, fk_member_id	= #{fk_member_id}
+			<if test="fd_view_flag		!= '' and fd_view_flag		!= null">, fd_view_flag		= #{fd_view_flag}		</if>
+			<if test="fd_user_name		!= '' and fd_user_name		!= null">, fd_user_name		= #{fd_user_name}		</if>
+			<if test="fd_rev_sms_flag	!= '' and fd_rev_sms_flag	!= null">, fd_rev_sms_flag	= #{fd_rev_sms_flag}	</if>
+			<if test="fd_new_date		!= '' and fd_new_date		!= null">, fd_new_date		= #{fd_new_date}		</if>
+			<if test="fd_mod_date		!= '' and fd_mod_date		!= null">, fd_mod_date		= #{fd_mod_date}		</if>
+			<if test="fd_memo			!= '' and fd_memo			!= null">, fd_memo			= #{fd_memo}			</if>
+			<if test="fd_addr			!= '' and fd_addr			!= null">, fd_addr			= #{fd_addr}			</if>
+		
+		</set>
+		WHERE
+		 pk_customer_tel = #{pk_customer_tel}
+		 and fk_member_id = #{fk_member_id}
+	</update>
+
+	<delete id="remove"  parameterType="String">
+		DELETE FROM tbl_phonebook WHERE pk_customer_tel = #{pk_customer_tel}
+	</delete>
+</mapper>

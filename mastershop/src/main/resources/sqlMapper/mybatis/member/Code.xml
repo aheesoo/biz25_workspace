@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Code">
+	
+<!-- 	<sql id="where">
+		<where>
+			<if test="fd_up_code != ''">
+				#{fd_up_code = "0000"};
+			</if>
+				fd_up_code = #{fd_up_code};			
+		</where> 	
+	</sql> -->
+	
+	<select id="getCodeList" parameterType="Code" resultType="Code">
+		SELECT
+		 * 
+		FROM
+		 tbl_code
+		WHERE
+		 fd_up_code = CASE WHEN #{fd_up_code}='' THEN '0000' ELSE #{fd_up_code} END	 
+	</select>
+
+	<select id="getCode" parameterType="Code" resultType="Code">
+		SELECT
+		 * 
+		FROM
+		 tbl_code 
+		WHERE
+		 pk_code = #{pk_code}	 
+	</select>
+</mapper>

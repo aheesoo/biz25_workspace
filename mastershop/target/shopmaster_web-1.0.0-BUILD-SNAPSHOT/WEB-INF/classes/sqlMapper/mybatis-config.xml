@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+  <typeAliases >
+  	<typeAlias type="com.includesys.sm.dto.manager.Admin" alias="Admin" />
+  	<typeAlias type="com.includesys.sm.dto.manager.CMSMenu" alias="CMSMenu" />
+  	<typeAlias type="com.includesys.sm.dto.manager.CMSMapping" alias="CMSMapping" />
+  	<typeAlias type="com.includesys.sm.dto.member.Code" alias="Code" />
+  	<typeAlias type="com.includesys.sm.dto.member.Member" alias="Member" />
+	<typeAlias type="com.includesys.sm.dto.member.MemberSub" alias="MemberSub" />
+  	<typeAlias type="com.includesys.sm.dto.member.Zipcode" alias="Zipcode" />
+  	<typeAlias type="com.includesys.sm.dto.member.ZipcodeDoro" alias="ZipcodeDoro" />
+  	<typeAlias type="com.includesys.sm.dto.product.Product" alias="Product" />
+  	<typeAlias type="com.includesys.sm.dto.common.Common" alias="Common" />
+  	<typeAlias type="com.includesys.sm.dto.common.CallLog" alias="CallLog" />
+  	<typeAlias type="com.includesys.sm.dto.common.Customer" alias="Customer" />
+  	<typeAlias type="com.includesys.sm.dto.PageHelper" alias="PageHelper" />  	
+  	<typeAlias type="com.includesys.sm.dto.myinfo.Coin" alias="Coin" />
+  	<typeAlias type="com.includesys.sm.dto.csManager.CsCustomer" alias="CsCustomer" />
+  	<typeAlias type="com.includesys.sm.dto.csCenter.Notice" alias="Notice" />
+  	<typeAlias type="com.includesys.sm.dto.csCenter.Faq" alias="Faq" />
+  	<typeAlias type="com.includesys.sm.dto.smsManager.SmsManager" alias="SmsManager" />
+  	<typeAlias type="com.includesys.sm.dto.smsManager.BoardEvent" alias="BoardEvent" />
+  	<typeAlias type="com.includesys.sm.dto.telManager.TelManager" alias="TelManager" />
+  	<typeAlias type="com.includesys.sm.dto.smsManager.Emoticon" alias="Emoticon" />
+  	<typeAlias type="com.includesys.sm.dto.member.SearchMember" alias="SearchMember" />
+  </typeAliases>
+  
+  <!-- 포함될 sql매퍼파일 -->
+  <mappers>
+    <mapper resource="sqlMapper/mybatis/manager/Admin.xml"/>
+    <mapper resource="sqlMapper/mybatis/manager/CMSMenu.xml"/>
+    <mapper resource="sqlMapper/mybatis/manager/CMSMapping.xml"/>
+    <mapper resource="sqlMapper/mybatis/member/Code.xml"/>
+    <mapper resource="sqlMapper/mybatis/member/Member.xml"/>
+    <mapper resource="sqlMapper/mybatis/product/Product.xml"/>
+    <mapper resource="sqlMapper/mybatis/common/Common.xml"/>
+    <mapper resource="sqlMapper/mybatis/common/CallLog.xml"/>
+    <mapper resource="sqlMapper/mybatis/common/Customer.xml"/>    
+    <mapper resource="sqlMapper/mybatis/myinfo/Coin.xml"/>
+    <mapper resource="sqlMapper/mybatis/csManager/CsCustomer.xml"/>
+    <mapper resource="sqlMapper/mybatis/csCenter/Notice.xml"/>
+    <mapper resource="sqlMapper/mybatis/csCenter/Faq.xml"/>
+    <mapper resource="sqlMapper/mybatis/smsManager/SmsManager.xml"/>
+    <mapper resource="sqlMapper/mybatis/smsManager/BoardEvent.xml"/>
+    <mapper resource="sqlMapper/mybatis/telManager/TelManager.xml"/>
+    <mapper resource="sqlMapper/mybatis/smsManager/Emoticon.xml"/>
+    <mapper resource="sqlMapper/mybatis/member/SearchMember.xml"/>
+    <mapper resource="sqlMapper/mybatis/report/Report.xml"/>
+  </mappers>
+
+</configuration>

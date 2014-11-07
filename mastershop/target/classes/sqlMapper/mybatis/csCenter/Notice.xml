@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Notice">	
+	<select id="getNoticeList"   parameterType="hashMap" resultType="Notice">		 
+		SELECT 	pk_seq, 			fd_user_id, 	fd_title, 
+					fd_content, 	fd_user_ip, 	fd_user_name, 
+					fd_open_yn, 	fd_hit,		 	fd_reg_date, 
+					fd_mod_date
+		FROM tbl_board_notice
+		WHERE fd_open_yn = 'Y'
+				<if test="searchString != '' and searchString != null">
+				 AND fd_title like CONCAT('%', #{searchString}, '%')
+				</if>
+		ORDER BY pk_seq desc
+		<if test="viewType != 'main'">
+			LIMIT #{pageStart}, #{pageSize}
+		</if>
+	</select>
+	
+	<select id="getNoticeListCount"   parameterType="hashMap" resultType="int">		 
+			SELECT 	count(*) as cnt      
+			FROM 	tbl_board_notice
+			WHERE 	fd_open_yn = 'Y'
+				<if test="searchString != '' and searchString != null">
+				  AND fd_title like CONCAT('%', #{searchString}, '%')
+				</if>
+	</select>
+	
+	<update id="updateViewHit"  parameterType="String">
+		UPDATE tbl_board_notice SET
+			 fd_hit = fd_hit+1
+		WHERE pk_seq = #{pk_seq}
+	</update>
+	
+	<select id="getNoticeView" parameterType="String" resultType="Notice">
+		SELECT 
+			pk_seq
+			,fd_title
+			,fd_hit
+			,fd_open_yn
+			,fd_content
+			,fd_reg_date
+			,fd_user_id
+			,fd_user_name
+			,fd_user_ip
+			,fd_mod_date
+		FROM tbl_board_notice
+		WHERE pk_seq = #{pk_seq}
+			AND fd_open_yn = 'Y'
+	</select>
+	
+	<select id="getNoticeViewPre" parameterType="String" resultType="Notice">
+		SELECT   pk_seq
+					,fd_title
+					,fd_hit
+					,fd_open_yn
+					,fd_content
+					,fd_reg_date
+					,fd_user_id
+					,fd_user_name
+					,fd_user_ip
+					,fd_mod_date
+		FROM	 tbl_board_notice
+		WHERE pk_seq IN (select max(pk_seq) from tbl_board_notice where pk_seq &lt; #{pk_seq} and fd_open_yn = 'Y')
+	</select>
+	
+	<select id="getNoticeViewNext" parameterType="String" resultType="Notice">
+		SELECT   pk_seq
+					,fd_title
+					,fd_hit
+					,fd_open_yn
+					,fd_content
+					,fd_reg_date
+					,fd_user_id
+					,fd_user_name
+					,fd_user_ip
+					,fd_mod_date
+		FROM	 tbl_board_notice
+		WHERE pk_seq IN (select min(pk_seq) from tbl_board_notice where pk_seq &gt; #{pk_seq} and fd_open_yn = 'Y')
+		
+	</select>
+	
+	
+</mapper>	

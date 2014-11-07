@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap namespace="ApiLog">
+
+	<insert id="insert" parameterClass="ApiLog" >    
+	REPLACE INTO tbl_call_log  (    
+      	pk_seqno
+		,fd_member_id
+		,fd_tel
+		,fd_rcv_tel
+		,fd_reg_yy
+		,fd_reg_mm
+		,fd_reg_dd
+		,fd_reg_hh
+		,fd_reg_week
+		,fd_reg_mi
+		,fd_reg_ss
+		,fd_openapi_rc_code
+		,fd_openapi_skind
+		,fd_search_time
+		,fd_reg_date
+	) values (
+		#pk_seqno#
+		,(select fk_member_id  from tbl_member_tel where pk_tel =#fd_tel#)
+		,#fd_tel#
+		,#fd_rcv_tel#
+		,#fd_reg_yy#
+		,#fd_reg_mm#
+		,#fd_reg_dd#
+		,#fd_reg_hh#
+		,dayofweek(#fd_reg_week#)
+		,#fd_reg_mi#
+		,#fd_reg_ss#
+		,#fd_openapi_rc_code#
+		,#fd_openapi_skind#
+		,#fd_search_time#
+		,#fd_reg_date#
+	)
+    </insert>
+
+</sqlMap>

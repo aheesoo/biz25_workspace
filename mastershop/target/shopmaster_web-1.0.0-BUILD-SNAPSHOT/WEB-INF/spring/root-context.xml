@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+	<!-- database.properties 읽어오기 -->
+	<!-- 기존 사용 
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="/WEB-INF/properties/database.properties"/>
+	</bean>
+	 -->
+	 <beans profile="local">
+	  	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="location" value="/WEB-INF/properties/database_dev.properties"/>
+		</bean>
+		
+		<!-- 1. dataSource설정(database.properties에 설정된 값으로 넣기) -->
+		<bean name="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+			<property name="driverClassName" value="${driver}" />
+			<property name="url" value="${url}" />
+			<property name="username" value="${username}" />
+			<property name="password" value="${password}" />
+			
+			<!-- mysql db timeout -->
+			<property name="validationQuery" value="select 1" />
+			<property name="testOnBorrow" value="true"/>
+		</bean>
+	
+		<!-- 2. SqlSessionFactory설정 (dataSource 주입)  -->
+		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"/>
+			<property name="configLocation"
+				 value="classpath:sqlMapper/mybatis-config.xml"/><!-- classpath*:test/mybatis/mapper/*.xml 여러 형태로 가능 -->
+		</bean>
+		
+		<!-- 3. SqlSession설정 (SqlSessionFactory 주입)  -->
+		<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+			<constructor-arg index="0" ref="sqlSessionFactory"/>
+		</bean>
+		<!-- 4. DAO 생성 (sqlSession을 필요로함) : 삭제 -->
+		<!-- 5. SERVICE 객체생성 : 삭제 -->
+	
+		<!-- 어노테이션 기반으로 객체 자동생성하기 (컨트롤러 제외) -->
+		<context:component-scan base-package="com.includesys.sm">
+			<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		</context:component-scan>
+	    
+		<!-- //// 어노테이션 기반 트랜잭션 설정 START //// -->
+		<!-- 1.트랜잭션 매니져 설정 jdbc와 mybatis는 아래 사용-->
+		<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+			<property name="dataSource" ref="dataSource"/>
+		</bean>
+		 
+		<!-- 어노테이션 기반 트랜잭션 설정 -->
+		<tx:annotation-driven/>
+		<!-- //// 트랜잭션 설정 END //// -->
+		
+		<!-- AOP -->
+		<!-- <bean name="menuAdvice" class="com.includesys.sm.intercepter.AccessControlListByURIAspect"/> -->
+		<!-- <bean name="menuDepthAop" class="com.includesys.sm.intercepter.ControllerLoggingAspect"/> -->
+		
+		<!-- 3. AOP 설정 (어노테이션) 사용하면 AOP설정 부분이 없어짐 -->
+		<!-- @AspectJ가 적용되도록 설정-->
+		<aop:aspectj-autoproxy/>
+		
+		<!-- Properties custom 설정 -->
+		<bean id="profieBean" class="com.includesys.sm.dto.common.ProfileBean">
+			<property name="inipayHome" value="D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50"/>
+			<property name="inipayAdminPw" value="1111"/>
+			<property name="inipayMid" value="kthskytest"/>
+		</bean>
+		<!-- Properties Spring Custom 설정 -->
+		<util:properties id="config"  location="classpath:/config/common_dev.properties"/>
+		
+	 </beans>
+	 
+	 <beans profile="dev">
+	  	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="location" value="/WEB-INF/properties/database_dev.properties"/>
+		</bean>
+		
+		<!-- 1. dataSource설정(database.properties에 설정된 값으로 넣기) -->
+		<bean name="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+			<property name="driverClassName" value="${driver}" />
+			<property name="url" value="${url}" />
+			<property name="username" value="${username}" />
+			<property name="password" value="${password}" />
+			
+			<!-- mysql db timeout -->
+			<property name="validationQuery" value="select 1" />
+			<property name="testOnBorrow" value="true"/>
+		</bean>
+	
+		<!-- 2. SqlSessionFactory설정 (dataSource 주입)  -->
+		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"/>
+			<property name="configLocation"
+				 value="classpath:sqlMapper/mybatis-config.xml"/><!-- classpath*:test/mybatis/mapper/*.xml 여러 형태로 가능 -->
+		</bean>
+		
+		<!-- 3. SqlSession설정 (SqlSessionFactory 주입)  -->
+		<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+			<constructor-arg index="0" ref="sqlSessionFactory"/>
+		</bean>
+		<!-- 4. DAO 생성 (sqlSession을 필요로함) : 삭제 -->
+		<!-- 5. SERVICE 객체생성 : 삭제 -->
+	
+		<!-- 어노테이션 기반으로 객체 자동생성하기 (컨트롤러 제외) -->
+		<context:component-scan base-package="com.includesys.sm">
+			<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		</context:component-scan>
+	    
+		<!-- //// 어노테이션 기반 트랜잭션 설정 START //// -->
+		<!-- 1.트랜잭션 매니져 설정 jdbc와 mybatis는 아래 사용-->
+		<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+			<property name="dataSource" ref="dataSource"/>
+		</bean>
+		 
+		<!-- 어노테이션 기반 트랜잭션 설정 -->
+		<tx:annotation-driven/>
+		<!-- //// 트랜잭션 설정 END //// -->
+		
+		<!-- AOP -->
+		<!-- <bean name="menuAdvice" class="com.includesys.sm.intercepter.AccessControlListByURIAspect"/> -->
+		<!-- <bean name="menuDepthAop" class="com.includesys.sm.intercepter.ControllerLoggingAspect"/> -->
+		
+		<!-- 3. AOP 설정 (어노테이션) 사용하면 AOP설정 부분이 없어짐 -->
+		<!-- @AspectJ가 적용되도록 설정-->
+		<aop:aspectj-autoproxy/>
+		
+		<!-- custom 설정 -->
+		<bean id="profieBean" class="com.includesys.sm.dto.common.ProfileBean">
+			<property name="inipayHome" value="/home/smaster/INIpay50"/>
+			<property name="inipayAdminPw" value="1111"/>
+			<property name="inipayMid" value="kthskytest"/>
+		</bean>
+		<!-- Properties Spring Custom 설정 -->
+		<util:properties id="config" location="classpath:/config/common_dev.properties"/>
+		
+	 </beans>
+	 
+	 <beans profile="real">
+	  	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+			<property name="location" value="/WEB-INF/properties/database_real.properties"/>
+		</bean>
+		
+		<!-- 1. dataSource설정(database.properties에 설정된 값으로 넣기) -->
+		<bean name="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+			<property name="driverClassName" value="${driver}" />
+			<property name="url" value="${url}" />
+			<property name="username" value="${username}" />
+			<property name="password" value="${password}" />
+			
+			<!-- mysql db timeout -->
+			<property name="validationQuery" value="select 1" />
+			<property name="testOnBorrow" value="true"/>
+			
+		</bean>
+	
+		<!-- 2. SqlSessionFactory설정 (dataSource 주입)  -->
+		<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"/>
+			<property name="configLocation"
+				 value="classpath:sqlMapper/mybatis-config.xml"/><!-- classpath*:test/mybatis/mapper/*.xml 여러 형태로 가능 -->
+		</bean>
+		
+		<!-- 3. SqlSession설정 (SqlSessionFactory 주입)  -->
+		<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+			<constructor-arg index="0" ref="sqlSessionFactory"/>
+		</bean>
+		
+		<!-- 4. DAO 생성 (sqlSession을 필요로함) : 삭제 -->
+		<!-- 5. SERVICE 객체생성 : 삭제 -->
+	
+		<!-- 어노테이션 기반으로 객체 자동생성하기 (컨트롤러 제외) -->
+		<context:component-scan base-package="com.includesys.sm">
+			<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		</context:component-scan>
+	    
+		<!-- //// 어노테이션 기반 트랜잭션 설정 START //// -->
+		<!-- 1.트랜잭션 매니져 설정 jdbc와 mybatis는 아래 사용-->
+		<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+			<property name="dataSource" ref="dataSource"/>
+		</bean>
+		 
+		<!-- 어노테이션 기반 트랜잭션 설정 -->
+		<tx:annotation-driven/>
+		<!-- //// 트랜잭션 설정 END //// -->
+		
+		<!-- AOP -->
+		<!-- <bean name="menuAdvice" class="com.includesys.sm.intercepter.AccessControlListByURIAspect"/> -->
+		<!-- <bean name="menuDepthAop" class="com.includesys.sm.intercepter.ControllerLoggingAspect"/> -->
+		
+		<!-- 3. AOP 설정 (어노테이션) 사용하면 AOP설정 부분이 없어짐 -->
+		<!-- @AspectJ가 적용되도록 설정-->
+		<aop:aspectj-autoproxy/>
+		
+		<!-- custom 설정 -->
+		<bean id="profieBean" class="com.includesys.sm.dto.common.ProfileBean">
+			<property name="inipayHome" value="/home/smaster/INIpay50"/>
+			<property name="inipayAdminPw" value="1111"/>
+			<property name="inipayMid" value="mastershop"/>
+		</bean>
+		<!-- Properties Spring Custom 설정 -->
+		<util:properties id="config" location="classpath:/config/common_real.properties"/>
+	 </beans>
+	
+</beans>

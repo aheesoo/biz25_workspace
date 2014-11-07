@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+table{table-layout:fixed; border-collapse:collapse;}
+/* ------------------------------------- popup ------------------------------------- */
+#cfmOllehPopUp {width:460px; height:auto;}
+#cfmOllehPopUp #cfmOllehPopUpHeader {width:420px; height:14px; padding:12px 20px; background:url(../images/common/popup/pop_cfmOllehHeaderBg.gif) left top no-repeat;}
+#cfmOllehPopUp #cfmOllehPopUpHeader h1 {background:url(../images/common/popup/h1_blt.gif) left 3px no-repeat; padding:0 8px 0 14px; float:left;}
+#cfmOllehPopUp #cfmOllehPopUpHeader span.sms {float:left; color:#bbbbbb; font-size:13px; line-height:18px;}
+
+#cfmOllehPopUp #cfmOllehPopUpContents {width:420px; height:auto; padding:20px;}
+#cfmOllehPopUp #cfmOllehPopUpContents h2.title01 {background:url(../images/common/popup/h2_blt.gif) left 3px no-repeat; padding:0 0 3px 12px; color:#3d3d3d; font-size:12px;}
+#cfmOllehPopUp #cfmOllehPopUpContents h2.title02 {background:url(../images/common/popup/h2_blt.gif) left 3px no-repeat; padding:0 0 3px 12px; color:#3d3d3d; font-size:12px; margin-top:20px;}
+
+/* 기본 테이블 - border 2px : Type02 */
+#cfmOllehPopUp .defaultPopupTblBorderType02 {width:420px; height:auto;}
+#cfmOllehPopUp .defaultPopupTblBorderType02 .defaultTbl {width:420px; height:auto; border-top:2px solid #e0e1e3; border-bottom:2px solid #e0e1e3;}
+#cfmOllehPopUp .defaultPopupTblBorderType02 .defaultTbl th {border-bottom:1px solid #e0e1e3; border-right:1px solid #e0e1e3; background-color:#f9f9f9; padding:0; font-size:11px; color:#3d3d3d; line-height:16px; padding:6px 0 4px 0;}
+#cfmOllehPopUp .defaultPopupTblBorderType02 .defaultTbl th.ltTxt {
+	border-bottom:1px solid #e0e1e3; border-right:1px solid #e0e1e3; background-color:#f9f9f9; padding:0; font-size:11px; color:#3d3d3d; line-height:16px; padding:6px 0 4px 14px; text-align:left;
+}
+#cfmOllehPopUp .defaultPopupTblBorderType02 .defaultTbl td {border-bottom:1px solid #e0e1e3; padding:6px 0 4px 15px;}
+#cfmOllehPopUp .defaultPopupTblBorderType02 .defaultTbl td.check {border-bottom:1px solid #e0e1e3; padding:5px 0 5px 15px;}
+
+#cfmOllehPopUp #cfmOllehPopUpContents .subBlt {background:url(../images/common/popup/sub_blt01.gif) 1px 5px no-repeat; padding:0 0 3px 8px; color:#9d9d9d; font-size:11px; line-height:14px; margin-top:7px;}
+#cfmOllehPopUp #cfmOllehPopUpContents .nbsp32 {width:1px; margin-left:21px;}
+#cfmOllehPopUp #cfmOllehPopUpContents input.checkCont {margin:-2px 4px 0 0; vertical-align:middle;}
+#cfmOllehPopUp #cfmOllehPopUpContents span.checkTxt {vertical-align:middle; line-height:12px; margin-right:14px;}
+
+/* 관리자 101108추가 */
+#cfmOllehPopUp .defaultPopupTblBorderType03 td{width:412px;padding:23px 0 20px;border:4px solid #e2e3e4;text-align:center;color:#6d6d6d;line-height:18px}
+#cfmOllehPopUp .defaultPopupTblBorderType03 td .point{color:#de1a22}
+#cfmOllehPopUp .defaultPopupTblBorderType03 td strong{color:#6d6d6d}
+#cfmOllehPopUp .cfmOllehDefaultBtnCt a {margin:0 3px}
+/* //관리자 101108추가 */
+#cfmOllehPopUp .cfmOllehDefaultBtnCt {width:100%; text-align:center;}
+
+#cfmOllehPopUp #cfmOllehPopUpFooter {position:relative; width:420px; height:11px; padding:10px 20px; background-color:#eaeaea;}
+#cfmOllehPopUp #cfmOllehPopUpFooter .today {height:11px; vertical-align:middle;}
+#cfmOllehPopUp #cfmOllehPopUpFooter .today input.todayCheck {margin:-1px 3px 0 0; *margin:-4px 3px 0 0; vertical-align:top;}
+#cfmOllehPopUp #cfmOllehPopUpFooter .today span.checkTxtToday {vertical-align:top; height:15px;}
+#cfmOllehPopUp #cfmOllehPopUpFooter .close {position:absolute; right:20px; top:10px;}
+
+
+/* ------------------------------------- layer popup ------------------------------------- */
+#cfmOllehLayerPopUp {width:770px; height:auto;}
+#cfmOllehLayerPopUp #cfmOllehLayerPopUpHeader {position:relative; width:720px; height:29px; padding:13px 25px 0 25px; background:url(../images/common/popup/layerPop_TopBg.gif) left top no-repeat;}
+#cfmOllehLayerPopUp #cfmOllehLayerPopUpHeader h1 {background:url(../images/common/popup/h1_blt.gif) left 3px no-repeat; padding:0 8px 0 15px; float:left;}
+#cfmOllehLayerPopUp #cfmOllehLayerPopUpHeader span.sms {float:left; color:#bbbbbb; font-size:13px; line-height:18px;}
+#cfmOllehLayerPopUp #cfmOllehLayerPopUpHeader .close {position:absolute; right:25px; top:17px;}
+#cfmOllehLayerPopUp #cfmOllehLayerPopUpContents {position:relative; width:720px; height:auto; padding:20px 25px 25px 25px; background:url(../images/common/popup/layerPop_BtBg.gif) left bottom no-repeat;}
+#cfmOllehLayerPopUp #cfmOllehLayerPopUpContents h2.title01 {width:708px; background:url(../images/common/popup/h2_blt.gif) left 3px no-repeat; padding:0 0 3px 12px; color:#3d3d3d; font-size:12px;}
+#cfmOllehLayerPopUp #cfmOllehLayerPopUpContents .iPhoneBlt {width:679px; background:url(../images/common/popup/blt_i-Phone.gif) left 3px no-repeat; padding:5px 0 17px 41px; line-height:14px; color:#6d6d6d;}
+
+/* 기본 테이블 - border 2px : Type01 */
+#cfmOllehLayerPopUp .defaultLayerTblBorder {width:720px; height:auto; margin-top:15px;}
+#cfmOllehLayerPopUp .defaultLayerTblBorder .defaultTbl {width:720px; height:auto; border-top:2px solid #e0e1e3; border-bottom:2px solid #e0e1e3;}
+#cfmOllehLayerPopUp .defaultLayerTblBorder .defaultTbl th {border-bottom:2px solid #e0e1e3; background-color:#f9f9f9; padding:7px 0 5px 0; font-size:11px; color:#3d3d3d;}
+#cfmOllehLayerPopUp .defaultLayerTblBorder .defaultTbl td {border-top:1px solid #e0e1e3; border-right:1px solid #e0e1e3; padding:6px 0 4px 0; font-size:12px; color:#6d6d6d; text-align:center;}
+#cfmOllehLayerPopUp .defaultLayerTblBorder .defaultTbl td.point {border-top:1px solid #e0e1e3; border-right:1px solid #e0e1e3; padding:6px 0 4px 0; font-size:12px; color:#de1a22; font-weight:bold; text-align:center;}
+#cfmOllehLayerPopUp .defaultLayerTblBorder .defaultTbl td.lineNone {border-top:1px solid #e0e1e3; border-right:none; padding:6px 0 4px 0; font-size:12px; color:#6d6d6d; text-align:center;}
+
+/* 텍스트 */
+#cfmOllehLayerPopUp .btTxt {width:720px; height:auto; line-height:18px; overflow:hidden;}
+#cfmOllehLayerPopUp .btTxt li {float:left; color:#6d6d6d; font-size:11px;}
+#cfmOllehLayerPopUp .btTxt li.ltTXt {width:550px; text-align:left;}
+#cfmOllehLayerPopUp .btTxt li.rtTXt {width:170px; text-align:right;}
+
+/* 버튼 */
+#cfmOllehLayerPopUp .cfmOllehDefaultBtnCt {width:100%; text-align:center;}
+#cfmOllehLayerPopUp .cfmOllehDefaultBtnRt {width:100%; text-align:right;}
+
+/* 여백 */
+.cfmOllehMarRt05 {margin-right:5px;}
+.cfmOllehMarTp15 {margin-top:15px;}
+
+/* 관리자 101108추가 */
+.sel{margin-right:6px;width:126px;border:1px solid #c0c0c0;color:#646464;font-size:11px}
+.ipt_tx{margin-right:7px;padding-left:5px;width:119px;height:17px;border:1px solid #c0c0c0;color:#646464;font-size:11px;line-height:20px}
+.ipt_tx1{padding-left:5px;width:99px;height:17px;border:1px solid #c0c0c0;color:#646464;font-size:11px;line-height:20px}
+span.ex{color:#6d6d6d;font-size:11px}
+textarea.ta{overflow-y:scroll;padding-left:5px;width:223px;height:38px;border:1px solid #c0c0c0;color:#646464;font-size:11px}

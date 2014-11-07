@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/* admin 101108 */
+#admin{position:absolute;left:50%;top:50%;margin:-185px 0 0 -272px;width:545px;height:370px}
+#admin h1{}
+#admin #container{width:545px;margin-top:20px;background:url(/resources/images/common/k_abox.gif) no-repeat 0 0}
+#admin .cnt{padding-top:58px}
+#admin .cnt form{display:block;position:relative;width:300px;height:83px;padding-left:125px}
+#admin .cnt form input{width:133px;height:19px;line-height:19px;border:0;padding-left:5px;background:url(/resources/images/common/k_ipt.gif) no-repeat 0 0}
+#admin .cnt form p{position:absolute;right:0;top:0}
+#admin .cnt label{display:block;margin-bottom:9px}
+#admin .cnt label img{margin-right:15px;vertical-align:middle}
+#admin .cnt label input{vertical-align:middle;color:#6d6d6d}
+#admin .cnt p.noti{text-align:center;color:#9d9d9d;font-size:11px}
+#admin .enter{margin:62px 0 0 15px}
+#admin .enter a{display:inline-block;margin:12px 0  0 23px}
+#admin address{margin-top:33px;text-align:center}
+
+* {font-family:"돋움",Dotum,sans-serif;font-size:12px;margin:0;padding:0;color:#474747;}

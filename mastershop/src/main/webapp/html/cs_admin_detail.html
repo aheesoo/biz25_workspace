@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SHOP MASTER</title>
+<link rel="stylesheet" type="text/css" href="inc/css/style.css">
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+
+<body background="images/shopmaster_bg2.gif">
+<div id="top_area">
+	<div style="width:1200px;">
+        <div style="float:left; width:200px;"><a href="main.html"><img src="images/shopm_logo.gif" border="0"/></a></div>
+        <div style="float:left;width:1000px;">
+            <!-------------------------------------->
+            <? include "inc/html/top_menu.html"; ?>
+            <!-------------------------------------->
+        </div>
+    </div>
+</div>
+<div id="main_area">
+	<div id="main_l">
+        <!-------------------------------------->
+        <? include "inc/html/shop_left.html"; ?>
+        <!-------------------------------------->
+    </div>
+    <div id="main_r">
+		<div class="contents_area">
+        	<div class="sub_tit">
+            	<div style="float:left;"><img src="images/tit_cs_admin.gif" border="0"/></div>
+            	<div class="sub_now">홈 > 고객관리 > <font class="sub_now_t">기본정보</font></div>
+            </div>
+            <div class="sub_tit_dot"></div>
+            <div class="sub_contents">
+            	<div style="height:24px;"><font style="font-size:14px; color:#222222; font-weight:bold">기본정보</font> <!-- 520 x 330 --><a href="popup/user_edit.html"><img src="images/btn_edit.gif"  border="0" align="absmiddle"/></a></div>
+                <div class="tb_top"></div>
+                <div>
+                	<table width="930" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="120" class="tb2_tit_l">이름</td>
+                        <td width="345" class="tb2_nor_l">김고객</td>
+                        <td width="120" class="tb2_tit_l">수신거부</td>
+                        <td width="345" class="tb2_nor_l">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td class="tb2_tit_l">전화번호</td>
+                        <td class="tb2_nor_l">01-234-1234</td>
+                        <td class="tb2_tit_l">보기옵션</td>
+                        <td class="tb2_nor_l">보기</td>
+                      </tr>
+                      <tr>
+                        <td class="tb2_tit_l">주소</td>
+                        <td colspan="3" class="tb2_nor_l">대림 아크로텔 1802호</td>
+                      </tr>
+                      <tr>
+                        <td class="tb2_tit_l">메모</td>
+                        <td colspan="3" class="tb2_nor_l">김치 추가, 고춧가루 추가</td>
+                      </tr>
+                    </table>
+                </div>
+                <div style="margin-top:35px; height:24px;">
+                	<div style="float:left;"><input name="" type="radio" value="" /></div>
+                	<div style="float:left; margin-top:3px;">1개월</div>
+                	<div style="float:left; margin-left:10px;"><input name="" type="radio" value="" /></div>
+                	<div style="float:left; margin-top:3px;">3개월</div>
+                	<div style="float:left; margin-left:10px;"><input name="" type="radio" value="" checked="checked" /></div>
+                	<div style="float:left; margin-top:3px;">6개월</div>
+                	<div style="float:left; margin-left:12px;"><a href="#"><img src="images/btn_check.gif"  border="0"/></a></div>
+                </div>
+                <div class="tb_top"></div>
+                <div>
+                	<table width="930" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="120" class="tb2_tit_l">최근 수신일시</td>
+                        <td width="345" class="tb2_nor_l">2014.06.19 11:11</td>
+                        <td width="120" class="tb2_tit_l">총 수신 건수</td>
+                        <td width="345" class="tb2_nor_l">52</td>
+                      </tr>
+                      <tr>
+                        <td class="tb2_tit_l">광고 발송 건수</td>
+                        <td class="tb2_nor_l">16건</td>
+                        <td class="tb2_tit_l">광고 응답률</td>
+                        <td class="tb2_nor_l">50% <font style="font-size:11px; color:#999999;">(광고 발송 후 7일 이내 답변 기준)</font></td>
+                      </tr>
+                    </table>
+                </div>
+				<div style="margin-top:35px; width:930px;">
+                	<div class="box280">
+                    	<table width="280" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="30" colspan="2">- 요일별 평균 수신통계</td>
+                          </tr>
+                          <tr>
+                            <td height="2" colspan="2" bgcolor="#444444"></td>
+                          </tr>
+                          <tr>
+                            <td width="100" class="tb2_tit_c">월</td>
+                            <td width="180" class="tb2_nor_l">45건 (21%)</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">화</td>
+                            <td class="tb2_nor_l">43건 (20%)</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">수</td>
+                            <td class="tb2_nor_l">36건 (16%)</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">목</td>
+                            <td class="tb2_nor_l">31건 (14%)</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">금</td>
+                            <td class="tb2_nor_l">26건 (12%)</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">토</td>
+                            <td class="tb2_nor_l">23건 (10%)</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">일</td>
+                            <td class="tb2_nor_l">15건 (7%)</td>
+                          </tr>
+                        </table>
+					</div>
+                    <div class="box280" style="margin-left:45px;">
+                    	<table width="280" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="30" colspan="2">- 평균 수신 시간대별 통계</td>
+                          </tr>
+                          <tr>
+                            <td height="2" colspan="2" bgcolor="#444444"></td>
+                          </tr>
+                          <tr>
+                            <td width="120" class="tb2_tit_c">새벽 (00~07)</td>
+                            <td width="160" class="tb2_nor_l">45건 (21%)</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">아침 (07~09)</td>
+                            <td class="tb2_nor_l">43건 (20%)</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">오전 (09~11)</td>
+                            <td class="tb2_nor_l">36건 (16%)</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">점심 (11~13)</td>
+                            <td class="tb2_nor_l">31건 (14%)</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">오후 (13~18)</td>
+                            <td class="tb2_nor_l">26건 (12%)</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">저녁 (18~21)</td>
+                            <td class="tb2_nor_l">23건 (10%)</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">야간 (21~24)</td>
+                            <td class="tb2_nor_l">15건 (7%)</td>
+                          </tr>
+                        </table>
+					</div>
+                    <div class="box280" style="margin-left:45px;">
+                    	<table width="280" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="30" colspan="2">- 광고 발송 내역</td>
+                          </tr>
+                          <tr>
+                            <td height="2" colspan="2" bgcolor="#444444"></td>
+                          </tr>
+                          <tr>
+                            <td width="60" class="tb2_tit_c">16</td>
+                            <td width="220" class="tb2_nor_l"><a href="#">2014.06.24</a></td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">15</td>
+                            <td class="tb2_nor_l"><a href="#">2014.06.24</a></td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">14</td>
+                            <td class="tb2_nor_l">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">13</td>
+                            <td class="tb2_nor_l">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">12</td>
+                            <td class="tb2_nor_l">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">11</td>
+                            <td class="tb2_nor_l">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td class="tb2_tit_c">10</td>
+                            <td class="tb2_nor_l">&nbsp;</td>
+                          </tr>
+                        </table>
+					</div>
+				</div>
+                <div style="clear:both;"></div>
+                <div style="width:930px; text-align:right; padding-top:15px; height:40px;"><a href="cs_admin.html"><img src="images/btn_list.gif" border="0"/></a></div>
+			</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

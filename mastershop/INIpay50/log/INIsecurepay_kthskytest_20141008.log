@@ -1,0 +1,494 @@
+[14:21:02] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:21:02] INFO <00001> DEBUG PRINT : 
+[14:21:02]DEBUG <00001> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[14:21:02]DEBUG <00001> MID          : kthskytest
+[14:21:02]DEBUG <00001> ADMIN(KEYPW) : 1111
+[14:21:03]DEBUG <00001> TX_PGPUBSN : 30
+[14:21:03]DEBUG <00001> TX_MPUBSN : 0
+[14:21:03] INFO <00001> price : 33000
+[14:21:03] INFO <00001> nointerest : no
+[14:21:03] INFO <00001> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[14:21:03]DEBUG <00001> src value       = cHJpY2U9MzMwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[14:21:03]DEBUG <00001> Hashed value    = FIrFr0iN++nPPZxoCjw7k8DiXM8=
+
+[14:21:03]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:21:03] INFO <00001> TRANSACTION COMPLETE 
+[14:21:03] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.615 sec. ] 
+[14:21:03] INFO --------------------------------------------------------------------------------
+[14:25:35] INFO <00002> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:25:36] INFO <00002> DEBUG PRINT : 
+[14:25:36]DEBUG <00002> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[14:25:36]DEBUG <00002> MID          : kthskytest
+[14:25:36]DEBUG <00002> ADMIN(KEYPW) : 1111
+[14:25:36]DEBUG <00002> TX_PGPUBSN : 30
+[14:25:36]DEBUG <00002> TX_MPUBSN : 0
+[14:25:36] INFO <00002> price : 33000
+[14:25:36] INFO <00002> nointerest : no
+[14:25:36] INFO <00002> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[14:25:36]DEBUG <00002> src value       = cHJpY2U9MzMwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[14:25:36]DEBUG <00002> Hashed value    = FIrFr0iN++nPPZxoCjw7k8DiXM8=
+
+[14:25:36]DEBUG <00002> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:25:36] INFO <00002> TRANSACTION COMPLETE 
+[14:25:36] INFO <00002> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.475 sec. ] 
+[14:25:36] INFO --------------------------------------------------------------------------------
+[14:26:01] INFO <00003> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[14:26:01] INFO <00003> DEBUG PRINT : 
+[14:26:01]DEBUG <00003> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[14:26:01]DEBUG <00003> MID          : kthskytest
+[14:26:01]DEBUG <00003> ADMIN(KEYPW) : 1111
+[14:26:01]DEBUG <00003> TX_PGPUBSN : 30
+[14:26:01]DEBUG <00003> TX_MPUBSN : 0
+[14:26:01] INFO <00003> price : 33000
+[14:26:01] INFO <00003> nointerest : no
+[14:26:01] INFO <00003> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[14:26:01]DEBUG <00003> src value       = cHJpY2U9MzMwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[14:26:01]DEBUG <00003> Hashed value    = FIrFr0iN++nPPZxoCjw7k8DiXM8=
+
+[14:26:01]DEBUG <00003> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[14:26:01] INFO <00003> TRANSACTION COMPLETE 
+[14:26:01] INFO <00003> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.022 sec. ] 
+[14:26:01] INFO --------------------------------------------------------------------------------
+[16:44:16] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[16:44:16] INFO <00001> DEBUG PRINT : 
+[16:44:16]DEBUG <00001> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[16:44:16]DEBUG <00001> MID          : kthskytest
+[16:44:16]DEBUG <00001> ADMIN(KEYPW) : 1111
+[16:44:16]DEBUG <00001> TX_PGPUBSN : 30
+[16:44:16]DEBUG <00001> TX_MPUBSN : 0
+[16:44:16] INFO <00001> price : 55000
+[16:44:16] INFO <00001> nointerest : no
+[16:44:16] INFO <00001> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[16:44:16]DEBUG <00001> src value       = cHJpY2U9NTUwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[16:44:16]DEBUG <00001> Hashed value    = phx3cWAK6H8PLq68240No45W28s=
+
+[16:44:16]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[16:44:16] INFO <00001> TRANSACTION COMPLETE 
+[16:44:16] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.347 sec. ] 
+[16:44:16] INFO --------------------------------------------------------------------------------
+[17:49:07] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[17:49:07] INFO <00001> DEBUG PRINT : 
+[17:49:07]DEBUG <00001> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[17:49:07]DEBUG <00001> MID          : kthskytest
+[17:49:07]DEBUG <00001> ADMIN(KEYPW) : 1111
+[17:49:07]DEBUG <00001> TX_PGPUBSN : 30
+[17:49:07]DEBUG <00001> TX_MPUBSN : 0
+[17:49:07] INFO <00001> price : 33000
+[17:49:07] INFO <00001> nointerest : no
+[17:49:07] INFO <00001> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[17:49:07]DEBUG <00001> src value       = cHJpY2U9MzMwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[17:49:07]DEBUG <00001> Hashed value    = FIrFr0iN++nPPZxoCjw7k8DiXM8=
+
+[17:49:07]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[17:49:07] INFO <00001> TRANSACTION COMPLETE 
+[17:49:07] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.388 sec. ] 
+[17:49:07] INFO --------------------------------------------------------------------------------
+[17:49:54] INFO <00002> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[17:49:54] INFO <00002> DEBUG PRINT : 
+[17:49:54]DEBUG <00002> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[17:49:54]DEBUG <00002> MID          : kthskytest
+[17:49:54]DEBUG <00002> ADMIN(KEYPW) : 1111
+[17:49:54]DEBUG <00002> TX_PGPUBSN : 30
+[17:49:54]DEBUG <00002> TX_MPUBSN : 0
+[17:49:54] INFO <00002> price : 33000
+[17:49:54] INFO <00002> nointerest : no
+[17:49:54] INFO <00002> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[17:49:54]DEBUG <00002> src value       = cHJpY2U9MzMwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[17:49:54]DEBUG <00002> Hashed value    = FIrFr0iN++nPPZxoCjw7k8DiXM8=
+
+[17:49:54]DEBUG <00002> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[17:49:54] INFO <00002> TRANSACTION COMPLETE 
+[17:49:54] INFO <00002> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.042 sec. ] 
+[17:49:54] INFO --------------------------------------------------------------------------------
+[17:50:32] INFO <00003> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[17:50:32] INFO <00003> DEBUG PRINT : 
+[17:50:32]DEBUG <00003> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[17:50:32]DEBUG <00003> MID          : kthskytest
+[17:50:32]DEBUG <00003> ADMIN(KEYPW) : 1111
+[17:50:32]DEBUG <00003> TX_PGPUBSN : 30
+[17:50:32]DEBUG <00003> TX_MPUBSN : 0
+[17:50:32] INFO <00003> price : 33000
+[17:50:32] INFO <00003> nointerest : no
+[17:50:32] INFO <00003> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[17:50:32]DEBUG <00003> src value       = cHJpY2U9MzMwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[17:50:32]DEBUG <00003> Hashed value    = FIrFr0iN++nPPZxoCjw7k8DiXM8=
+
+[17:50:32]DEBUG <00003> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[17:50:32] INFO <00003> TRANSACTION COMPLETE 
+[17:50:32] INFO <00003> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.027 sec. ] 
+[17:50:32] INFO --------------------------------------------------------------------------------
+[17:51:24] INFO <00004> START securepay (5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60)
+[17:51:24] INFO <00004> DEBUG PRINT : 
+[17:51:24] INFO <00004> PAYMETHOD   : Card
+[17:51:24] INFO <00004> OID         : orderid_of_merchant
+[17:51:24] INFO <00004> PRICE       : 33000
+[17:51:24] INFO <00004> CURRENCY    : WON
+[17:51:24] INFO <00004> GOODNAME    : 마스터샵 충전 B형
+[17:51:24] INFO <00004> BUYERNAME   : 조상현
+[17:51:24] INFO <00004> BUYERTEL    : null
+[17:51:24] INFO <00004> BUYEREMAIL  : 
+[17:51:24] INFO <00004> SESSIONKEY : D51aZOMDFQt0ylpK5kctp5I+Qja0SXpHOHb6r38Q0hmtoEa6dwELgxZ/g/PrBYA3
+ODa9ZoZgWxas508l9QpaFyeeqWXJYN94i71coCRW5BLFTp7rglytDDSkcWw6c47/
+h2tI7Rgm9gLnrVhql1TjWTARVx2J3EV9iJ/ijewE+lE=
+[17:51:24] INFO <00004> ENCRYPTED  : Version=4.1&PayMethod=Card&RsaKeyNum=1&EncryptionAlgorithm=SEED-CBC&SignAlgorithm=RSAwithSHA1&CertVer=39&moid=orderid_of_merchant&ver_trace=main(6087,6053)card(6115,6105)n(6008)Cs(6022)Dt(6002)Pa(6002)Cf(6024)Fv(0000)La(6131)Re(6083)Vr(6006)P(6033)en(6039)nP(6006)&pg1=211.219.96.180&pg2=203.238.37.3&pg1ip=211.219.96.180&pg2ip=203.238.37.3&agreeflag=1111&Data=C8O6w+VkLASrUQ02hYlaHsQ30WGUcqP79MiOZ3e0JAlpjMvrAyVSaElv47ftCgBy
+j+eF6pvZgvc893UG11LEHSPQvWiIXDOhG87lsh3YcPGYXwENBENehiNi64ws048s
+H9BnbhbavzEbBbCBnTKZ0K/CjdH5uhX1KffBxsi/3Ps9J9YOpXyDUXeld1yNGa6z
+WWuExDehBkqJ25bSRuf9jTo/ka4BeqSZdbH1k/xcf6LA+8Aw7bHJXwy315HBdp6b
+TMV2/wKCxr/e09wwsay1pElkc6ND68CdYvsgtUmK5jGs1ca0Go3XOK8zQRAr0sR2
+Mkxksn1S64kTkKx9JSlYnC1RIN/4jGHSdbFTn5AXTFSx9ysV7xxLZc186VpeGUZy
+ghcx5sWs8YjpZaHTB/rA7Kl6EhiIZ+iPNEXY8E2VctRgMRfIX2OKxvYdYhkgEIap
+JgzDS5stGm+R+WYSeVtXqKUT4T3F5LtUgL0LYo2EOvs4j8VGJYeQL8eKGvIX+0E/
+ZZwc6yvzK1MxzCN4Yd9lSRMOzcxNPFZjYw8OTN8aLvCzK1ZNm9QNU5tr8G4NrEGc
+JCaq4XQFUV5uzVpow8F2DINITpAwRD20o+/HLoctNqSCRnFItPYox6csrtg=
+[17:51:24]ERROR <00004> BUYEREMAIL is NULL
+[17:51:25]ERROR TX9229
+com.inicis.util.etc.INIpayException: TX9229
+	at com.inicis.inipay.actions.INIsecurepayAction.parameterCheck(INIsecurepayAction.java:504)
+	at com.inicis.inipay.actions.INIAction.setParameter(INIAction.java:69)
+	at com.inicis.inipay.INIpay.startAction(INIpay.java:115)
+	at com.includesys.sm.controller.smsManager.CoinController.coinChargePgResult(CoinController.java:412)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:219)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:745)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:686)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:838)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+[17:51:25] INFO <00004>  ERROR_MSG : TX9229
+[17:51:25] INFO <00004>  ResultMsg : 
+[17:51:25]ERROR <00004>  ResultMsg : [TX9229|필수항목 누락  - BUYEREMAIL]
+[17:51:25] INFO <00004> TRANSACTION COMPLETE 
+[17:51:25] INFO <00004> END securepay, [ TID: ], 01|[TX9229|필수항목 누락  - BUYEREMAIL],  LapTime[0.297 sec. ] 
+[17:51:25] INFO --------------------------------------------------------------------------------
+[18:04:22] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[18:04:22] INFO <00001> DEBUG PRINT : 
+[18:04:22]DEBUG <00001> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[18:04:22]DEBUG <00001> MID          : kthskytest
+[18:04:22]DEBUG <00001> ADMIN(KEYPW) : 1111
+[18:04:22]DEBUG <00001> TX_PGPUBSN : 30
+[18:04:22]DEBUG <00001> TX_MPUBSN : 0
+[18:04:22] INFO <00001> price : 11000
+[18:04:22] INFO <00001> nointerest : no
+[18:04:22] INFO <00001> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[18:04:22]DEBUG <00001> src value       = cHJpY2U9MTEwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[18:04:22]DEBUG <00001> Hashed value    = XHrpNU/tmFBgoupkuumTB7ma4d8=
+
+[18:04:22]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[18:04:22] INFO <00001> TRANSACTION COMPLETE 
+[18:04:22] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.288 sec. ] 
+[18:04:22] INFO --------------------------------------------------------------------------------
+[18:05:04] INFO <00002> START securepay (5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60)
+[18:05:04] INFO <00002> DEBUG PRINT : 
+[18:05:04] INFO <00002> PAYMETHOD   : Card
+[18:05:04] INFO <00002> OID         : orderid_of_merchant
+[18:05:04] INFO <00002> PRICE       : 11000
+[18:05:04] INFO <00002> CURRENCY    : WON
+[18:05:04] INFO <00002> GOODNAME    : 마스터샵 충전 A형
+[18:05:04] INFO <00002> BUYERNAME   : 조상현
+[18:05:04] INFO <00002> BUYERTEL    : null
+[18:05:04] INFO <00002> BUYEREMAIL  : 
+[18:05:04] INFO <00002> SESSIONKEY : CwoHJaoJ/3KZ/6N4Z668Wt0jKGMNqYYaBU/YogpugD4DW5TbiVAr+VusxL5ZOSn0
+JCrDdkFNakHLhMd5ldpW3nETQHzTBdubSpRVhkg9zqAT3lz5oz1d6GVDuThYq+CQ
+2j5Fx8eKq+h+4Li95VhZTsJwgh+NsbLgYFJWLkPilbk=
+[18:05:04] INFO <00002> ENCRYPTED  : Version=4.1&PayMethod=Card&RsaKeyNum=1&EncryptionAlgorithm=SEED-CBC&SignAlgorithm=RSAwithSHA1&CertVer=39&moid=orderid_of_merchant&ver_trace=main(6087,6053)card(6115,6105)n(6008)Cs(6022)Dt(6002)Pa(6002)Cf(6024)Fv(0000)La(6131)Re(6083)Vr(6006)P(6033)en(6039)nP(6006)&pg1=211.219.96.180&pg2=203.238.37.3&pg1ip=211.219.96.180&pg2ip=203.238.37.3&agreeflag=1111&Data=/4tjIkQmLfQ+HtGmuGSY8zKZAkGhHdmt3ME4HBlatCPqkPGE87+PF2NDR5WfigCE
+0/PqeY/EYGitw35yX+oFGhPvowhcrV9FpFE47M1WeBPqS1p7wjZAl2WZXlMhCgPi
++yhZGHhE717BAeMNGub2gfn4sp9nXeQ0GHA8qNDRF/ncEXzROk3/gFnbp/20EoHQ
+2xiO/SZTTYoX69l1zPAk6YXJplG2zHra5wOzmGFjuR25wfYXD6x8aZYkN9h9iKGU
+63FMDmButbTkE1wUHRFfcuYtBnruEtJUONL3SBANtAvr1HRYk6W0bzqXf+m/aLFT
+/al/TY+GeAmHSEzvn/Ta2/4GfXZsllptDdxMGuoIOFn2AGOaW4E0sIT7iwxSbLxU
+k4EVBsdUMjSPtC416EyVrCHv7dBw6vOO29wItFbiVxIRR8kH1TvTO2yw/NW++pCK
+ReNyreotgo6zEXsv9x33N8V947qnmS60xNU/y8jDuA91ngylaYUSvzM3NOLzXsqG
+cRhHBnmZbDB4f34QVHdx0Fa8Bo/AOwipno/S+X6sxKeZTn5q/bkshwE7sMeySIUH
+E5cb2dB/VvqgHZTnnRd3M9h6YO5w57QwNs7m0y+KndmhmreRT4P6OdEysRE=
+[18:05:04]ERROR <00002> BUYEREMAIL is NULL
+[18:05:04]ERROR TX9229
+com.inicis.util.etc.INIpayException: TX9229
+	at com.inicis.inipay.actions.INIsecurepayAction.parameterCheck(INIsecurepayAction.java:504)
+	at com.inicis.inipay.actions.INIAction.setParameter(INIAction.java:69)
+	at com.inicis.inipay.INIpay.startAction(INIpay.java:115)
+	at com.includesys.sm.controller.smsManager.CoinController.coinChargePgResult(CoinController.java:412)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:219)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:745)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:686)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:838)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+[18:05:04] INFO <00002>  ERROR_MSG : TX9229
+[18:05:04] INFO <00002>  ResultMsg : 
+[18:05:04]ERROR <00002>  ResultMsg : [TX9229|필수항목 누락  - BUYEREMAIL]
+[18:05:04] INFO <00002> TRANSACTION COMPLETE 
+[18:05:04] INFO <00002> END securepay, [ TID: ], 01|[TX9229|필수항목 누락  - BUYEREMAIL],  LapTime[0.155 sec. ] 
+[18:05:04] INFO --------------------------------------------------------------------------------
+[18:10:31] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[18:10:31] INFO <00001> DEBUG PRINT : 
+[18:10:31]DEBUG <00001> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[18:10:31]DEBUG <00001> MID          : kthskytest
+[18:10:31]DEBUG <00001> ADMIN(KEYPW) : 1111
+[18:10:31]DEBUG <00001> TX_PGPUBSN : 30
+[18:10:31]DEBUG <00001> TX_MPUBSN : 0
+[18:10:31] INFO <00001> price : 11000
+[18:10:31] INFO <00001> nointerest : no
+[18:10:31] INFO <00001> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[18:10:31]DEBUG <00001> src value       = cHJpY2U9MTEwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[18:10:31]DEBUG <00001> Hashed value    = XHrpNU/tmFBgoupkuumTB7ma4d8=
+
+[18:10:31]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[18:10:31] INFO <00001> TRANSACTION COMPLETE 
+[18:10:31] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.342 sec. ] 
+[18:10:31] INFO --------------------------------------------------------------------------------
+[18:11:36] INFO <00002> START securepay (5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60)
+[18:11:36] INFO <00002> DEBUG PRINT : 
+[18:11:36] INFO <00002> PAYMETHOD   : Card
+[18:11:36] INFO <00002> OID         : orderid_of_merchant
+[18:11:36] INFO <00002> PRICE       : 11000
+[18:11:36] INFO <00002> CURRENCY    : WON
+[18:11:36] INFO <00002> GOODNAME    : 마스터샵 충전 A형
+[18:11:36] INFO <00002> BUYERNAME   : 조상현
+[18:11:36] INFO <00002> BUYERTEL    : null
+[18:11:36] INFO <00002> BUYEREMAIL  : 
+[18:11:36] INFO <00002> SESSIONKEY : xfYqQWXOpBgW8uOEIogpbm1HYgxkWWSTTL3Nya2/3dNVsacqyZiR+ac/keQsEoWb
+m57ZNYz3qLjs32RUJO3iIieXGshXCU92JbANad1V4/aIExWYreHtkosIoQmHCxyZ
+Rl5WZKmo1HHaz9RkVpQGyTH5iIWBlQIsi07Kx+i/wmM=
+[18:11:36] INFO <00002> ENCRYPTED  : Version=4.1&PayMethod=Card&RsaKeyNum=1&EncryptionAlgorithm=SEED-CBC&SignAlgorithm=RSAwithSHA1&CertVer=39&moid=orderid_of_merchant&ver_trace=main(6087,6053)card(6115,6105)n(6008)Cs(6022)Dt(6002)Pa(6002)Cf(6024)Fv(0000)La(6131)Re(6083)Vr(6006)P(6033)en(6039)nP(6006)&pg1=211.219.96.180&pg2=203.238.37.3&pg1ip=211.219.96.180&pg2ip=203.238.37.3&agreeflag=1111&Data=SQAvE2+F/k3yYXfD5Va0HiOUUAcyd66oHpDXSeGBu5ZGBuN38p7NZG5/5YwJgExk
+QctKVOQArebxAg+rFmPqUZDt5hS7VAQ33Cl9tTbLWDB2zYdHxhzg80bJja8DN085
+LHQF5U6G4aBzcR0ve30KRj7Va7wIS00VS4vidwx+RCg3f2KvvqP8tjBRGDrHEybh
+22vglJSwajCVbgmhZLl7pSPEqw7Vd/eCT3fYaIhgmeUPyvpPjqv8ujrBLm6jz2Y2
+WoNmdn8hSsAyhlwMKDmPjXTTMcNPZnO4aJFxW0OBBA3PlnXCVVd/sECSTdLuKS9T
+3fzX+ahHQzKlSbKLWi8hLYoHQ0qSpuk2ttT0k3h9PUck9pDQya420usr2c1yDeYK
+JdtCI5nypBNkwAYcXNUxfkqhQTGbKfs8TM51IWjfTQMZvAUsg1hMRWzRAS3qKsOD
+mmy0mFvctmyALoiPQ1WFziC1IU741PsT0TOBVOc1STplMtMVmeWOLiqlAmzb6uV7
+fMgiDR0uYSCfgEVAiGUwC15HWR8zgRqpFkDwhsrB/R/a8bo2+fSpcSkBTkMzqwP2
+DKyAndi8WL26pTdgwVDgeEu1kRmdHzQYO3c5Q5xgMbX1Ar7Ne/c4XBe+0Ds=
+[18:11:36]ERROR <00002> BUYEREMAIL is NULL
+[18:11:36]ERROR TX9229
+com.inicis.util.etc.INIpayException: TX9229
+	at com.inicis.inipay.actions.INIsecurepayAction.parameterCheck(INIsecurepayAction.java:504)
+	at com.inicis.inipay.actions.INIAction.setParameter(INIAction.java:69)
+	at com.inicis.inipay.INIpay.startAction(INIpay.java:115)
+	at com.includesys.sm.controller.smsManager.CoinController.coinChargePgResult(CoinController.java:413)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:219)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:745)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:686)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:838)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+[18:11:36] INFO <00002>  ERROR_MSG : TX9229
+[18:11:36] INFO <00002>  ResultMsg : 
+[18:11:37]ERROR <00002>  ResultMsg : [TX9229|필수항목 누락  - BUYEREMAIL]
+[18:11:37] INFO <00002> TRANSACTION COMPLETE 
+[18:11:37] INFO <00002> END securepay, [ TID: ], 01|[TX9229|필수항목 누락  - BUYEREMAIL],  LapTime[0.265 sec. ] 
+[18:11:37] INFO --------------------------------------------------------------------------------
+[18:14:37] INFO <00001> START checkfake (5132B20121227 chkfake Windows 7 JSP pureJAVA  1.7.0_60)
+[18:14:37] INFO <00001> DEBUG PRINT : 
+[18:14:37]DEBUG <00001> INIPAYHOME   : D:\\Project\\Eclipse\\ShopMaster\\Web\\INIpay50
+[18:14:37]DEBUG <00001> MID          : kthskytest
+[18:14:37]DEBUG <00001> ADMIN(KEYPW) : 1111
+[18:14:37]DEBUG <00001> TX_PGPUBSN : 30
+[18:14:37]DEBUG <00001> TX_MPUBSN : 0
+[18:14:37] INFO <00001> price : 33000
+[18:14:37] INFO <00001> nointerest : no
+[18:14:37] INFO <00001> quotabase : lumpsum:00:02:03:04:05:06:07:08:09:10:11:12
+[18:14:37]DEBUG <00001> src value       = cHJpY2U9MzMwMDAmbm9pbnRlcmVzdD1ubyZxdW90YWJhc2U9bHVtcHN1bTowMDow
+MjowMzowNDowNTowNjowNzowODowOToxMDoxMToxMg==
+
+[18:14:37]DEBUG <00001> Hashed value    = FIrFr0iN++nPPZxoCjw7k8DiXM8=
+
+[18:14:37]DEBUG <00001> certid          = 9q9a+V+kgjiOxR2MGAOqdlPE5XM=0
+[18:14:37] INFO <00001> TRANSACTION COMPLETE 
+[18:14:37] INFO <00001> END chkfake, 00|위변조 체크 정보 생성 성공,  LapTime[0.267 sec. ] 
+[18:14:37] INFO --------------------------------------------------------------------------------
+[18:15:18] INFO <00002> START securepay (5132B20121227 securepay Windows 7 JSP pureJAVA  1.7.0_60)
+[18:15:18] INFO <00002> DEBUG PRINT : 
+[18:15:18] INFO <00002> PAYMETHOD   : Card
+[18:15:18] INFO <00002> OID         : orderid_of_merchant
+[18:15:18] INFO <00002> PRICE       : 33000
+[18:15:18] INFO <00002> CURRENCY    : WON
+[18:15:18] INFO <00002> GOODNAME    : 마스터샵 충전 B형
+[18:15:18] INFO <00002> BUYERNAME   : 조상현
+[18:15:18] INFO <00002> BUYERTEL    : null
+[18:15:18] INFO <00002> BUYEREMAIL  : 
+[18:15:18] INFO <00002> SESSIONKEY : Q6sbbWyyrFwIYxXbMhVylbiiE1aK7ljlJ3yl6rGxwqJHD+QdtGNNs0xdmWSFVVTn
+POcAfTmIGOdrN6uHaOaUxwfxWj8xmdSNK6PGBHrbghYmxpnf4pVqYJX706WE+7Yy
+Eh9ggYztdVuqwhyHwoi0RBCayLnqOA+XCfN6cCEc9gg=
+[18:15:18] INFO <00002> ENCRYPTED  : Version=4.1&PayMethod=Card&RsaKeyNum=1&EncryptionAlgorithm=SEED-CBC&SignAlgorithm=RSAwithSHA1&CertVer=39&moid=orderid_of_merchant&ver_trace=main(6087,6053)card(6115,6105)n(6008)Cs(6022)Dt(6002)Pa(6002)Cf(6024)Fv(0000)La(6131)Re(6083)Vr(6006)P(6033)en(6039)nP(6006)&pg1=211.219.96.180&pg2=203.238.37.3&pg1ip=211.219.96.180&pg2ip=203.238.37.3&agreeflag=1111&Data=utCuzT84o/p33H8JZyw6ijcmi8r3SduI5Wpdzf1UDFCY6wEaX8U67MD8lIQNfh4e
+3xhUDyS9+5kERK67pKtQCIPj7P5NEV/NcnVtwLm0n/mbHYL6bD5uKzLoZpv4y41z
+hq5/J0EQLe/5G+x1BqioRg4PiOZEYkj+xo+BxhBKHobVfpDhwvPETD4ztamDljAQ
+nVctlgNuBplpe9B4Ci+er1oryjUSs3e76hHPheqkW6mOp1I3nFggRIT1LUg2ZYtk
+Ivj7gebQDUmz2Kf8lweAex6aqWkkAspcqQZ5dDJYe+7V49JB2/1cArjRMqpsvHRJ
+A5rDj2qZ5aRDIRv3WUJFBR+Kl52Ff2f/6XCa1BWQClY9W463yaSDrI8TTH7vW7wz
+0otSp6WYfKKf1XIgE7hg97UmUtxGgJhNG9dYa7rs3iGrTN9BQhmeXlXbRUFUW/nj
+tVpOIYu+U+PytrrQmz5bcqwx1lV4l/oXioMt+y3SgDNwStODTlrkTD+DnGOUlGJw
+LbcKFLaytRb1S3eNh7Z0muim64bfhNC1DUyAMc1TpYpQiH5tnezzTJcB3ewbp3lS
+PSuWcgVWmpbjajDvtzhyh+J5EOIl5O8n4NzOHbjatbYBiyjtxC6Jf60eE8s=
+[18:15:18]ERROR <00002> BUYEREMAIL is NULL
+[18:15:19]ERROR TX9229
+com.inicis.util.etc.INIpayException: TX9229
+	at com.inicis.inipay.actions.INIsecurepayAction.parameterCheck(INIsecurepayAction.java:504)
+	at com.inicis.inipay.actions.INIAction.setParameter(INIAction.java:69)
+	at com.inicis.inipay.INIpay.startAction(INIpay.java:115)
+	at com.includesys.sm.controller.smsManager.CoinController.coinChargePgResult(CoinController.java:413)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:219)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:745)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:686)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:925)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:856)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:936)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:838)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:812)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+[18:15:19] INFO <00002>  ERROR_MSG : TX9229
+[18:15:19] INFO <00002>  ResultMsg : 
+[18:15:19]ERROR <00002>  ResultMsg : [TX9229|필수항목 누락  - BUYEREMAIL]
+[18:15:19] INFO <00002> TRANSACTION COMPLETE 
+[18:15:19] INFO <00002> END securepay, [ TID: ], 01|[TX9229|필수항목 누락  - BUYEREMAIL],  LapTime[0.330 sec. ] 
+[18:15:19] INFO --------------------------------------------------------------------------------

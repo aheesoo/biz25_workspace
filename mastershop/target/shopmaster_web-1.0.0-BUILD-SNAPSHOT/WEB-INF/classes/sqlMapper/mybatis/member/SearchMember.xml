@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="SearchMember">
+
+	
+	<!-- 회원 정보 조회 -->
+	<select id="selectMemberInfo" parameterType="hashmap" resultType="SearchMember">
+		select 	tm.pk_member_id, 
+					tmt.pk_tel, 
+					tm.fd_mobile,
+					tm.fd_user_name, 
+					tm.fd_sex,
+					tm.fd_birthday, 
+					tm.fd_regist_num, 
+					tm.fd_corp_regist_num, 
+					tm.fd_email
+		from 		tbl_member tm, tbl_member_tel tmt
+		where 	tm.pk_member_id = tmt.fk_member_id
+			and 	tmt.pk_tel = ${search_tel}
+			<if test="search_id !=null and !search_id.equals('')">
+				and 	tm.pk_member_id = #{search_id}
+			</if>
+			<if test="search_name !=null and !search_name.equals('')">
+				and 	tm.fd_user_name = #{search_name}
+			</if>	
+			<if test="search_type == 1">
+				and 	tm.fd_regist_num = #{search_num}
+			</if>
+			<if test="search_type == 2">
+				and 	tm.fd_corp_regist_num = #{search_num}
+			</if>
+			<if test="search_type == 3">
+				and 	tm.fd_sex = #{search_gender}
+				and 	tm.fd_birthday = #{search_birth}
+			</if>			
+	</select>
+	
+	<!-- 회원 정보 조회 카운트 -->
+	<select id="selectMemberInfoCount" parameterType="hashmap" resultType="int">
+		select count(*)
+		from (
+					select 	tm.pk_member_id, 
+								tmt.pk_tel,
+								tm.fd_mobile, 
+								tm.fd_user_name, 
+								tm.fd_sex,
+								tm.fd_birthday, 
+								tm.fd_regist_num, 
+								tm.fd_corp_regist_num, 
+								tm.fd_email
+					from 		tbl_member tm, tbl_member_tel tmt
+					where 	tm.pk_member_id = tmt.fk_member_id
+						and 	tmt.pk_tel = ${search_tel}
+						<if test="search_id !=null and !search_id.equals('')">
+							and 	tm.pk_member_id = #{search_id}
+						</if>
+							and 	tm.fd_user_name = #{search_name}
+						<if test="search_type !=null and search_type.equals('1')">
+							and 	tm.fd_regist_num = #{search_num}
+						</if>
+						<if test="search_type !=null and search_type.equals('2')">
+							and 	tm.fd_corp_regist_num = #{search_num}
+						</if>
+						<if test="search_type !=null and search_type.equals('3')">
+							and 	tm.fd_sex = #{search_gender}
+							and 	tm.fd_birthday = #{search_birth}
+						</if>		
+		) as result						
+	</select>
+	
+	<!-- 인증키 생성  -->
+	<insert id="insertCreateSecurityKey" parameterType="hashmap">
+		INSERT INTO tbl_member_security_num(
+			fd_member_id,
+			fd_tel, 
+			fd_security_key
+		)VALUES (
+			#{fd_member_id}, 
+			#{search_tel},
+			#{fd_security_key}
+		)
+
+	</insert>
+	
+	<!-- 회원 인증번호 조회 -->
+	<select id="selectMemberInfoSecurityKey" parameterType="hashmap" resultType="SearchMember">
+		select 	pk_idx, 			fd_member_id, 
+					fd_tel, 			fd_security_key, 
+					fd_reg_date
+		from 		tbl_member_security_num
+		where 	date_format(date_add(fd_reg_date,interval 3 minute), '%Y%m%d%H%i') >=date_format(now(),'%Y%m%d%H%i')	
+			and 	fd_tel= #{search_tel}
+			and	fd_member_id =#{fd_member_id}
+			and	fd_security_key = #{fd_security_key}		
+	</select>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="updateMemberTempPassword"  parameterType="SearchMember">
+		update tbl_member
+		 <set>
+			fd_member_pwd = #{temp_paswd}
+		 </set>
+	       where pk_member_id = #{search_id}		 
+	</update>	
+	
+	<!-- SMS 그룹 테이블 저장 step 1 --> 
+	<update id="insertMemberSearchSmsGroup" parameterType="hashmap">
+		INSERT INTO tbl_sms_group(
+			fk_member_id,
+			fk_tel,
+			fk_custom_msg_id, 
+			pk_group_code, 
+			msg_type, 
+			msg_sub_type, 
+			req_count,
+			send_content,
+			reserve_time,
+			req_member_type,
+			member_ip,
+			reserve_type,
+			reg_date			
+		) VALUES (
+			#{fk_member_id},
+			#{fk_tel},
+			#{fk_custom_msg_id},
+			#{pk_group_code},
+	 		#{msg_type}, 
+			#{msg_sub_type},
+	 		#{req_count},
+	  		#{send_content},
+	   		#{reserve_time}, 
+	   		#{req_member_type},   
+	      	#{member_ip},
+	      	#{reserve_type},         
+	         now()       
+         )
+
+	</update>
+	
+	<!-- SMS 그룹 테이블 저장 step 1 --> 
+	<update id="insertMemberSearchSmsReservation" parameterType="hashmap">
+		INSERT INTO tbl_sms_reservation(
+			fk_member_id, 
+			fk_tel,
+			fk_group_code, 
+			receive_number, 
+			msg_type,
+			msg_sub_type,
+			send_content,
+			fk_custom_msg_id,
+			reserve_type,
+			reserve_date,
+			reg_date
+		)VALUES (
+			#{fk_member_id},
+			#{fk_tel}, 
+		 	#{fk_group_code},
+			#{receive_number},
+			#{msg_type},
+			#{msg_sub_type},
+			#{send_content}, 
+			#{fk_custom_msg_id},
+			#{reserve_type},
+			#{reserve_date},
+			now()
+		)		
+	</update>
+	
+</mapper>

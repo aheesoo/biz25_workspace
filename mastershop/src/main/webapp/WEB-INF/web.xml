@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- post 방식에서 한글이 깨지지 않도록 필터 설정하기 -->
+	<!-- 인코딩 필터 설정(utf-8,EUC-KR) // 모든페이지 호출할때마다 자동 호출됨 -->
+	<filter>
+		<filter-name>characterEncoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>	
+		<filter-name>characterEncoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- ////////////////////////////////////////////////////////////// -->
+	
+	
+	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+	
+	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Processes application requests -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+		
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- param지정 -->
+	<!-- 인증 만료 시간(초) -->
+	<context-param>
+		<param-name>authExpire</param-name>
+		<param-value>30</param-value><!-- 분 -->
+	</context-param>
+	<!-- 정적 리소스 서버 도메인 및 호스트명 -->
+	<context-param>
+		<param-name>staticServerURL</param-name>
+		<param-value>shopmaster.co.kr</param-value>
+	</context-param>	
+
+	<!-- 관리자 인증정보 쿠키 암호화 키 -->
+	<context-param>
+		<param-name>encryptKey</param-name>
+		<param-value>696d697373796f7568616e6765656e61</param-value>
+	</context-param>
+	
+	<!-- 
+		접근 IP 관리 사용 여부
+		성능 향상을 위해 캐싱을 사용하므로, DB에서의 쿼리를 통한
+		등록/수정/삭제는 반영되지 않음 
+	-->
+	<context-param>
+		<param-name>useACLByIP</param-name>
+		<param-value>Y</param-value>
+	</context-param>	
+	
+	<!-- 로깅 차단 URI -->
+	<context-param>
+		<param-name>blockURIByLogging</param-name>
+		<param-value>
+			/manager/adminRegister.do
+		,	/manager/adminModify.do
+		, 	/manager/logList.do
+		, 	/manager/logView.do
+		,	/manager/initSubMenuList.do
+		</param-value>
+	</context-param>	
+	
+	<context-param>
+		<param-name>defaultHtmlEscape</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    
+    <filter>
+    	<filter-name>deviceResolverRequestFilter</filter-name>
+    	<filter-class>org.springframework.mobile.device.DeviceResolverRequestFilter</filter-class>
+    </filter> 
+	<filter-mapping> 
+  		<filter-name>deviceResolverRequestFilter</filter-name>
+    	<url-pattern>/*</url-pattern>
+    </filter-mapping> 
+    
+</web-app>

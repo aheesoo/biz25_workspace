@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CallLog">
+<!-- 
+  `fk_member_id` varchar(20) NOT NULL COMMENT '로그인 ID',
+  `fk_tel` varchar(20) NOT NULL COMMENT '로그인 전화번호(통화오픈API 번호)',
+  `pk_rcv_tel` varchar(20) NOT NULL COMMENT '수신 전화번호',
+  `fd_seqno` int(9) DEFAULT NULL COMMENT '통화오픈 API일련번호',
+  `fd_reg_yy` varchar(4) DEFAULT NULL COMMENT '수신 년도',
+  `fd_reg_mm` varchar(2) DEFAULT NULL COMMENT '수신 월',
+  `fd_reg_dd` varchar(2) DEFAULT NULL COMMENT '수신 일',
+  `fd_reg_hh` varchar(2) DEFAULT NULL COMMENT '수신 시각',
+  `fd_reg_week` int(1) DEFAULT NULL COMMENT '수신요일구분 1~7 (일요일~토요일)',
+  `fd_reg_mi` varchar(2) DEFAULT NULL COMMENT '수신 분',
+  `fd_reg_ss` varchar(2) DEFAULT NULL COMMENT '수신 초',
+  `fd_openapi_rc_code` varchar(4) DEFAULT NULL COMMENT '통화오픈api_수신상태 코드',
+
+  `fd_memo` varchar(2000) DEFAULT NULL COMMENT '전화 수신시 메모 2000byte 체크'
+
+ -->
+<!-- 
+	<select id="get" parameterType="String" resultType="CallLog">
+		select 
+			fd_seqno
+			,pk_rcv_tel
+			,fk_tel
+			,fk_member_id
+			,fd_reg_yy
+			,fd_reg_week
+			,fd_reg_ss
+			,fd_reg_mm
+			,fd_reg_mi
+			,fd_reg_hh
+			,fd_reg_dd
+			,fd_openapi_rc_code
+			,fd_memo
+			,fd_reg_date
+		from tbl_call_log
+		<trim prefix="where" prefixOverrides="and">
+			<if test="fk_member_id != '' and fk_member_id != null">
+				and fk_member_id = #{fk_member_id}
+			</if>
+			<if test="fd_seqno != '' and fd_seqno != null">
+				and fd_seqno = #{fd_seqno}
+			</if>
+		</trim>
+	</select>
+ -->
+<!-- 로그와 사용자 조인 리스트 -->
+	<select id="getListView" parameterType="HashMap" resultType="CallLog">
+		select 
+			log.fd_rcv_tel			 
+			,log.fd_tel				 
+			,log.fd_member_id		 
+			,log.pk_seqno			 
+			,log.fd_reg_yy			 
+			,log.fd_reg_week		 
+			,log.fd_reg_ss			 
+			,log.fd_reg_mm			 
+			,log.fd_reg_mi			 
+			,log.fd_reg_hh			 
+			,log.fd_reg_dd			 
+			,log.fd_openapi_rc_code	 
+			,log.fd_reg_date		 
+
+			,callm.fd_memo			 
+			
+			,cus.fd_view_flag		 
+			,cus.fd_user_name		 
+			,cus.fd_rev_sms_flag	 
+			,cus.fd_new_date		 
+			,cus.fd_mod_date		 
+			,cus.fd_memo			 as fd_memo_cus
+			,cus.fd_addr			 
+		from
+			tbl_call_log as log
+		left outer join
+			tbl_call_memo_log as callm
+			on(log.pk_seqno = callm.fk_seq)
+		left outer join
+			tbl_phonebook as cus
+			on(log.fd_rcv_tel = cus.pk_customer_tel and log.fd_member_id = cus.fk_member_id)
+		<trim prefix="where" prefixOverrides="and">
+			<if test="fd_member_id != '' and fd_member_id != null">
+				and log.fd_member_id = #{fd_member_id}
+			</if>
+			<if test="fk_openapi_rc_code != '' and fk_openapi_rc_code != null">
+				and log.fd_openapi_rc_code = #{fd_openapi_rc_code}
+			</if>
+			<if test="fd_rcv_tel != '' and fd_rcv_tel != null">
+				and log.fd_rcv_tel = #{fd_rcv_tel}
+			</if>
+			<if test="pk_customer_tel != '' and pk_customer_tel != null">
+				and cus.pk_customer_tel = #{pk_customer_tel}
+			</if>
+			
+		</trim>
+		order by log.fd_reg_date desc
+		<if test="limit != '' and limit != null">
+			limit #{limit}
+		</if> 
+		<if test="limit == '' or limit == null">
+			limit 4
+		</if> 
+	</select>
+<!-- 로그와 사용자 조인 리스트 -->
+
+	<select id="getCount"  parameterType="HashMap" resultType="int">
+		select count(*) as cnt
+		from tbl_call_log
+		<trim prefix="where" prefixOverrides="and">
+			<if test="fd_seqno != '' and fd_seqno != null">
+				and fd_seqno = #{fd_seqno}
+			</if>
+			<if test="pk_rcv_tel != '' and pk_rcv_tel != null">
+				and pk_rcv_tel = #{pk_rcv_tel}
+			</if>
+			<if test="fk_member_id != '' and fk_member_id != null">
+				and fk_member_id = #{fk_member_id}
+			</if>
+		</trim>
+	</select>
+
+	<insert id="register" parameterType="CallLog">
+	replace INTO tbl_call_log(
+			pk_seqno
+			,fd_member_id
+			,fd_tel
+			,fd_rcv_tel
+			,fd_reg_yy
+			,fd_reg_mm
+			,fd_reg_dd
+			,fd_reg_hh
+			,fd_reg_week
+			,fd_reg_mi
+			,fd_reg_ss
+			,fd_openapi_rc_code
+			,fd_openapi_skind
+			,fd_search_time
+			,fd_reg_date
+	)
+		VALUES (
+			#{pk_seqno}
+			<if test="fd_member_id != '' and fd_member_id != null">
+				,#{fd_member_id}
+			</if>
+			<if test="fd_member_id == '' or fd_member_id == null">
+				,(select fk_member_id  from tbl_member_tel where pk_tel =#{fd_tel})
+			</if>
+			,#{fd_tel}
+			,#{fd_rcv_tel}
+			,#{fd_reg_yy}
+			,#{fd_reg_mm}
+			,#{fd_reg_dd}
+			,#{fd_reg_hh}
+			,dayofweek(#{fd_reg_week})
+			,#{fd_reg_mi}
+			,#{fd_reg_ss}
+			,#{fd_openapi_rc_code}
+			,#{fd_openapi_skind}
+			,#{fd_search_time}
+			,#{fd_reg_date}
+		)
+	</insert>
+
+
+	<update id="modify"  parameterType="CallLog">
+		insert into tbl_call_memo_log (fk_seq, fd_memo) values (#{fk_seq}, #{fd_memo})
+		ON DUPLICATE KEY 
+		UPDATE fd_memo = #{fd_memo}
+	</update>
+
+	<delete id="remove"  parameterType="String">
+		<!-- DELETE FROM tbl_call_log WHERE pk_seq = #{pk_seq} -->
+	</delete>
+	
+	
+	<select id="getCustom" parameterType="HashMap" resultType="CallLog">
+		select 
+			pk_customer_tel
+			, fk_member_id
+			, fd_view_flag
+			, fd_user_name
+			, fd_rev_sms_flag
+			, fd_new_date
+			, fd_mod_date
+			, fd_memo
+			, fd_addr
+		from tbl_phonebook
+		<trim prefix="where" prefixOverrides="and">
+			and pk_customer_tel = #{pk_customer_tel}
+			<if test="fk_member_id != '' and fk_member_id != null">
+				and fk_member_id = #{fk_member_id}
+			</if>
+		</trim>
+	</select>
+	
+</mapper>

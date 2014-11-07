@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Product">
+
+	<!-- 
+	<sql id="where">
+        	
+		<where>
+			<if test="searchString != '' and searchString != null">
+				<if test="searchColumn == 'aId'">
+					pk_admin_id like CONCAT('%', #{searchString}, '%')
+				</if>				
+				<if test="searchColumn == 'aName'">
+					fd_admin_name like CONCAT('%', #{searchString}, '%')
+				</if>
+			</if>
+		</where>  	
+	</sql>
+	 -->
+    <!--  품목관리 리스트 -->
+	<select id="getProductList"  resultType="Product">
+		<!-- 
+		SELECT tpc.pk_product_code, tpc.fd_up_code, tpc.fd_code_name, coalesce(tpc_count.cnt, '1')as row_cnt
+		FROM tb_product_code tpc LEFT OUTER JOIN (	SELECT substring(pk_product_code,1,1) as fd_up_code, count(*) as cnt
+                   														FROM tb_product_code
+                    													GROUP BY substring(pk_product_code,1,1)) as tpc_count
+											ON tpc.pk_product_code = tpc_count.fd_up_code		
+		ORDER BY pk_product_code ASC
+		
+		SELECT tpc.pk_product_code, tpc.fd_up_code, tpc.fd_code_name, depth1
+		FROM tb_product_code tpc LEFT OUTER JOIN( SELECT pk_product_code, fd_up_code, fd_code_name as depth1
+		               													FROM tb_product_code
+		                                         						WHERE fd_up_code = '0000'
+		                											  ) as tpc_count
+		ON tpc.fd_up_code = tpc_count.pk_product_code
+		WHERE tpc.fd_up_code != '0000'
+		ORDER BY pk_product_code ASC
+		-->		 
+		SELECT 	tpc.pk_product_code, tpc.fd_up_code, tpc.fd_code_name, coalesce(tpc_count.cnt-1, '1')as row_cnt,
+     				depth1
+		FROM tb_product_code tpc LEFT OUTER JOIN (	SELECT substring(pk_product_code,1,1) as fd_up_code, count(*) as cnt, fd_code_name as depth1
+		               														FROM tb_product_code                                          
+		                													GROUP BY substring(pk_product_code,1,1)) as tpc_count
+		ON tpc.fd_up_code = tpc_count.fd_up_code		
+		where  tpc.fd_up_code != '0000'
+		ORDER BY pk_product_code ASC
+		
+	</select>
+		
+	<!-- 제품코드 리스트 -->
+	<select id="getProductCodeList"   parameterType="String" resultType="Product">		 
+		select pk_product_code, fd_up_code, fd_code_name, fd_point_level_5, fd_point_level_10
+		from tb_product_code
+		where  fd_up_code = #{search_code}		      
+	</select>
+	
+	<!-- 제품 상세보기  -->
+	<select id="getProductCodeListView"   parameterType="String" resultType="Product">		 
+		select pk_product_code, fd_up_code, fd_code_name, fd_point_level_5, fd_point_level_10
+		from tb_product_code
+		where pk_product_code = #{search_code}		        		 
+	</select>
+	
+	<!-- 제품 상위 코드 조회 -->
+	<select id="getProductCodeSearch"   parameterType="String" resultType="Product">		 
+		select pk_product_code, fd_up_code, fd_code_name, fd_point_level_5, fd_point_level_10
+		from tb_product_code
+		where  fd_up_code = #{search_code}	
+		order by pk_product_code desc
+		limit 0 , 1 		
+	</select>
+	
+	<!--  제품명 등록 -->
+	<insert id="registerProductCode" parameterType="Product">
+		INSERT INTO kaffa.tb_product_code(
+			pk_product_code, 
+			fd_up_code, 
+			fd_code_name, 
+			fd_point_level_5, 
+			fd_point_level_10
+			)VALUES (
+			#{pk_product_code}, 
+			#{fd_up_code}, 
+			#{fd_code_name},
+			#{fd_point_level_5},
+			#{fd_point_level_10}
+		)	
+	</insert>
+	
+	
+	<!--  제품명 수정 -->
+	<update id="UpdateProductCode" parameterType="Product">
+		UPDATE tb_product_code
+		<trim prefix="SET" prefixOverrides=",">
+			<if test="fd_code_name != '' and fd_code_name != null">, fd_code_name = #{fd_code_name}</if>
+			<if test="fd_point_level_5 != '' and fd_point_level_5 != null">, fd_point_level_5 = #{fd_point_level_5}</if>
+			<if test="fd_point_level_10 != '' and fd_point_level_10 != null">, fd_point_level_10 = #{fd_point_level_10}</if>
+		</trim>	
+		WHERE  pk_product_code	= #{pk_product_code}
+			AND 	fd_up_code			= #{fd_up_code}
+	</update>
+	
+	
+</mapper>

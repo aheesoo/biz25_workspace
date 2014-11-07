@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Report">
+
+	
+
+	<!-- 가입 상품 전화번호 리스트 -->
+	<select id="getSendTelList"   parameterType="String" resultType="HashMap">		 
+		SELECT 	fk_tel
+		FROM 	tbl_product
+		WHERE 	fk_member_id = #{member_id}
+	</select>
+	
+	<!-- 월별 리포트 리스트 카운트 -->
+	<select id="getMonthReportListCount"   parameterType="HashMap" resultType="int">		 
+		SELECT 	COUNT(*)
+		FROM 	tbl_sms_group
+		WHERE 	fk_member_id = #{fk_member_id}
+					AND msg_send_finish = 'Y'
+					AND reserve_time <![CDATA[>=]]> #{startDate} 
+					AND reserve_time <![CDATA[<=]]> #{finishDate} 
+					<if test="fk_tel != '' and fk_tel != null">
+						AND fk_tel = #{fk_tel}
+					</if>
+	</select>
+	
+	<!-- 월별 리포트 리스트 -->
+	<select id="getMonthReportList"   parameterType="HashMap" resultType="SmsManager">		 
+		SELECT  G.fk_member_id
+			        , G.fk_tel
+			        , G.pk_group_code AS group_code
+			        , G.msg_type
+			        , G.msg_sub_type
+			        , G.req_count
+			        , G.mcs_res_result_success
+			        , G.mcs_res_result_fail
+			        , G.reserve_time
+			        , G.search_month
+			        , G.search_customer
+			        , G.search_week
+			        , G.search_time
+			        , G.search_call_rcv_cnt
+			        , G.search_call_rcv_cnt_type
+			        , IFNULL(S.fd_tot_day, 0) AS call_count
+		FROM tbl_sms_group G LEFT JOIN (
+		
+                    SELECT  fk_group_code
+                           		, IFNULL(call_cnt.fd_tot_day, 0) AS fd_tot_day
+                    FROM    tbl_sms_log sms_log INNER JOIN (
+                    
+                                SELECT  fd_rcv_tel
+                                			, fd_member_tel
+                                        	, SUM(fd_tot_day) AS fd_tot_day
+                                FROM 	tbl_report_call_day_cnt
+                                WHERE 	fd_member_id = #{fk_member_id}
+                                      		AND CONCAT(fd_yy,fd_mm,fd_dd) <![CDATA[>=]]> DATE_FORMAT(DATE_ADD(NOW(), INTERVAL -14 DAY), '%Y%m%d')
+                                GROUP BY fd_rcv_tel
+                                
+                    )call_cnt ON sms_log.fk_tel = call_cnt.fd_member_tel AND sms_log.receive_number = call_cnt.fd_rcv_tel 
+                    
+                    WHERE sms_log.fk_member_id = #{fk_member_id}
+						                                
+        )S ON G.pk_group_code = S.fk_group_code
+        
+		WHERE 	G.fk_member_id = #{fk_member_id} 
+					AND G.msg_send_finish = 'Y'
+					AND G.reserve_time <![CDATA[>=]]> #{startDate} 
+					AND G.reserve_time <![CDATA[<=]]> #{finishDate}
+					<if test="fk_tel != '' and fk_tel != null">
+						AND G.fk_tel = #{fk_tel}
+					</if>
+		ORDER BY G.reserve_time DESC
+		LIMIT #{pageStart}, #{pageSize}
+	</select>
+	
+	<!-- 월별 리포트 그래프 데이터-->
+	<select id="getMonthReportGraph"   parameterType="HashMap" resultType="HashMap">		 
+		SELECT  SUBSTRING(G.reserve_time, 7, 2) AS day_number
+              		, SUM(G.req_count) AS req_count
+			        , SUM(S.fd_tot_day) AS call_count
+		FROM tbl_sms_group G LEFT JOIN (
+		
+                    SELECT  fk_group_code
+                           		, IFNULL(call_cnt.fd_tot_day, 0) AS fd_tot_day
+                    FROM    tbl_sms_log sms_log INNER JOIN (
+                    
+                                SELECT  fd_rcv_tel
+                                			, fd_member_tel
+                                        	, SUM(fd_tot_day) AS fd_tot_day
+                                FROM 	tbl_report_call_day_cnt
+                                WHERE 	fd_member_id = #{fk_member_id}
+                                      		AND CONCAT(fd_yy,fd_mm,fd_dd) <![CDATA[>=]]> DATE_FORMAT(DATE_ADD(NOW(), INTERVAL -14 DAY), '%Y%m%d')
+                                GROUP BY fd_rcv_tel
+                                
+                    )call_cnt ON sms_log.fk_tel = call_cnt.fd_member_tel AND sms_log.receive_number = call_cnt.fd_rcv_tel 
+                    
+                    WHERE sms_log.fk_member_id = #{fk_member_id}
+						                                
+        )S ON G.pk_group_code = S.fk_group_code
+        
+		WHERE 	G.fk_member_id = #{fk_member_id} 
+					AND G.msg_send_finish = 'Y'
+					AND G.reserve_time <![CDATA[>=]]> #{startDate} 
+					AND G.reserve_time <![CDATA[<=]]> #{finishDate}
+					<if test="fk_tel != '' and fk_tel != null">
+						AND G.fk_tel = #{fk_tel}
+					</if>
+	    GROUP BY day_number
+	    ORDER BY day_number ASC
+	</select>
+	
+	<!-- 상세보기 그룹 정보 -->
+	<select id="getReportDetailGroup"   parameterType="HashMap" resultType="SmsManager">		 
+		SELECT 	reserve_time
+        			, fk_tel
+        			, msg_type
+        			, msg_sub_type
+        			, search_month
+        			, search_customer
+        			, req_count
+        			, mcs_res_result_success
+        			, send_content
+        			, attachment_path
+ 		FROM   	tbl_sms_group
+ 		WHERE  	fk_member_id = #{member_id}
+        			AND pk_group_code = #{group_code}
+	</select>
+	
+	<!-- 상세보기 14일 이전 수신리스트 -->
+	<select id="getReportDetailList" parameterType="HashMap" resultType="SmsManager">		 
+		SELECT	tel_list.call_date
+        			, B.fd_user_name
+        			, B.pk_customer_tel
+		FROM 	tbl_phonebook B INNER JOIN (
+  
+  					SELECT  C.fd_rcv_tel
+          						, CONCAT(C.fd_reg_yy, C.fd_reg_mm, C.fd_reg_dd, C.fd_reg_hh, C.fd_reg_mi, C.fd_reg_ss) AS call_date
+  					FROM 	tbl_sms_log S INNER JOIN tbl_call_log C 
+    							ON S.fk_tel = C.fd_tel AND S.receive_number = C.fd_rcv_tel
+  					WHERE 	S.fk_group_code = #{group_code} 
+        						AND CONCAT(C.fd_reg_yy, C.fd_reg_mm, C.fd_reg_dd, C.fd_reg_hh, C.fd_reg_mi, C.fd_reg_ss) <![CDATA[>=]]> DATE_FORMAT(DATE_ADD(NOW(), INTERVAL -14 DAY), '%Y%m%d%H%i')
+  
+ 		)tel_list ON B.pk_customer_tel = tel_list.fd_rcv_tel
+ 		WHERE B.fk_member_id = #{member_id}
+ 		ORDER BY tel_list.call_date DESC
+	</select>
+</mapper>
